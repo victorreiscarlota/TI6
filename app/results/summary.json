@@ -1,0 +1,47 @@
+[
+  {
+    "repo": "facebook/react",
+    "stars": 239886,
+    "forks": 49612,
+    "size_kb": 1196623,
+    "lines_of_code": 0,
+    "avg_complexity": 0,
+    "dependencies": 0
+  },
+  {
+    "repo": "trekhleb/javascript-algorithms",
+    "stars": 193569,
+    "forks": 30918,
+    "size_kb": 13564,
+    "lines_of_code": 0,
+    "avg_complexity": 0,
+    "dependencies": 0
+  },
+  {
+    "repo": "airbnb/javascript",
+    "stars": 147657,
+    "forks": 26801,
+    "size_kb": 3723,
+    "lines_of_code": 0,
+    "avg_complexity": 0,
+    "dependencies": 0
+  },
+  {
+    "repo": "f/awesome-chatgpt-prompts",
+    "stars": 135518,
+    "forks": 18028,
+    "size_kb": 1700,
+    "lines_of_code": 0,
+    "avg_complexity": 0,
+    "dependencies": 0
+  },
+  {
+    "repo": "vercel/next.js",
+    "stars": 135136,
+    "forks": 29609,
+    "size_kb": 2382945,
+    "lines_of_code": 0,
+    "avg_complexity": 2.909090909090909,
+    "dependencies": 0
+  }
+]
