@@ -9,7 +9,6 @@ from scripts.github_api import get_top_js_repos
 from scripts.metrics import get_metrics
 from scripts.utils import save_json
 
-
 load_dotenv()
 TOKEN = os.getenv("GITHUB_TOKEN")
 

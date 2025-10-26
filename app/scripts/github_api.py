@@ -32,13 +32,13 @@ def get_top_js_repos(limit=5):
     return repos
 
 
-def fetch_package_json(repo_full_name):
-    """Baixa apenas o package.json do repositório via API do GitHub."""
-    url = f"{GITHUB_API}/repos/{repo_full_name}/contents/package.json"
-    r = requests.get(url, headers=HEADERS)
+def fetch_package_json(repo_full_name, subpath=""):
+    """Baixa o package.json de uma subpasta (ou raiz) via API do GitHub."""
+    base_url = f"{GITHUB_API}/repos/{repo_full_name}/contents"
+    url = f"{base_url}/{subpath}/package.json" if subpath else f"{base_url}/package.json"
 
+    r = requests.get(url, headers=HEADERS)
     if r.status_code == 404:
-        print(f"⚠️ Nenhum package.json encontrado em {repo_full_name}")
         return None
 
     r.raise_for_status()
@@ -49,7 +49,6 @@ def fetch_package_json(repo_full_name):
         try:
             return json.loads(decoded)
         except Exception as e:
-            print(f"⚠️ Erro ao ler package.json em {repo_full_name}: {e}")
+            print(f"⚠️ Erro ao ler package.json em {repo_full_name}/{subpath}: {e}")
             return None
-
     return None
