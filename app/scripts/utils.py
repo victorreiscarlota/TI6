@@ -2,6 +2,7 @@ import subprocess
 import json
 import os
 
+
 def run_command(command, cwd=None):
     result = subprocess.run(
         command,
@@ -13,6 +14,7 @@ def run_command(command, cwd=None):
     if result.returncode != 0:
         print(f"⚠️ Erro ao executar '{command}' em {cwd}:\n{result.stderr}")
     return result.stdout.strip()
+
 
 def save_json(filepath, data):
     os.makedirs(os.path.dirname(filepath), exist_ok=True)

@@ -1,13 +1,19 @@
 import requests
 import os
+import json
+import base64
 from dotenv import load_dotenv
 
 load_dotenv()
 TOKEN = os.getenv("GITHUB_TOKEN")
-HEADERS = {"Authorization": f"token {TOKEN}"}
+HEADERS = {"Authorization": f"token {TOKEN}"} if TOKEN else {}
+
+GITHUB_API = "https://api.github.com"
+
 
 def get_top_js_repos(limit=5):
-    url = "https://api.github.com/search/repositories"
+    """Busca os repositórios JavaScript mais populares do GitHub."""
+    url = f"{GITHUB_API}/search/repositories"
     params = {"q": "language:javascript", "sort": "stars", "order": "desc", "per_page": limit}
     r = requests.get(url, headers=HEADERS, params=params)
     r.raise_for_status()
@@ -15,10 +21,6 @@ def get_top_js_repos(limit=5):
 
     repos = []
     for repo in data:
-        # pega o branch principal dinamicamente (main, master, etc)
-        default_branch = repo.get("default_branch", "main")
-        download_url = f"https://codeload.github.com/{repo['full_name']}/zip/refs/heads/{default_branch}"
-
         repos.append({
             "name": repo["full_name"],
             "url": repo["html_url"],
@@ -26,6 +28,28 @@ def get_top_js_repos(limit=5):
             "forks": repo["forks_count"],
             "size_kb": repo["size"],
             "updated_at": repo["updated_at"],
-            "download_url": download_url,
         })
     return repos
+
+
+def fetch_package_json(repo_full_name):
+    """Baixa apenas o package.json do repositório via API do GitHub."""
+    url = f"{GITHUB_API}/repos/{repo_full_name}/contents/package.json"
+    r = requests.get(url, headers=HEADERS)
+
+    if r.status_code == 404:
+        print(f"⚠️ Nenhum package.json encontrado em {repo_full_name}")
+        return None
+
+    r.raise_for_status()
+    data = r.json()
+
+    if data.get("encoding") == "base64":
+        decoded = base64.b64decode(data["content"]).decode("utf-8")
+        try:
+            return json.loads(decoded)
+        except Exception as e:
+            print(f"⚠️ Erro ao ler package.json em {repo_full_name}: {e}")
+            return None
+
+    return None
