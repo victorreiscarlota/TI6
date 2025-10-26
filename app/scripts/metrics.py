@@ -45,7 +45,6 @@ def get_metrics(repo, token):
     metrics["dependencies"] = len(deps)
     metrics["dev_dependencies"] = len(dev_deps)
 
-    # 🔍 Verifica vulnerabilidades de cada dependência
     total_vulns = 0
     cve_list = []
     for dep in deps.keys():

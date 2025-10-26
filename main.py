@@ -3,7 +3,6 @@ import sys
 import pandas as pd
 from dotenv import load_dotenv
 
-# Adiciona o caminho ./app ao PYTHONPATH (para importar os scripts)
 sys.path.append(os.path.join(os.path.dirname(__file__), "app"))
 
 from scripts.github_api import get_top_js_repos
@@ -11,11 +10,9 @@ from scripts.metrics import get_metrics
 from scripts.utils import save_json
 
 
-# Carrega o token do .env
 load_dotenv()
 TOKEN = os.getenv("GITHUB_TOKEN")
 
-# Diretório de resultados
 RESULTS_DIR = os.path.join("app", "results")
 os.makedirs(RESULTS_DIR, exist_ok=True)
 
@@ -35,7 +32,6 @@ def run_analysis():
         metrics = get_metrics(repo, TOKEN)
         summary.append(metrics)
 
-    # Salva os resultados
     df = pd.DataFrame(summary)
     csv_path = os.path.join(RESULTS_DIR, "dependencies_cve_summary.csv")
     json_path = os.path.join(RESULTS_DIR, "dependencies_cve_summary.json")
@@ -47,7 +43,6 @@ def run_analysis():
     print(f"📁 CSV salvo em: {csv_path}")
     print(f"📁 JSON salvo em: {json_path}")
 
-    # Gera gráfico
     try:
         import matplotlib.pyplot as plt
 

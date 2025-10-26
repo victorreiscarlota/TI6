@@ -28,7 +28,6 @@ def main():
 
     print("✅ Análise concluída! Resultados salvos em ./results/dependencies_cve_summary.csv")
 
-    # Gráfico opcional
     try:
         import matplotlib.pyplot as plt
         df.plot(x="repo", y=["dependencies", "vulnerable_deps"], kind="bar", figsize=(8, 4))
