@@ -19,7 +19,7 @@ os.makedirs(RESULTS_DIR, exist_ok=True)
 def run_analysis():
     """Executa toda a análise de dependências e CVEs."""
     print("🔍 Buscando repositórios JavaScript mais populares...")
-    repos = get_top_js_repos(limit=5)
+    repos = get_top_js_repos(limit=100)
 
     if not repos:
         print("❌ Nenhum repositório foi retornado pela API do GitHub.")

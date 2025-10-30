@@ -14,7 +14,7 @@ os.makedirs(RESULTS_DIR, exist_ok=True)
 
 def main():
     print("🔍 Buscando repositórios JavaScript mais populares...")
-    repos = get_top_js_repos(limit=5)
+    repos = get_top_js_repos(limit=100)
     summary = []
 
     for repo in repos:
