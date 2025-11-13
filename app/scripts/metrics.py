@@ -6,6 +6,7 @@ import json
 from utils import run_command
 from pygount import analysis
 from pathlib import Path
+import lizard  # ✅ nova dependência
 
 def download_and_extract(repo, token):
     """Baixa o repositório em ZIP e retorna o caminho da pasta extraída."""
@@ -53,15 +54,15 @@ def find_package_json_files(root_dir):
                 matches.append(os.path.join(root, f))
     return matches
 
+
 def count_js_loc(repo_path: str) -> int:
+    """Conta linhas de código em arquivos JS com pygount."""
     total_loc = 0
     repo_dir = Path(repo_path)
 
     for file_path in repo_dir.rglob("*.js"):
         if not file_path.is_file():
-            # pula entradas que são diretórios (mesmo que terminem com .js)
             continue
-
         try:
             result = analysis.SourceAnalysis.from_file(
                 str(file_path),
@@ -75,6 +76,49 @@ def count_js_loc(repo_path: str) -> int:
             print(f"⚠️ Erro ao analisar {file_path}: {e}")
 
     return total_loc
+
+
+def calc_js_complexity(repo_path: str, extensions=None) -> float:
+    """
+    Calcula a complexidade média do código JS usando lizard.
+    - repo_path: caminho para a pasta do repo.
+    - extensions: lista opcional de sufixos de arquivo (ex: ['.js', '.jsx', '.ts', '.tsx'])
+    """
+    if extensions is None:
+        extensions = [".js", ".jsx", ".ts", ".tsx"]
+
+    repo_dir = Path(repo_path)
+    complexities = []
+
+    for ext in extensions:
+        for file_path in repo_dir.rglob(f"*{ext}"):
+            # print(f"   🔍 Analisando complexidade em {file_path}...")
+            
+            # pular entradas que não são arquivos (por ex.: pastas com nome terminado em .js)
+            if not file_path.is_file():
+                continue
+
+            # pular arquivos muito grandes (opcional), por exemplo > 5MB
+            try:
+                if file_path.stat().st_size > 1_000_000:
+                    continue
+            except Exception:
+                pass
+
+            try:
+                # lizard.analyze_file analisa um único arquivo e retorna um FileInfo-like object
+                file_info = lizard.analyze_file(str(file_path))
+                for func in getattr(file_info, "function_list", []):
+                    # cyclomatic_complexity é o campo padrão
+                    cc = getattr(func, "cyclomatic_complexity", None)
+                    if cc is not None:
+                        complexities.append(cc)
+            except Exception as e:
+                # só log pra debug; não interrompe o processamento do repo
+                print(f"   ⚠️ Lizard falhou em {file_path}: {e}")
+
+    return sum(complexities) / len(complexities) if complexities else 0.0
+
 
 def get_metrics(repo, token):
     """Calcula métricas do repositório (LOC, complexidade, dependências)."""
@@ -94,17 +138,14 @@ def get_metrics(repo, token):
         metrics["lines_of_code"] = count_loc_fallback(repo_path)
         print(f"⚠️ Erro ao calcular LOC (pygount) em {repo['name']}: {e}")
 
-    # 2️⃣ Complexidade ciclomática (radon)
+    # 2️⃣ Complexidade ciclomática (lizard)
     try:
-        radon_output = run_command("python -m radon cc . -s -j", cwd=repo_path)
-        if not radon_output.strip():
-            raise ValueError("radon output vazio")
-        radon_data = json.loads(radon_output)
-        complexities = [i["complexity"] for f in radon_data.values() for i in f]
-        metrics["avg_complexity"] = sum(complexities) / len(complexities) if complexities else 0
+        avg_complexity = calc_js_complexity(repo_path)
+        metrics["avg_complexity"] = avg_complexity
+        print(f"   🧮 Complexidade média em {repo['name']}: {avg_complexity:.2f}")
     except Exception as e:
         metrics["avg_complexity"] = 0
-        print(f"⚠️ radon falhou em {repo['name']}: {e}")
+        print(f"⚠️ Lizard falhou em {repo['name']}: {e}")
 
     # 3️⃣ Dependências (procura todos os package.json)
     try:
