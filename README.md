@@ -45,7 +45,7 @@ pip install -r requirements.txt
 
 - Duplique o arquivo de exemplo e edite:
   ```bash
-  cp .env.sample .env
+  cp .env.example .env
   ```
 - Abra o arquivo `.env` e defina seu token do GitHub:
   ```env

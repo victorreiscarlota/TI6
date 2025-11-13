@@ -3,9 +3,9 @@ import tempfile
 import zipfile
 import requests
 import json
-from scripts.utils import run_command
-from pygount import ProjectSummary
-
+from utils import run_command
+from pygount import analysis
+from pathlib import Path
 
 def download_and_extract(repo, token):
     """Baixa o repositório em ZIP e retorna o caminho da pasta extraída."""
@@ -53,6 +53,28 @@ def find_package_json_files(root_dir):
                 matches.append(os.path.join(root, f))
     return matches
 
+def count_js_loc(repo_path: str) -> int:
+    total_loc = 0
+    repo_dir = Path(repo_path)
+
+    for file_path in repo_dir.rglob("*.js"):
+        if not file_path.is_file():
+            # pula entradas que são diretórios (mesmo que terminem com .js)
+            continue
+
+        try:
+            result = analysis.SourceAnalysis.from_file(
+                str(file_path),
+                group=repo_dir.name,
+                encoding="utf-8"
+            )
+            total_loc += result.code_count
+        except UnicodeDecodeError:
+            print(f"⚠️ Arquivo com encoding inválido: {file_path}")
+        except Exception as e:
+            print(f"⚠️ Erro ao analisar {file_path}: {e}")
+
+    return total_loc
 
 def get_metrics(repo, token):
     """Calcula métricas do repositório (LOC, complexidade, dependências)."""
@@ -66,8 +88,7 @@ def get_metrics(repo, token):
 
     # 1️⃣ Linhas de código (pygount com fallback)
     try:
-        summary = ProjectSummary.from_dir(repo_path, "utf-8")
-        total_loc = sum([e.code_count for e in summary.entries if e.language == "JavaScript"])
+        total_loc = count_js_loc(repo_path)
         metrics["lines_of_code"] = total_loc
     except Exception as e:
         metrics["lines_of_code"] = count_loc_fallback(repo_path)

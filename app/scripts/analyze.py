@@ -1,9 +1,9 @@
 import os
 import pandas as pd
 from dotenv import load_dotenv
-from scripts.github_api import get_top_js_repos
-from scripts.metrics import get_metrics
-from scripts.utils import save_json
+from github_api import get_top_js_repos
+from metrics import get_metrics
+from utils import save_json
 
 load_dotenv()
 TOKEN = os.getenv("GITHUB_TOKEN")
