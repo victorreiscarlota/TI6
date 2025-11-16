@@ -1,88 +1,126 @@
 import requests
 import json
-from scripts.github_api import fetch_package_json
+import os
+import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from app.scripts.github_api import fetch_package_json_at_ref, find_package_json_paths
+from dotenv import load_dotenv
+load_dotenv()
 
-COMMON_PATHS = [
-    "",
-    "packages/react",
-    "packages/next",
-    "packages/core",
-    "apps",
-    "examples",
-    "src",
-]
+OSV_URL = "https://api.osv.dev/v1/query"
+OSV_CACHE = os.path.join("app", "results", "osv_cache.json")
 
-
-def try_fetch_any_package_json(repo_full_name):
-    """Tenta buscar o package.json em vários caminhos e escolhe o mais completo."""
-    best_pkg = None
-    best_path = ""
-    max_deps = 0
-
-    for path in COMMON_PATHS:
-        pkg = fetch_package_json(repo_full_name, subpath=path)
-        if not pkg:
-            continue
-
-        deps = pkg.get("dependencies", {})
-        total = len(deps)
-        if total > max_deps:
-            best_pkg = pkg
-            best_path = path
-            max_deps = total
-
-    return best_pkg, best_path
-
-
-def get_cve_for_package(package_name):
-    """Busca vulnerabilidades (CVE) de um pacote NPM via API do OSV.dev."""
-    url = "https://api.osv.dev/v1/query"
-    payload = {"package": {"name": package_name, "ecosystem": "npm"}}
+def load_osv_cache():
     try:
-        response = requests.post(url, json=payload, timeout=10)
-        if response.status_code == 200:
-            vulns = response.json().get("vulns", [])
-            return len(vulns), [v["id"] for v in vulns]
-        return 0, []
-    except Exception as e:
-        print(f"⚠️ Erro ao consultar CVE de {package_name}: {e}")
-        return 0, []
+        with open(OSV_CACHE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return {}
 
+def save_osv_cache(cache):
+    os.makedirs(os.path.dirname(OSV_CACHE), exist_ok=True)
+    with open(OSV_CACHE, "w", encoding="utf-8") as f:
+        json.dump(cache, f, indent=2, ensure_ascii=False)
 
-def get_metrics(repo, token):
-    """Coleta métricas principais: dependências e vulnerabilidades."""
+def get_cve_for_package(package_name, session=None, cache=None):
+    """Busca vulnerabilidades (CVE) de um pacote NPM via API do OSV.dev, com cache."""
+    if cache is None:
+        cache = {}
+    if package_name in cache:
+        return cache[package_name]
+    payload = {"package": {"name": package_name, "ecosystem": "npm"}}
+    s = session or requests
+    try:
+        r = s.post(OSV_URL, json=payload, timeout=10)
+        if r.status_code == 200:
+            vulns = r.json().get("vulns", [])
+            result = (len(vulns), [v.get("id") for v in vulns])
+            cache[package_name] = result
+            return result
+    except Exception:
+        pass
+    cache[package_name] = (0, [])
+    return (0, [])
+
+def compute_metrics_for_repo(pkg_jsons, repo_name, token=None, session=None):
+    """
+    Recebe pkg_jsons: list of (path, pkg_json dict) for a repo (may be empty).
+    Agrega dependências presentes em todos os package.jsons (monorepo) e retorna métricas.
+    """
     metrics = {
-        "repo": repo["name"],
-        "stars": repo["stars"],
-        "forks": repo["forks"],
+        "repo": repo_name,
         "dependencies": 0,
         "dev_dependencies": 0,
         "vulnerable_deps": 0,
         "cves": [],
-        "path_usado": "",
+        "path_used": "",
     }
-
-    pkg, used_path = try_fetch_any_package_json(repo["name"])
-    if not pkg:
-        print(f"⚠️ Nenhum package.json encontrado em {repo['name']}")
+    if not pkg_jsons:
         return metrics
 
-    deps = pkg.get("dependencies", {})
-    dev_deps = pkg.get("devDependencies", {})
+    # Aggregate dependencies from all package.json files.
+    deps_agg = {}
+    dev_deps_agg = {}
+    paths = [p for p,_ in pkg_jsons]
+    for path, pkg in pkg_jsons:
+        deps = pkg.get("dependencies", {}) or {}
+        dev = pkg.get("devDependencies", {}) or {}
+        for k,v in deps.items():
+            # keep first seen version if multiple occurrences
+            if k not in deps_agg:
+                deps_agg[k] = v
+        for k,v in dev.items():
+            if k not in dev_deps_agg:
+                dev_deps_agg[k] = v
 
-    metrics["dependencies"] = len(deps)
-    metrics["dev_dependencies"] = len(dev_deps)
-    metrics["path_usado"] = used_path or "root"
+    metrics["dependencies"] = len(deps_agg)
+    metrics["dev_dependencies"] = len(dev_deps_agg)
+    metrics["path_used"] = ",".join(paths) if paths else ""
 
+    # Check CVEs for unique dependencies using cache
+    cache = load_osv_cache()
     total_vulns = 0
     cve_list = []
-
-    for dep_name in deps.keys():
-        count, ids = get_cve_for_package(dep_name)
+    session = session or requests
+    for dep in deps_agg.keys():
+        count, ids = get_cve_for_package(dep, session=session, cache=cache)
         total_vulns += count
-        cve_list.extend(ids)
+        if ids:
+            cve_list.extend(ids)
 
     metrics["vulnerable_deps"] = total_vulns
-    metrics["cves"] = cve_list
-
+    metrics["cves"] = sorted(list(set(cve_list)))
+    save_osv_cache(cache)
     return metrics
+
+def get_metrics_batch(repos, token=None, workers=8):
+    """Roda get_metrics para uma lista de repos em paralelo. Each repo is dict with 'repo' key."""
+    results = []
+    session = requests.Session()
+    session.headers.update({"Authorization": f"token {token}"} if token else {})
+    def process(repo):
+        repo_name = repo.get("repo") or repo.get("name")
+        # find all package.json paths in HEAD (monorepos)
+        pkg_paths = find_package_json_paths(repo_name, ref="HEAD", token=token)
+        pkg_jsons = []
+        for p in pkg_paths:
+            try:
+                pj = fetch_package_json_at_ref(repo_name, ref="HEAD", path=p, token=token)
+                if pj:
+                    pkg_jsons.append((p,pj))
+            except Exception:
+                continue
+        metrics = compute_metrics_for_repo(pkg_jsons, repo_name, token=token, session=session)
+        metrics["repo"] = repo_name
+        metrics["stars"] = repo.get("stars") or repo.get("stargazers_count", 0)
+        metrics["forks"] = repo.get("forks") or repo.get("forks_count", 0)
+        return metrics
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+    with ThreadPoolExecutor(max_workers=workers) as ex:
+        futures = {ex.submit(process, r): r for r in repos}
+        for fut in as_completed(futures):
+            try:
+                results.append(fut.result())
+            except Exception as e:
+                print("Erro get_metrics_batch:", e)
+    return results

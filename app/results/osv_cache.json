@@ -1,0 +1,344 @@
+{
+  "accepts": [
+    0,
+    []
+  ],
+  "body-parser": [
+    1,
+    [
+      "GHSA-qwcr-r2fm-qrc7"
+    ]
+  ],
+  "content-disposition": [
+    0,
+    []
+  ],
+  "content-type": [
+    0,
+    []
+  ],
+  "cookie": [
+    1,
+    [
+      "GHSA-pxg6-pf52-xh8x"
+    ]
+  ],
+  "cookie-signature": [
+    1,
+    [
+      "GHSA-92vm-wfm5-mxvv"
+    ]
+  ],
+  "debug": [
+    4,
+    [
+      "GHSA-4x49-vf9v-38px",
+      "GHSA-9vvw-cc9w-f27h",
+      "GHSA-gxpj-cx7g-858c",
+      "MAL-2025-46974"
+    ]
+  ],
+  "depd": [
+    0,
+    []
+  ],
+  "encodeurl": [
+    0,
+    []
+  ],
+  "escape-html": [
+    0,
+    []
+  ],
+  "etag": [
+    0,
+    []
+  ],
+  "finalhandler": [
+    0,
+    []
+  ],
+  "fresh": [
+    1,
+    [
+      "GHSA-9qj9-36jm-prpv"
+    ]
+  ],
+  "http-errors": [
+    0,
+    []
+  ],
+  "merge-descriptors": [
+    0,
+    []
+  ],
+  "mime-types": [
+    0,
+    []
+  ],
+  "on-finished": [
+    0,
+    []
+  ],
+  "once": [
+    0,
+    []
+  ],
+  "parseurl": [
+    0,
+    []
+  ],
+  "proxy-addr": [
+    0,
+    []
+  ],
+  "qs": [
+    4,
+    [
+      "GHSA-f9cm-p3w6-xvr3",
+      "GHSA-gqgv-6jq5-jjj9",
+      "GHSA-hrpp-h998-j3pp",
+      "GHSA-jjv7-qpx3-h62q"
+    ]
+  ],
+  "range-parser": [
+    0,
+    []
+  ],
+  "router": [
+    0,
+    []
+  ],
+  "send": [
+    3,
+    [
+      "GHSA-jgqf-hwc5-hh37",
+      "GHSA-m6fv-jmcg-4jfg",
+      "GHSA-xwg4-93c6-3h42"
+    ]
+  ],
+  "serve-static": [
+    2,
+    [
+      "GHSA-c3x7-gjmx-r2ff",
+      "GHSA-cm22-4g7w-348p"
+    ]
+  ],
+  "statuses": [
+    0,
+    []
+  ],
+  "type-is": [
+    0,
+    []
+  ],
+  "vary": [
+    0,
+    []
+  ],
+  "remark-cli": [
+    0,
+    []
+  ],
+  "remark-lint": [
+    0,
+    []
+  ],
+  "remark-lint-alphabetize-lists": [
+    0,
+    []
+  ],
+  "remark-lint-hiring-without-whiteboards-links": [
+    0,
+    []
+  ],
+  "remark-lint-no-tabs": [
+    0,
+    []
+  ],
+  "remark-lint-no-trailing-spaces": [
+    0,
+    []
+  ],
+  "remark-lint-no-url-trailing-slash": [
+    0,
+    []
+  ],
+  "remark-lint-unordered-list-marker-style": [
+    0,
+    []
+  ],
+  "remark-preset-lint-recommended": [
+    0,
+    []
+  ],
+  "@fortawesome/fontawesome": [
+    0,
+    []
+  ],
+  "@fortawesome/fontawesome-free-brands": [
+    0,
+    []
+  ],
+  "@fortawesome/fontawesome-free-solid": [
+    0,
+    []
+  ],
+  "@fortawesome/fontawesome-svg-core": [
+    0,
+    []
+  ],
+  "@fortawesome/react-fontawesome": [
+    0,
+    []
+  ],
+  "axios": [
+    7,
+    [
+      "GHSA-42xw-2xvc-qx8m",
+      "GHSA-4hjh-wcwx-xvwj",
+      "GHSA-4w2v-q235-vp99",
+      "GHSA-8hc4-vh64-cxmj",
+      "GHSA-cph5-m8f7-6c5x",
+      "GHSA-jr5f-v2jv-69x6",
+      "GHSA-wf5p-g6vw-rhxx"
+    ]
+  ],
+  "bluebird": [
+    0,
+    []
+  ],
+  "brace": [
+    0,
+    []
+  ],
+  "chart.js": [
+    1,
+    [
+      "GHSA-h68q-55jf-x68w"
+    ]
+  ],
+  "js-cookie": [
+    0,
+    []
+  ],
+  "node-sass": [
+    2,
+    [
+      "GHSA-9v62-24cr-58cx",
+      "GHSA-r8f7-9pfq-mjmv"
+    ]
+  ],
+  "query-string": [
+    0,
+    []
+  ],
+  "raw-loader": [
+    0,
+    []
+  ],
+  "react": [
+    2,
+    [
+      "GHSA-g53w-52xc-2j85",
+      "GHSA-hg79-j56m-fxgv"
+    ]
+  ],
+  "react-ace": [
+    0,
+    []
+  ],
+  "react-chartjs-2": [
+    0,
+    []
+  ],
+  "react-dom": [
+    1,
+    [
+      "GHSA-mvjj-gqq2-p4hw"
+    ]
+  ],
+  "react-helmet": [
+    0,
+    []
+  ],
+  "react-input-autosize": [
+    0,
+    []
+  ],
+  "react-input-range": [
+    0,
+    []
+  ],
+  "react-markdown": [
+    0,
+    []
+  ],
+  "react-redux": [
+    0,
+    []
+  ],
+  "react-router": [
+    2,
+    [
+      "GHSA-cpj6-fhp6-mr6j",
+      "GHSA-f46r-rw29-r322"
+    ]
+  ],
+  "react-router-dom": [
+    0,
+    []
+  ],
+  "react-router-redux": [
+    0,
+    []
+  ],
+  "react-scripts": [
+    0,
+    []
+  ],
+  "react-toastify": [
+    0,
+    []
+  ],
+  "redbox-react": [
+    0,
+    []
+  ],
+  "redux": [
+    0,
+    []
+  ],
+  "redux-actions": [
+    0,
+    []
+  ],
+  "remove-markdown": [
+    0,
+    []
+  ],
+  "screenfull": [
+    0,
+    []
+  ],
+  "sprintf-js": [
+    0,
+    []
+  ],
+  "uuid": [
+    0,
+    []
+  ],
+  "@testing-library/jest-dom": [
+    0,
+    []
+  ],
+  "@testing-library/react": [
+    0,
+    []
+  ],
+  "@testing-library/user-event": [
+    0,
+    []
+  ]
+}
