@@ -1,0 +1,15 @@
+{
+  "purpose": "Responder Q1: verificar se repos com refatoração/nativas reduzem exposição a CVEs",
+  "notes": "Pontos representando (lines_of_code_before, vulnerable_deps). Interpretação: olho na tendência (correlação negativa sugere redução da superfície de ataque).",
+  "n_points": 0,
+  "x_summary": {
+    "min": 0,
+    "max": 0,
+    "median": 0
+  },
+  "y_summary": {
+    "min": 0,
+    "max": 0,
+    "median": 0
+  }
+}

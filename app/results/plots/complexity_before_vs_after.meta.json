@@ -1,0 +1,5 @@
+{
+  "purpose": "Responder Q3: avaliar se refatoração para nativas reduz complexidade média (indireto: estabilidade/manutenção).",
+  "notes": "Pontos abaixo da linha y=x indicam redução de complexidade após mudança (potencial ganho de estabilidade).",
+  "n_points": 0
+}

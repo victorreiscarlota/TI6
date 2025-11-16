@@ -1,0 +1,704 @@
+[mining] Will analyze 100 repos with mining_workers=1 and per-repo timeout=1800s
+[timeout] Skipping f/awesome-chatgpt-prompts after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining f/awesome-chatgpt-prompts -> 0 candidates
+[timeout] Skipping trekhleb/javascript-algorithms after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining trekhleb/javascript-algorithms -> 0 candidates
+[timeout] Skipping airbnb/javascript after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining airbnb/javascript -> 0 candidates
+[timeout] Skipping Chalarangelo/30-seconds-of-code after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining Chalarangelo/30-seconds-of-code -> 0 candidates
+[timeout] Skipping open-webui/open-webui after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining open-webui/open-webui -> 0 candidates
+[timeout] Skipping mrdoob/three.js after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining mrdoob/three.js -> 0 candidates
+[timeout] Skipping axios/axios after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining axios/axios -> 0 candidates
+[timeout] Skipping facebook/create-react-app after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining facebook/create-react-app -> 0 candidates
+[timeout] Skipping facebook/react after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining facebook/react -> 0 candidates
+[timeout] Skipping mui/material-ui after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining mui/material-ui -> 0 candidates
+[timeout] Skipping ryanmcdermott/clean-code-javascript after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining ryanmcdermott/clean-code-javascript -> 0 candidates
+[timeout] Skipping jaywcjlove/awesome-mac after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining jaywcjlove/awesome-mac -> 0 candidates
+[timeout] Skipping microsoft/Web-Dev-For-Beginners after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining microsoft/Web-Dev-For-Beginners -> 0 candidates
+[timeout] Skipping sveltejs/svelte after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining sveltejs/svelte -> 0 candidates
+[timeout] Skipping anuraghazra/github-readme-stats after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining anuraghazra/github-readme-stats -> 0 candidates
+[timeout] Skipping louislam/uptime-kuma after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining louislam/uptime-kuma -> 0 candidates
+[timeout] Skipping typicode/json-server after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining typicode/json-server -> 0 candidates
+[timeout] Skipping hakimel/reveal.js after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining hakimel/reveal.js -> 0 candidates
+[timeout] Skipping expressjs/express after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining expressjs/express -> 0 candidates
+[timeout] Skipping FortAwesome/Font-Awesome after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining FortAwesome/Font-Awesome -> 0 candidates
+[timeout] Skipping leonardomso/33-js-concepts after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining leonardomso/33-js-concepts -> 0 candidates
+[timeout] Skipping chartjs/Chart.js after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining chartjs/Chart.js -> 0 candidates
+[timeout] Skipping juliangarnier/anime after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining juliangarnier/anime -> 0 candidates
+[timeout] Skipping resume/resume.github.com after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining resume/resume.github.com -> 0 candidates
+[timeout] Skipping lodash/lodash after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining lodash/lodash -> 0 candidates
+[timeout] Skipping atom/atom after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining atom/atom -> 0 candidates
+[timeout] Skipping adam-p/markdown-here after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining adam-p/markdown-here -> 0 candidates
+[timeout] Skipping gorhill/uBlock after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining gorhill/uBlock -> 0 candidates
+[timeout] Skipping jquery/jquery after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining jquery/jquery -> 0 candidates
+[timeout] Skipping angular/angular.js after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining angular/angular.js -> 0 candidates
+[timeout] Skipping jgraph/drawio-desktop after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining jgraph/drawio-desktop -> 0 candidates
+[timeout] Skipping h5bp/html5-boilerplate after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining h5bp/html5-boilerplate -> 0 candidates
+[timeout] Skipping scutan90/DeepLearning-500-questions after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining scutan90/DeepLearning-500-questions -> 0 candidates
+[timeout] Skipping webpack/webpack after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining webpack/webpack -> 0 candidates
+[timeout] Skipping azl397985856/leetcode after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining azl397985856/leetcode -> 0 candidates
+[timeout] Skipping marktext/marktext after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining marktext/marktext -> 0 candidates
+[timeout] Skipping mozilla/pdf.js after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining mozilla/pdf.js -> 0 candidates
+[timeout] Skipping Semantic-Org/Semantic-UI after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining Semantic-Org/Semantic-UI -> 0 candidates
+[timeout] Skipping nodejs/node after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining nodejs/node -> 0 candidates
+[timeout] Skipping TryGhost/Ghost after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining TryGhost/Ghost -> 0 candidates
+[timeout] Skipping Mintplex-Labs/anything-llm after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining Mintplex-Labs/anything-llm -> 0 candidates
+[timeout] Skipping chinese-poetry/chinese-poetry after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining chinese-poetry/chinese-poetry -> 0 candidates
+[timeout] Skipping poteto/hiring-without-whiteboards after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining poteto/hiring-without-whiteboards -> 0 candidates
+[timeout] Skipping agalwood/Motrix after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining agalwood/Motrix -> 0 candidates
+[timeout] Skipping NARKOZ/hacker-scripts after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining NARKOZ/hacker-scripts -> 0 candidates
+[timeout] Skipping iamkun/dayjs after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining iamkun/dayjs -> 0 candidates
+[timeout] Skipping algorithm-visualizer/algorithm-visualizer after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining algorithm-visualizer/algorithm-visualizer -> 0 candidates
+[timeout] Skipping moment/moment after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining moment/moment -> 0 candidates
+[timeout] Skipping prettier/prettier after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining prettier/prettier -> 0 candidates
+[timeout] Skipping typescript-cheatsheets/react after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining typescript-cheatsheets/react -> 0 candidates
+[timeout] Skipping serverless/serverless after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining serverless/serverless -> 0 candidates
+[timeout] Skipping Asabeneh/30-Days-Of-JavaScript after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining Asabeneh/30-Days-Of-JavaScript -> 0 candidates
+[timeout] Skipping bigskysoftware/htmx after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining bigskysoftware/htmx -> 0 candidates
+[timeout] Skipping LeCoupa/awesome-cheatsheets after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining LeCoupa/awesome-cheatsheets -> 0 candidates
+[timeout] Skipping google/zx after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining google/zx -> 0 candidates
+[timeout] Skipping microsoft/monaco-editor after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining microsoft/monaco-editor -> 0 candidates
+[timeout] Skipping meteor/meteor after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining meteor/meteor -> 0 candidates
+[timeout] Skipping Leaflet/Leaflet after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining Leaflet/Leaflet -> 0 candidates
+[timeout] Skipping GitSquared/edex-ui after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining GitSquared/edex-ui -> 0 candidates
+[timeout] Skipping sudheerj/reactjs-interview-questions after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining sudheerj/reactjs-interview-questions -> 0 candidates
+[timeout] Skipping NaiboWang/EasySpider after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining NaiboWang/EasySpider -> 0 candidates
+[timeout] Skipping Unitech/pm2 after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining Unitech/pm2 -> 0 candidates
+[timeout] Skipping nolimits4web/swiper after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining nolimits4web/swiper -> 0 candidates
+[timeout] Skipping gatsbyjs/gatsby after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining gatsbyjs/gatsby -> 0 candidates
+[timeout] Skipping vercel/next.js after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining vercel/next.js -> 0 candidates
+[timeout] Skipping nwjs/nw.js after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining nwjs/nw.js -> 0 candidates
+[timeout] Skipping remoteintech/remote-jobs after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining remoteintech/remote-jobs -> 0 candidates
+[timeout] Skipping videojs/video.js after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining videojs/video.js -> 0 candidates
+[timeout] Skipping Dogfalo/materialize after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining Dogfalo/materialize -> 0 candidates
+[timeout] Skipping dcloudio/uni-app after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining dcloudio/uni-app -> 0 candidates
+[timeout] Skipping phaserjs/phaser after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining phaserjs/phaser -> 0 candidates
+[timeout] Skipping usebruno/bruno after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining usebruno/bruno -> 0 candidates
+[timeout] Skipping impress/impress.js after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining impress/impress.js -> 0 candidates
+[timeout] Skipping goabstract/Awesome-Design-Tools after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining goabstract/Awesome-Design-Tools -> 0 candidates
+[timeout] Skipping naptha/tesseract.js after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining naptha/tesseract.js -> 0 candidates
+[timeout] Skipping denysdovhan/wtfjs after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining denysdovhan/wtfjs -> 0 candidates
+[timeout] Skipping preactjs/preact after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining preactjs/preact -> 0 candidates
+[timeout] Skipping upstash/context7 after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining upstash/context7 -> 0 candidates
+[timeout] Skipping HeyPuter/puter after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining HeyPuter/puter -> 0 candidates
+[timeout] Skipping markedjs/marked after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining markedjs/marked -> 0 candidates
+[timeout] Skipping carbon-app/carbon after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining carbon-app/carbon -> 0 candidates
+[timeout] Skipping koajs/koa after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining koajs/koa -> 0 candidates
+[timeout] Skipping alvarotrigo/fullPage.js after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining alvarotrigo/fullPage.js -> 0 candidates
+[timeout] Skipping jondot/awesome-react-native after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining jondot/awesome-react-native -> 0 candidates
+[timeout] Skipping sahat/hackathon-starter after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining sahat/hackathon-starter -> 0 candidates
+[timeout] Skipping fastify/fastify after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining fastify/fastify -> 0 candidates
+[timeout] Skipping drawdb-io/drawdb after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining drawdb-io/drawdb -> 0 candidates
+[timeout] Skipping typicode/husky after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining typicode/husky -> 0 candidates
+[timeout] Skipping danielmiessler/Fabric after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining danielmiessler/Fabric -> 0 candidates
+[timeout] Skipping zenorocha/clipboard.js after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining zenorocha/clipboard.js -> 0 candidates
+[timeout] Skipping atlassian/react-beautiful-dnd after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining atlassian/react-beautiful-dnd -> 0 candidates
+[timeout] Skipping ryanhanwu/How-To-Ask-Questions-The-Smart-Way after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining ryanhanwu/How-To-Ask-Questions-The-Smart-Way -> 0 candidates
+[timeout] Skipping TheAlgorithms/JavaScript after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining TheAlgorithms/JavaScript -> 0 candidates
+[timeout] Skipping qishibo/AnotherRedisDesktopManager after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining qishibo/AnotherRedisDesktopManager -> 0 candidates
+[timeout] Skipping ToolJet/ToolJet after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining ToolJet/ToolJet -> 0 candidates
+[timeout] Skipping gchq/CyberChef after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining gchq/CyberChef -> 0 candidates
+[timeout] Skipping gulpjs/gulp after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining gulpjs/gulp -> 0 candidates
+[timeout] Skipping adobe/brackets after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining adobe/brackets -> 0 candidates
+[timeout] Skipping parcel-bundler/parcel after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining parcel-bundler/parcel -> 0 candidates
+[timeout] Skipping yarnpkg/yarn after 1800 seconds: worker_error: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\repo_watchdog.py", line 22, in _worker_wrapper
+    result = fn(*args_tuple, **kwargs_dict)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: _analyze_repo_worker() missing 1 required positional argument: 'out_json_path'
+
+[mining] Done mining yarnpkg/yarn -> 0 candidates
+[mining] Saved mining JSON: app/results/commit_changes_all.json (candidates: 0)
+[mining] Saved mining CSV: app/results/commit_changes_all.csv
+[main] Final dataset saved to app/results/final_dataset.json

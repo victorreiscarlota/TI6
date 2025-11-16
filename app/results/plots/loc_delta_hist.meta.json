@@ -1,0 +1,4 @@
+{
+  "purpose": "Responder Q4: verificar impacto em tamanho do código mantido",
+  "notes": "Valores positivos indicam aumento do código (possivelmente por adaptação native), negativos indicam redução."
+}
