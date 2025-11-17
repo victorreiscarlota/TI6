@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
 """
-Mining sem REST (só git local) + métrica de migração para nativo.
+Mining + sinais de migração para nativo com proteção de timeout e clone controlado.
+Inclui:
+- contagens before/after de dependencies e vulnerable_dependencies (via OSV com cache)
+- CÁLCULO DE MÉTRICAS INLINE POR COMMIT (sem checkout):
+  - lines_of_code e avg_complexity usando blobs do git
+  - lizard para complexidade ciclomática por função em JS/TS
 
-Alterações principais:
-- Adicionada proteção por timeout para análise POR-REPO (via repo_watchdog.run_worker_with_timeout).
-  Se a análise demorar mais que timeout_seconds, o repo será pulado e o pipeline segue.
-- Mantido comportamento anterior (agregação de dependências, detecção de remoções e sinais de migração).
+Requer: lizard (pip install lizard) para avg_complexity > 0.0
 """
+
 import argparse
 import json
 import os
@@ -14,20 +17,45 @@ import re
 import shutil
 import subprocess
 import tempfile
+import time
 from typing import List, Dict, Tuple
 
-from app.scripts import repo_watchdog  # novo helper
+import requests
+
+# imports robustos (relativo + fallback absoluto)
+try:
+    from .repo_watchdog_subprocess import run_callable_in_subprocess
+    from .metrics import get_cve_for_package, load_osv_cache, save_osv_cache
+except ImportError:
+    from app.scripts.repo_watchdog_subprocess import run_callable_in_subprocess
+    from app.scripts.metrics import get_cve_for_package, load_osv_cache, save_osv_cache
+
+# lizard é opcional, mas recomendado
+try:
+    import lizard  # type: ignore
+except Exception:
+    lizard = None
+
 GIT = "git"
 PYTHON = "python"
 
-# default timeout por repositório (segundos). Ajuste conforme necessário.
-DEFAULT_REPO_TIMEOUT = int(os.environ.get("REPO_TIMEOUT", 1800))  # 30min
+DEFAULT_REPO_TIMEOUT = int(os.environ.get("REPO_TIMEOUT", 1800))
+DEFAULT_CLONE_TIMEOUT = int(os.environ.get("REPO_CLONE_TIMEOUT", 600))
+DEFAULT_MAX_COMMITS_SCAN = int(os.environ.get("MAX_COMMITS_SCAN", 1200))
+
+LOG_ROOT = os.path.join("app", "results", "logs")
+
+JS_EXTS = (".js", ".jsx", ".ts", ".tsx")
+
+def log(repo: str, msg: str):
+    os.makedirs(LOG_ROOT, exist_ok=True)
+    safe_name = repo.replace("/", "__")
+    path = os.path.join(LOG_ROOT, f"{safe_name}.log")
+    ts = time.strftime("%Y-%m-%d %H:%M:%S")
+    with open(path, "a", encoding="utf-8") as f:
+        f.write(f"[{ts}] {msg}\n")
 
 def run(cmd, cwd=None, check=True, timeout=None):
-    """
-    Wrapper para subprocess.run com encoding utf-8 e errors='replace'
-    para evitar UnicodeDecodeError em Windows.
-    """
     result = subprocess.run(
         cmd,
         shell=True,
@@ -42,22 +70,16 @@ def run(cmd, cwd=None, check=True, timeout=None):
         raise RuntimeError(f"Command failed: {cmd}\nstdout:{result.stdout}\nstderr:{result.stderr}")
     return result.stdout.strip()
 
-def clone_repo_light(full_name: str, target_dir: str, timeout=None):
-    """
-    Partial clone do repositório sem fazer checkout do working tree.
-    Não usamos --depth aqui porque a mining precisa de histórico completo.
-    O clone pode receber timeout (segundos).
-    """
+def clone_repo_light(full_name: str, target_dir: str, clone_timeout: int):
     os.makedirs(os.path.dirname(target_dir), exist_ok=True)
-    run(f'{GIT} clone --filter=blob:none --no-checkout --quiet https://github.com/{full_name}.git "{target_dir}"', timeout=timeout)
+    cmd = f'{GIT} clone --filter=blob:none --no-checkout --quiet https://github.com/{full_name}.git "{target_dir}"'
+    run(cmd, timeout=clone_timeout, check=True)
 
-def commits_touching_any_package_json(repo_dir: str, limit: int = None) -> List[Tuple[str,int,str]]:
+def commits_touching_any_package_json(repo_dir: str, limit: int = None) -> List[Tuple[str, int, str]]:
     out = run(f'{GIT} -C "{repo_dir}" log --pretty=format:%H --no-renames --diff-filter=AMDR -- ":(glob)**/package.json"', check=False)
     shas = [l for l in (out.splitlines() if out else []) if l.strip()]
-    if limit:
-        shas = shas[:limit]
     result = []
-    for sha in shas:
+    for sha in (shas[:limit] if limit else shas):
         info = run(f'{GIT} -C "{repo_dir}" show -s --format=%ct%x00%s {sha}', check=False)
         if info:
             try:
@@ -74,9 +96,12 @@ def parent_of(repo_dir: str, sha: str) -> str:
     parts = line.split()
     return parts[1] if len(parts) >= 2 else ""
 
-def list_package_json_paths_at_commit(repo_dir: str, sha: str) -> List[str]:
+def list_paths_at_commit(repo_dir: str, sha: str) -> List[str]:
     out = run(f'{GIT} -C "{repo_dir}" ls-tree -r --name-only {sha}', check=False)
-    return [l for l in (out.splitlines() if out else []) if l.lower().endswith("package.json")]
+    return [l for l in (out.splitlines() if out else []) if l.strip()]
+
+def list_package_json_paths_at_commit(repo_dir: str, sha: str) -> List[str]:
+    return [p for p in list_paths_at_commit(repo_dir, sha) if p.lower().endswith("package.json")]
 
 def load_package_json_at_commit(repo_dir: str, sha: str, path: str):
     try:
@@ -101,7 +126,7 @@ def aggregate_deps(pkg_dict: Dict[str, dict]):
             if k not in dev_agg:
                 dev_agg[k] = v
             versions.setdefault(k, set()).add(v)
-    versions = {k: sorted(list(vs)) for k,vs in versions.items()}
+    versions = {k: sorted(list(vs)) for k, vs in versions.items()}
     return deps_agg, dev_agg, versions
 
 def load_all_pkg_at_commit(repo_dir: str, sha: str):
@@ -113,19 +138,58 @@ def load_all_pkg_at_commit(repo_dir: str, sha: str):
             d[p] = pj
     return d, paths
 
-def compute_js_metrics_with_tool(repo_dir: str, sha: str, tmpdir: str) -> dict:
-    script = os.path.join(os.path.dirname(__file__), "compute_js_metrics.py")
-    out_json = os.path.join(tmpdir, f"metrics_{sha}.json")
-    cmd = f'{PYTHON} "{script}" --repo "{repo_dir}" --commit "{sha}" --out "{out_json}"'
-    run(cmd, cwd=repo_dir, check=False)
-    try:
-        import json as _json
-        return _json.load(open(out_json, "r", encoding="utf-8"))
-    except Exception:
-        return {"lines_of_code": 0, "avg_complexity": 0.0}
+# ------------- Métricas inline por commit (sem checkout) -------------
+
+def _iter_js_ts_files(repo_dir: str, sha: str):
+    for p in list_paths_at_commit(repo_dir, sha):
+        if not p.lower().endswith(JS_EXTS):
+            continue
+        # ignorar declarações TypeScript
+        if p.endswith(".d.ts"):
+            continue
+        yield p
+
+def _git_show(repo_dir: str, sha: str, path: str) -> str:
+    return run(f'{GIT} -C "{repo_dir}" show {sha}:{path}', check=False) or ""
+
+def compute_js_metrics_inline(repo_dir: str, sha: str) -> dict:
+    """
+    Calcula lines_of_code e avg_complexity lendo blobs do commit (sha) via git show.
+    - LOC: linhas não vazias
+    - Complexidade: média das complexidades por função via lizard (se disponível)
+    """
+    total_loc = 0
+    complexities = []
+    for path in _iter_js_ts_files(repo_dir, sha):
+        code = _git_show(repo_dir, sha, path)
+        if not code:
+            continue
+        # LOC simples: não vazias
+        loc = sum(1 for ln in code.splitlines() if ln.strip())
+        total_loc += loc
+        # Complexidade via lizard, se disponível
+        if lizard is not None:
+            try:
+                # analyze_source_code(filename, source_code)
+                result = lizard.analyze_file.analyze_source_code(path, code)  # type: ignore
+                for fn in getattr(result, "function_list", []) or []:
+                    cc = getattr(fn, "cyclomatic_complexity", None)
+                    if isinstance(cc, int):
+                        complexities.append(cc)
+            except Exception:
+                # ignora erros por arquivo
+                pass
+    avg_complex = float(sum(complexities) / len(complexities)) if complexities else 0.0
+    return {
+        "lines_of_code": total_loc,
+        "avg_complexity": avg_complex,
+        "commit_snapshot": sha,
+        "files_scanned": len(list(_iter_js_ts_files(repo_dir, sha))),
+        "functions_counted": len(complexities),
+        "complexity_tool": "lizard" if lizard is not None else "none",
+    }
 
 def grep_count(repo_dir: str, sha: str, pattern: str) -> int:
-    # git grep por commit/ref; captura ocorrências aproximadas
     out = run(f'{GIT} -C "{repo_dir}" grep -I -n -E "{pattern}" {sha} -- "*.js" "*.jsx" "*.ts" "*.tsx"', check=False)
     if not out:
         return 0
@@ -205,20 +269,56 @@ def native_migration_signal(repo_dir: str, before_sha: str, after_sha: str, dep:
         "native_migration_score": (n_after - n_before) - (t_before - t_after),
     }
 
-# ---------------- worker que roda a análise por repositório ----------------
-def _analyze_repo_worker(full_name: str, limit_commits: int, out_json_path: str):
+# ---- Vulnerability helpers (OSV) ----
+
+def vulnerable_count_for(dep_names, session, cache) -> int:
+    cnt = 0
+    for name in dep_names:
+        try:
+            vul_count, _ = get_cve_for_package(name, session=session, cache=cache)
+            if vul_count and vul_count > 0:
+                cnt += 1
+        except Exception:
+            pass
+    return cnt
+
+# ---- Worker (roda em subprocess) ----
+
+def _worker_analyze(full_name: str,
+                    limit_commits: int,
+                    out_json_path: str,
+                    clone_timeout: int,
+                    max_commits_scan: int):
     """
-    Worker que executa a análise e escreve JSON em out_json_path.
-    Este código é essencialmente a versão antiga de analyze_repo, isolada para execução em processo filho.
+    Faz clone e análise; chamada dentro do wrapper subprocess.
+    Inclui contagens before/after de dependencies e vulnerable_dependencies e
+    métricas inline por commit (LOC/complexidade).
     """
     tmp_root = tempfile.mkdtemp(prefix="mine_")
     repo_dir = os.path.join(tmp_root, full_name.split("/")[-1])
     results = []
+    session = requests.Session()
+    osv_cache = load_osv_cache()
     try:
-        print(f"[clone] {full_name}")
-        clone_repo_light(full_name, repo_dir)
-        commits = commits_touching_any_package_json(repo_dir, limit=limit_commits)
-        print(f"[{full_name}] commits touching package.json: {len(commits)}")
+        log(full_name, f"START clone")
+        try:
+            clone_repo_light(full_name, repo_dir, clone_timeout=clone_timeout)
+        except Exception as e:
+            log(full_name, f"CLONE_FAILED: {e}")
+            return results
+        log(full_name, f"CLONE_OK")
+
+        commits = commits_touching_any_package_json(repo_dir, limit=None)
+        total_commits = len(commits)
+        log(full_name, f"COMMITS_TOUCHING_PACKAGE_JSON={total_commits}")
+
+        if max_commits_scan and total_commits > max_commits_scan:
+            commits = commits[:max_commits_scan]
+            log(full_name, f"COMMITS_TRUNCATED_TO={len(commits)} (max_commits_scan={max_commits_scan})")
+
+        if limit_commits and limit_commits > 0 and len(commits) > limit_commits:
+            commits = commits[:limit_commits]
+            log(full_name, f"COMMITS_LIMITED_TO={len(commits)} (limit_commits={limit_commits})")
 
         for sha, ts, subj in commits:
             parent = parent_of(repo_dir, sha)
@@ -232,14 +332,23 @@ def _analyze_repo_worker(full_name: str, limit_commits: int, out_json_path: str)
 
             deps_b, dev_b, vers_b = aggregate_deps(before_pkgs)
             deps_a, dev_a, vers_a = aggregate_deps(after_pkgs)
+
+            # Contagens before/after
+            dep_names_before = set(deps_b.keys()) | set(dev_b.keys())
+            dep_names_after  = set(deps_a.keys()) | set(dev_a.keys())
+            dependencies_before = len(dep_names_before)
+            dependencies_after  = len(dep_names_after)
+
+            vulnerable_before = vulnerable_count_for(dep_names_before, session, osv_cache)
+            vulnerable_after  = vulnerable_count_for(dep_names_after,  session, osv_cache)
+
             removed = [d for d in deps_b.keys() if d not in deps_a]
             if not removed:
                 continue
 
-            tmp_metrics = os.path.join(tmp_root, "m")
-            os.makedirs(tmp_metrics, exist_ok=True)
-            metrics_before = compute_js_metrics_with_tool(repo_dir, parent, tmp_metrics)
-            metrics_after  = compute_js_metrics_with_tool(repo_dir, sha, tmp_metrics)
+            # MÉTRICAS INLINE POR COMMIT (sem checkout)
+            metrics_before = compute_js_metrics_inline(repo_dir, parent)
+            metrics_after  = compute_js_metrics_inline(repo_dir, sha)
 
             iso = run(f'{GIT} -C "{repo_dir}" show -s --format=%cI {sha}', check=False) or ""
 
@@ -263,59 +372,75 @@ def _analyze_repo_worker(full_name: str, limit_commits: int, out_json_path: str)
                     "native_migration": nat,
                     "pkg_before_paths": before_paths,
                     "pkg_after_paths": after_paths,
+                    "dependencies_before": dependencies_before,
+                    "dependencies_after": dependencies_after,
+                    "vulnerable_dependencies_before": vulnerable_before,
+                    "vulnerable_dependencies_after": vulnerable_after,
                 }
                 results.append(candidate)
-        # escreve resultado final em out_json_path
+
+        # salva resultado
         if out_json_path:
             os.makedirs(os.path.dirname(out_json_path) or ".", exist_ok=True)
             with open(out_json_path, "w", encoding="utf-8") as f:
                 json.dump(results, f, indent=2, ensure_ascii=False)
         return results
     finally:
+        try:
+            save_osv_cache(osv_cache)
+        except Exception:
+            pass
         shutil.rmtree(tmp_root, ignore_errors=True)
 
-def analyze_repo(full_name: str, limit_commits: int = None, timeout_seconds: int = None) -> list:
-    """
-    Versão pública compatível. Internamente executa o worker em processo separado com timeout.
-    Se timeout_seconds é None, usa DEFAULT_REPO_TIMEOUT.
-    Retorna a lista de candidatos (pode ser vazia).
-    """
+def analyze_repo(full_name: str,
+                 limit_commits: int = None,
+                 timeout_seconds: int = None,
+                 clone_timeout: int = None,
+                 max_commits_scan: int = None) -> list:
     if timeout_seconds is None:
         timeout_seconds = DEFAULT_REPO_TIMEOUT
+    if clone_timeout is None:
+        clone_timeout = DEFAULT_CLONE_TIMEOUT
+    if max_commits_scan is None:
+        max_commits_scan = DEFAULT_MAX_COMMITS_SCAN
 
     tmp_root = tempfile.mkdtemp(prefix="mine_supervisor_")
     out_json = os.path.join(tmp_root, "worker_out.json")
+
+    success, payload = run_callable_in_subprocess(
+        module_name="app.scripts.find_dependency_replacements",
+        func_name="_worker_analyze",
+        args=[full_name, limit_commits, out_json, clone_timeout, max_commits_scan],
+        out_json_path=out_json,
+        timeout_seconds=timeout_seconds
+    )
     try:
-        # CORREÇÃO: passamos out_json como terceiro argumento posicional para que
-        # _analyze_repo_worker receba (full_name, limit_commits, out_json_path)
-        success, payload = repo_watchdog.run_worker_with_timeout(_analyze_repo_worker,
-                                                                args=(full_name, limit_commits, out_json),
-                                                                out_json_path=out_json,
-                                                                timeout_seconds=timeout_seconds)
         if not success:
-            # log e retorna lista vazia para seguir em frente
-            print(f"[timeout] Skipping {full_name} after {timeout_seconds} seconds: {payload}")
+            log(full_name, f"TIMEOUT_OR_ERROR: {payload}")
             return []
-        # payload pode ser None se o worker escreveu no arquivo (run_worker_with_timeout retorna loaded data)
         if payload is None:
             try:
-                with open(out_json, "r", encoding="utf-8") as f:
-                    return json.load(f)
+                return json.load(open(out_json, "r", encoding="utf-8"))
             except Exception:
                 return []
         return payload
     finally:
         shutil.rmtree(tmp_root, ignore_errors=True)
 
-# Quando executado standalone para debug
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--repo", required=True)
     ap.add_argument("--limit", type=int, default=None)
+    ap.add_argument("--timeout", type=int, default=DEFAULT_REPO_TIMEOUT)
+    ap.add_argument("--clone-timeout", type=int, default=DEFAULT_CLONE_TIMEOUT)
+    ap.add_argument("--max-commits-scan", type=int, default=DEFAULT_MAX_COMMITS_SCAN)
     ap.add_argument("--out", default=None)
-    ap.add_argument("--timeout", type=int, default=DEFAULT_REPO_TIMEOUT, help="timeout por repo em segundos")
     args = ap.parse_args()
-    res = analyze_repo(args.repo, limit_commits=args.limit, timeout_seconds=args.timeout)
+    res = analyze_repo(args.repo,
+                       limit_commits=args.limit,
+                       timeout_seconds=args.timeout,
+                       clone_timeout=args.clone_timeout,
+                       max_commits_scan=args.max_commits_scan)
     if args.out:
         os.makedirs(os.path.dirname(args.out) or ".", exist_ok=True)
         with open(args.out, "w", encoding="utf-8") as f:

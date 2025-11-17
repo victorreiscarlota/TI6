@@ -1,0 +1,502 @@
+[
+  {
+    "repo": "facebook/react",
+    "stargazers_count": 240652,
+    "forks_count": 49882
+  },
+  {
+    "repo": "trekhleb/javascript-algorithms",
+    "stargazers_count": 194137,
+    "forks_count": 30966
+  },
+  {
+    "repo": "airbnb/javascript",
+    "stargazers_count": 147831,
+    "forks_count": 26800
+  },
+  {
+    "repo": "f/awesome-chatgpt-prompts",
+    "stargazers_count": 136585,
+    "forks_count": 18166
+  },
+  {
+    "repo": "vercel/next.js",
+    "stargazers_count": 135707,
+    "forks_count": 29859
+  },
+  {
+    "repo": "Chalarangelo/30-seconds-of-code",
+    "stargazers_count": 125791,
+    "forks_count": 12372
+  },
+  {
+    "repo": "open-webui/open-webui",
+    "stargazers_count": 115434,
+    "forks_count": 16170
+  },
+  {
+    "repo": "nodejs/node",
+    "stargazers_count": 114325,
+    "forks_count": 33801
+  },
+  {
+    "repo": "mrdoob/three.js",
+    "stargazers_count": 109388,
+    "forks_count": 36081
+  },
+  {
+    "repo": "axios/axios",
+    "stargazers_count": 108226,
+    "forks_count": 11409
+  },
+  {
+    "repo": "facebook/create-react-app",
+    "stargazers_count": 103849,
+    "forks_count": 27162
+  },
+  {
+    "repo": "mui/material-ui",
+    "stargazers_count": 97300,
+    "forks_count": 32755
+  },
+  {
+    "repo": "microsoft/Web-Dev-For-Beginners",
+    "stargazers_count": 94252,
+    "forks_count": 14705
+  },
+  {
+    "repo": "ryanmcdermott/clean-code-javascript",
+    "stargazers_count": 94034,
+    "forks_count": 12495
+  },
+  {
+    "repo": "jaywcjlove/awesome-mac",
+    "stargazers_count": 93525,
+    "forks_count": 7063
+  },
+  {
+    "repo": "sveltejs/svelte",
+    "stargazers_count": 84873,
+    "forks_count": 4678
+  },
+  {
+    "repo": "louislam/uptime-kuma",
+    "stargazers_count": 78496,
+    "forks_count": 6941
+  },
+  {
+    "repo": "anuraghazra/github-readme-stats",
+    "stargazers_count": 76955,
+    "forks_count": 26836
+  },
+  {
+    "repo": "FortAwesome/Font-Awesome",
+    "stargazers_count": 75804,
+    "forks_count": 12205
+  },
+  {
+    "repo": "typicode/json-server",
+    "stargazers_count": 75349,
+    "forks_count": 7245
+  },
+  {
+    "repo": "hakimel/reveal.js",
+    "stargazers_count": 69842,
+    "forks_count": 16781
+  },
+  {
+    "repo": "expressjs/express",
+    "stargazers_count": 68209,
+    "forks_count": 21522
+  },
+  {
+    "repo": "chartjs/Chart.js",
+    "stargazers_count": 66769,
+    "forks_count": 11984
+  },
+  {
+    "repo": "leonardomso/33-js-concepts",
+    "stargazers_count": 65935,
+    "forks_count": 9198
+  },
+  {
+    "repo": "webpack/webpack",
+    "stargazers_count": 65765,
+    "forks_count": 9174
+  },
+  {
+    "repo": "juliangarnier/anime",
+    "stargazers_count": 65238,
+    "forks_count": 4364
+  },
+  {
+    "repo": "resume/resume.github.com",
+    "stargazers_count": 62693,
+    "forks_count": 1362
+  },
+  {
+    "repo": "lodash/lodash",
+    "stargazers_count": 61387,
+    "forks_count": 7098
+  },
+  {
+    "repo": "atom/atom",
+    "stargazers_count": 60860,
+    "forks_count": 17322
+  },
+  {
+    "repo": "adam-p/markdown-here",
+    "stargazers_count": 60078,
+    "forks_count": 11172
+  },
+  {
+    "repo": "gorhill/uBlock",
+    "stargazers_count": 59828,
+    "forks_count": 3829
+  },
+  {
+    "repo": "jquery/jquery",
+    "stargazers_count": 59643,
+    "forks_count": 20532
+  },
+  {
+    "repo": "angular/angular.js",
+    "stargazers_count": 58967,
+    "forks_count": 27317
+  },
+  {
+    "repo": "jgraph/drawio-desktop",
+    "stargazers_count": 57903,
+    "forks_count": 5494
+  },
+  {
+    "repo": "h5bp/html5-boilerplate",
+    "stargazers_count": 57268,
+    "forks_count": 12312
+  },
+  {
+    "repo": "scutan90/DeepLearning-500-questions",
+    "stargazers_count": 56829,
+    "forks_count": 15976
+  },
+  {
+    "repo": "gatsbyjs/gatsby",
+    "stargazers_count": 55948,
+    "forks_count": 10267
+  },
+  {
+    "repo": "azl397985856/leetcode",
+    "stargazers_count": 55715,
+    "forks_count": 9478
+  },
+  {
+    "repo": "marktext/marktext",
+    "stargazers_count": 52367,
+    "forks_count": 3850
+  },
+  {
+    "repo": "mozilla/pdf.js",
+    "stargazers_count": 52260,
+    "forks_count": 10512
+  },
+  {
+    "repo": "TryGhost/Ghost",
+    "stargazers_count": 51188,
+    "forks_count": 11160
+  },
+  {
+    "repo": "Semantic-Org/Semantic-UI",
+    "stargazers_count": 51187,
+    "forks_count": 4920
+  },
+  {
+    "repo": "prettier/prettier",
+    "stargazers_count": 51174,
+    "forks_count": 4607
+  },
+  {
+    "repo": "Mintplex-Labs/anything-llm",
+    "stargazers_count": 51136,
+    "forks_count": 5404
+  },
+  {
+    "repo": "chinese-poetry/chinese-poetry",
+    "stargazers_count": 50329,
+    "forks_count": 10136
+  },
+  {
+    "repo": "poteto/hiring-without-whiteboards",
+    "stargazers_count": 50174,
+    "forks_count": 3879
+  },
+  {
+    "repo": "agalwood/Motrix",
+    "stargazers_count": 49794,
+    "forks_count": 4750
+  },
+  {
+    "repo": "NARKOZ/hacker-scripts",
+    "stargazers_count": 49259,
+    "forks_count": 6682
+  },
+  {
+    "repo": "iamkun/dayjs",
+    "stargazers_count": 48384,
+    "forks_count": 2394
+  },
+  {
+    "repo": "algorithm-visualizer/algorithm-visualizer",
+    "stargazers_count": 48125,
+    "forks_count": 7519
+  },
+  {
+    "repo": "moment/moment",
+    "stargazers_count": 48090,
+    "forks_count": 7045
+  },
+  {
+    "repo": "serverless/serverless",
+    "stargazers_count": 46897,
+    "forks_count": 5743
+  },
+  {
+    "repo": "typescript-cheatsheets/react",
+    "stargazers_count": 46787,
+    "forks_count": 4267
+  },
+  {
+    "repo": "bigskysoftware/htmx",
+    "stargazers_count": 46555,
+    "forks_count": 1542
+  },
+  {
+    "repo": "Asabeneh/30-Days-Of-JavaScript",
+    "stargazers_count": 45608,
+    "forks_count": 10371
+  },
+  {
+    "repo": "google/zx",
+    "stargazers_count": 44837,
+    "forks_count": 1177
+  },
+  {
+    "repo": "LeCoupa/awesome-cheatsheets",
+    "stargazers_count": 44761,
+    "forks_count": 6609
+  },
+  {
+    "repo": "meteor/meteor",
+    "stargazers_count": 44749,
+    "forks_count": 5259
+  },
+  {
+    "repo": "microsoft/monaco-editor",
+    "stargazers_count": 44634,
+    "forks_count": 3910
+  },
+  {
+    "repo": "parcel-bundler/parcel",
+    "stargazers_count": 44005,
+    "forks_count": 2273
+  },
+  {
+    "repo": "Leaflet/Leaflet",
+    "stargazers_count": 43951,
+    "forks_count": 6040
+  },
+  {
+    "repo": "GitSquared/edex-ui",
+    "stargazers_count": 43613,
+    "forks_count": 2898
+  },
+  {
+    "repo": "sudheerj/reactjs-interview-questions",
+    "stargazers_count": 43553,
+    "forks_count": 10180
+  },
+  {
+    "repo": "NaiboWang/EasySpider",
+    "stargazers_count": 43428,
+    "forks_count": 5332
+  },
+  {
+    "repo": "Unitech/pm2",
+    "stargazers_count": 42733,
+    "forks_count": 2665
+  },
+  {
+    "repo": "nolimits4web/swiper",
+    "stargazers_count": 41591,
+    "forks_count": 9723
+  },
+  {
+    "repo": "yarnpkg/yarn",
+    "stargazers_count": 41540,
+    "forks_count": 2737
+  },
+  {
+    "repo": "nwjs/nw.js",
+    "stargazers_count": 41454,
+    "forks_count": 3880
+  },
+  {
+    "repo": "dcloudio/uni-app",
+    "stargazers_count": 41241,
+    "forks_count": 3717
+  },
+  {
+    "repo": "remoteintech/remote-jobs",
+    "stargazers_count": 39504,
+    "forks_count": 3870
+  },
+  {
+    "repo": "videojs/video.js",
+    "stargazers_count": 39304,
+    "forks_count": 7522
+  },
+  {
+    "repo": "Dogfalo/materialize",
+    "stargazers_count": 39152,
+    "forks_count": 4685
+  },
+  {
+    "repo": "usebruno/bruno",
+    "stargazers_count": 38684,
+    "forks_count": 1966
+  },
+  {
+    "repo": "phaserjs/phaser",
+    "stargazers_count": 38605,
+    "forks_count": 7127
+  },
+  {
+    "repo": "impress/impress.js",
+    "stargazers_count": 38449,
+    "forks_count": 6635
+  },
+  {
+    "repo": "goabstract/Awesome-Design-Tools",
+    "stargazers_count": 38436,
+    "forks_count": 2168
+  },
+  {
+    "repo": "preactjs/preact",
+    "stargazers_count": 38158,
+    "forks_count": 2026
+  },
+  {
+    "repo": "naptha/tesseract.js",
+    "stargazers_count": 37486,
+    "forks_count": 2349
+  },
+  {
+    "repo": "denysdovhan/wtfjs",
+    "stargazers_count": 37439,
+    "forks_count": 2667
+  },
+  {
+    "repo": "upstash/context7",
+    "stargazers_count": 37306,
+    "forks_count": 1844
+  },
+  {
+    "repo": "HeyPuter/puter",
+    "stargazers_count": 37290,
+    "forks_count": 3186
+  },
+  {
+    "repo": "ToolJet/ToolJet",
+    "stargazers_count": 36918,
+    "forks_count": 4876
+  },
+  {
+    "repo": "markedjs/marked",
+    "stargazers_count": 36060,
+    "forks_count": 3501
+  },
+  {
+    "repo": "carbon-app/carbon",
+    "stargazers_count": 35795,
+    "forks_count": 1972
+  },
+  {
+    "repo": "koajs/koa",
+    "stargazers_count": 35684,
+    "forks_count": 3221
+  },
+  {
+    "repo": "alvarotrigo/fullPage.js",
+    "stargazers_count": 35488,
+    "forks_count": 7222
+  },
+  {
+    "repo": "jondot/awesome-react-native",
+    "stargazers_count": 35481,
+    "forks_count": 4027
+  },
+  {
+    "repo": "sahat/hackathon-starter",
+    "stargazers_count": 35142,
+    "forks_count": 8199
+  },
+  {
+    "repo": "fastify/fastify",
+    "stargazers_count": 35017,
+    "forks_count": 2516
+  },
+  {
+    "repo": "drawdb-io/drawdb",
+    "stargazers_count": 34839,
+    "forks_count": 2621
+  },
+  {
+    "repo": "typicode/husky",
+    "stargazers_count": 34433,
+    "forks_count": 1080
+  },
+  {
+    "repo": "danielmiessler/Fabric",
+    "stargazers_count": 34296,
+    "forks_count": 3506
+  },
+  {
+    "repo": "zenorocha/clipboard.js",
+    "stargazers_count": 34184,
+    "forks_count": 3939
+  },
+  {
+    "repo": "atlassian/react-beautiful-dnd",
+    "stargazers_count": 34050,
+    "forks_count": 2731
+  },
+  {
+    "repo": "ryanhanwu/How-To-Ask-Questions-The-Smart-Way",
+    "stargazers_count": 33965,
+    "forks_count": 5750
+  },
+  {
+    "repo": "TheAlgorithms/JavaScript",
+    "stargazers_count": 33909,
+    "forks_count": 5804
+  },
+  {
+    "repo": "qishibo/AnotherRedisDesktopManager",
+    "stargazers_count": 33422,
+    "forks_count": 2682
+  },
+  {
+    "repo": "gchq/CyberChef",
+    "stargazers_count": 33145,
+    "forks_count": 3734
+  },
+  {
+    "repo": "adobe/brackets",
+    "stargazers_count": 33138,
+    "forks_count": 7558
+  },
+  {
+    "repo": "gulpjs/gulp",
+    "stargazers_count": 33045,
+    "forks_count": 4203
+  }
+]

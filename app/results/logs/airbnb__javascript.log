@@ -1,0 +1,9 @@
+[2025-11-17 10:54:11] TIMEOUT_OR_ERROR: process exited code 1; stderr: Traceback (most recent call last):
+  File "C:\Users\victo\AppData\Local\Temp\mine_supervisor_uz6gy1oa\worker_out.json.runner.py", line 3, in <module>
+    from app.scripts.find_dependency_replacements import _worker_analyze
+ModuleNotFoundError: No module named 'app'
+
+[2025-11-17 10:56:27] START clone
+[2025-11-17 10:56:28] CLONE_OK
+[2025-11-17 10:56:45] COMMITS_TOUCHING_PACKAGE_JSON=389
+[2025-11-17 10:56:45] COMMITS_LIMITED_TO=20 (limit_commits=20)

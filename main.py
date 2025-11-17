@@ -1,23 +1,9 @@
 #!/usr/bin/env python3
 """
-Main com checkpoints periódicos e escrita incremental.
-
-O que há de novo:
-- Checkpoints automáticos a cada N segundos (default 600 = 10 minutos) em:
-  app/results/checkpoints/commit_changes_all.partial-YYYYmmdd-HHMMSS.json
-  app/results/checkpoints/commit_changes_all.partial-YYYYmmdd-HHMMSS.csv
-  (nunca sobrescreve: sempre cria um novo arquivo)
-- Escrita incremental por repositório em NDJSON:
-  app/results/commit_changes_all.ndjson
-  (cada candidato é escrito como uma linha JSON assim que o repo termina)
-
-Você pode usar seu comando atual sem mudanças:
-python main.py --stage all --limit 100 --workers 16 --mining_sample 0 --mining_workers 10 --deps-out app/results/dependencies_cve_summary.json --mining-json-out app/results/commit_changes_all.json --mining-csv-out app/results/commit_changes_all.csv --plots app/results/plots --final-out app/results/final_dataset.json
-
-Se quiser ajustar:
---checkpoint-interval-sec 600     (intervalo em segundos)
---checkpoint-dir app/results/checkpoints
---ndjson-out app/results/commit_changes_all.ndjson
+Main com:
+- Descoberta automática (GitHub API) quando não há --repos-file nem app/data/repos.json.
+- Checkpoints periódicos + NDJSON incremental.
+- CSV inclui before/after de dependencies e vulnerable_dependencies.
 """
 import argparse
 import json
@@ -28,13 +14,11 @@ import threading
 import time
 from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from typing import List, Dict
+from typing import List, Dict, Optional
 
 from app.scripts import metrics as metrics_mod
 from app.scripts import find_dependency_replacements as mining_mod
 from app.scripts import plots as plots_mod
-
-# ---------------- Utils ----------------
 
 def safe_mkdir(p: str):
     if p:
@@ -46,7 +30,7 @@ def save_json(path: str, obj):
         json.dump(obj, f, indent=2, ensure_ascii=False)
 
 def append_ndjson(path: str, records: List[dict]):
-    if not records:
+    if not records or not path:
         return
     safe_mkdir(os.path.dirname(path) or ".")
     with open(path, "a", encoding="utf-8") as f:
@@ -58,7 +42,10 @@ def write_candidates_csv(candidates: List[dict], csv_path: str):
     header = [
         "repo", "commit", "parent", "commit_date", "removed_dep", "commit_message",
         "native_replacement_evidence", "native_migration_score",
-        "lines_of_code_before", "lines_of_code_after", "avg_complexity_before", "avg_complexity_after"
+        "lines_of_code_before", "lines_of_code_after", "avg_complexity_before", "avg_complexity_after",
+        # NOVOS CAMPOS:
+        "dependencies_before", "dependencies_after",
+        "vulnerable_dependencies_before", "vulnerable_dependencies_after",
     ]
     with open(csv_path, "w", newline="", encoding="utf-8") as cf:
         writer = csv.writer(cf)
@@ -80,13 +67,55 @@ def write_candidates_csv(candidates: List[dict], csv_path: str):
                 ma.get("lines_of_code") or ma.get("lines_of_code_after") or "",
                 mb.get("avg_complexity") or mb.get("avg_complexity_before") or "",
                 ma.get("avg_complexity") or ma.get("avg_complexity_after") or "",
+                c.get("dependencies_before", ""),
+                c.get("dependencies_after", ""),
+                c.get("vulnerable_dependencies_before", ""),
+                c.get("vulnerable_dependencies_after", ""),
             ]
             writer.writerow(row)
 
 def timestamp():
+    from datetime import datetime
     return datetime.now().strftime("%Y%m%d_%H%M%S")
 
-# ---------------- Repos helpers ----------------
+# Descoberta (mesma de antes)
+def discover_repos_via_github(language: str, min_stars: int, count: int, token: Optional[str] = None) -> List[Dict]:
+    import urllib.request, urllib.parse, time as _time
+    per_page = 100
+    out = []
+    page = 1
+    q = f"language:{language} stars:>={min_stars}"
+    base = "https://api.github.com/search/repositories"
+    while len(out) < count:
+        remaining = count - len(out)
+        pp = per_page if remaining > per_page else remaining
+        query = f"{base}?q={urllib.parse.quote(q)}&sort=stars&order=desc&per_page={pp}&page={page}"
+        req = urllib.request.Request(query, headers={
+            "Accept": "application/vnd.github+json",
+            "User-Agent": "ti6-miner/1.0",
+        })
+        if token:
+            req.add_header("Authorization", f"Bearer {token}")
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            data = resp.read()
+            js = json.loads(data.decode("utf-8", errors="replace"))
+        items = js.get("items") or []
+        if not items:
+            break
+        for it in items:
+            full = it.get("full_name")
+            if full:
+                out.append({
+                    "repo": full,
+                    "stargazers_count": it.get("stargazers_count", 0),
+                    "forks_count": it.get("forks_count", 0),
+                })
+                if len(out) >= count:
+                    break
+        page += 1
+        if not token:
+            _time.sleep(1.8)
+    return out
 
 def load_repos_from_file(path: str, limit: int = None) -> List[Dict]:
     if not path or not os.path.exists(path):
@@ -106,26 +135,30 @@ def load_repos_from_file(path: str, limit: int = None) -> List[Dict]:
         return out[:limit]
     return out
 
-# ---------------- Stages ----------------
-
 def run_deps_stage(args):
-    # Fonte de repositórios é obrigatória se stage inclui deps
     src_path = None
     if args.repos_file and os.path.exists(args.repos_file):
         src_path = args.repos_file
+        print(f"[deps] Usando --repos-file {src_path}")
+        repos = load_repos_from_file(src_path, limit=args.limit)
     else:
         default_path = os.path.join("app", "data", "repos.json")
         if os.path.exists(default_path):
             src_path = default_path
+            print(f"[deps] Usando {default_path}")
+            repos = load_repos_from_file(src_path, limit=args.limit)
+        else:
+            token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
+            print(f"[deps][discover] language={args.discover_language} minStars={args.discover_min_stars} count={args.discover_count} token={'yes' if token else 'no'}")
+            discovered = discover_repos_via_github(args.discover_language, args.discover_min_stars, args.discover_count, token=token)
+            if args.limit:
+                discovered = discovered[:args.limit]
+            save_json(args.discover_out, discovered)
+            print(f"[deps][discover] Lista salva em {args.discover_out} (n={len(discovered)})")
+            repos = discovered
 
-    if not src_path:
-        print("ERRO: Nenhum arquivo de repositórios fornecido (--repos-file) e app/data/repos.json não existe.")
-        print('Crie um JSON: ["owner/repo", "owner2/repo2", ...] ou passe --repos-file.')
-        sys.exit(2)
-
-    repos = load_repos_from_file(src_path, limit=args.limit)
     if not repos:
-        print(f"ERRO: arquivo de repositórios vazio ou inválido: {src_path}")
+        print("ERRO: Nenhum repositório para deps.")
         sys.exit(2)
 
     print(f"[deps] Running dependency metrics for {len(repos)} repos (workers={args.workers}) clone_timeout={args.clone_timeout}")
@@ -135,15 +168,12 @@ def run_deps_stage(args):
     return results
 
 def run_mining_stage(args):
-    # arquivo deps_out deve existir (lista de repos para mining)
     if not os.path.exists(args.deps_out):
-        print(f"[mining] deps file not found: {args.deps_out}. Rode a stage deps primeiro (com --repos-file).")
+        print(f"[mining] deps file not found: {args.deps_out}. Rode stage deps primeiro (ou all).")
         return []
 
-    # Tenta carregar como lista de dicts com chave repo (output de metrics)
     try:
-        with open(args.deps_out, "r", encoding="utf-8") as f:
-            raw = json.load(f)
+        raw = json.load(open(args.deps_out, "r", encoding="utf-8"))
         deps = [{"repo": item.get("repo")} for item in raw if isinstance(item, dict) and item.get("repo")]
     except Exception:
         deps = []
@@ -159,11 +189,8 @@ def run_mining_stage(args):
     all_candidates = []
     lock = threading.Lock()
 
-    # Checkpoint worker
     stop_event = threading.Event()
-
     def write_checkpoint():
-        # snapshot sob lock
         with lock:
             snapshot = list(all_candidates)
         if not snapshot:
@@ -180,16 +207,13 @@ def run_mining_stage(args):
             print(f"[checkpoint] error: {e}")
 
     def checkpoint_loop():
-        # aguarda intervalos e escreve
-        interval = max(30, int(args.checkpoint_interval_sec))  # sanidade: >=30s
+        interval = max(30, int(args.checkpoint_interval_sec))
         while not stop_event.wait(interval):
             write_checkpoint()
 
-    # inicia thread de checkpoint
     checkpoint_thread = threading.Thread(target=checkpoint_loop, name="checkpoint-writer", daemon=True)
     checkpoint_thread.start()
 
-    # NDJSON incremental: cada repo concluído, escrevemos
     ndjson_path = args.ndjson_out
 
     def worker(repo_full):
@@ -199,9 +223,9 @@ def run_mining_stage(args):
                 limit_commits=args.limit_commits,
                 timeout_seconds=args.repo_timeout
             )
-            # agrega e grava incremental
             with lock:
-                all_candidates.extend(cands or [])
+                if cands:
+                    all_candidates.extend(cands)
             if ndjson_path and cands:
                 try:
                     append_ndjson(ndjson_path, cands)
@@ -222,12 +246,10 @@ def run_mining_stage(args):
                 except Exception as e:
                     print("Error in mining thread:", e)
     finally:
-        # encerra checkpoints e força um último snapshot
         stop_event.set()
         checkpoint_thread.join(timeout=2.0)
         write_checkpoint()
 
-    # salvar finais "oficiais"
     save_json(args.mining_json_out, all_candidates)
     print(f"[mining] Saved mining JSON: {args.mining_json_out} (candidates: {len(all_candidates)})")
     write_candidates_csv(all_candidates, args.mining_csv_out)
@@ -242,36 +264,36 @@ def run_plots_stage(args):
     plots_mod.generate_all_plots_from_dataset(dataset, out_dir=args.plots)
     print(f"[plots] Plots generated to {args.plots}")
 
-# ---------------- CLI ----------------
-
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--stage", choices=["deps","mining","plots","all"], default="all")
-    ap.add_argument("--limit", type=int, default=None, help="limit number of repos (for deps/mining)")
-    ap.add_argument("--limit-commits", dest="limit_commits", type=int, default=None, help="limit commits per repo when mining")
-    ap.add_argument("--workers", type=int, default=4, help="workers for deps stage")
-    ap.add_argument("--mining_workers", type=int, default=1, help="workers (threads) for mining stage")
-    ap.add_argument("--mining_sample", type=int, default=0, help="sample size for mining (0 means all from deps)")
-    ap.add_argument("--repos-file", type=str, default=None, help="JSON file with list of repos to analyze (for deps)")
+    ap.add_argument("--limit", type=int, default=None)
+    ap.add_argument("--limit-commits", dest="limit_commits", type=int, default=None)
+    ap.add_argument("--workers", type=int, default=4)
+    ap.add_argument("--mining_workers", type=int, default=1)
+    ap.add_argument("--mining_sample", type=int, default=0)
+    ap.add_argument("--repos-file", type=str, default=None)
     ap.add_argument("--deps-out", default="app/results/dependencies_cve_summary.json")
     ap.add_argument("--mining-json-out", dest="mining_json_out", default="app/results/commit_changes_all.json")
     ap.add_argument("--mining-csv-out", dest="mining_csv_out", default="app/results/commit_changes_all.csv")
     ap.add_argument("--plots", default="app/results/plots")
     ap.add_argument("--final-out", dest="final_out", default="app/results/final_dataset.json")
-    ap.add_argument("--repo-timeout", dest="repo_timeout", type=int, default=int(os.environ.get("REPO_TIMEOUT", 1800)), help="timeout per repo (seconds) for mining")
-    ap.add_argument("--clone-timeout", dest="clone_timeout", type=int, default=int(os.environ.get("CLONE_TIMEOUT", 600)), help="timeout for git clone during deps stage (seconds)")
+    ap.add_argument("--repo-timeout", dest="repo_timeout", type=int, default=int(os.environ.get("REPO_TIMEOUT", 1800)))
+    ap.add_argument("--clone-timeout", dest="clone_timeout", type=int, default=int(os.environ.get("CLONE_TIMEOUT", 600)))
 
-    # NOVOS argumentos para checkpoints e incremental
-    ap.add_argument("--checkpoint-interval-sec", type=int, default=int(os.environ.get("CHECKPOINT_INTERVAL_SEC", 600)),
-                    help="intervalo (segundos) para gravar checkpoints (default 600)")
-    ap.add_argument("--checkpoint-dir", type=str, default=os.environ.get("CHECKPOINT_DIR", "app/results/checkpoints"),
-                    help="diretório onde checkpoints serão gravados")
-    ap.add_argument("--ndjson-out", type=str, default=os.environ.get("NDJSON_OUT", "app/results/commit_changes_all.ndjson"),
-                    help="arquivo NDJSON incremental (uma linha JSON por candidato)")
+    # Descoberta
+    ap.add_argument("--discover-language", type=str, default=os.environ.get("DISCOVER_LANGUAGE", "JavaScript"))
+    ap.add_argument("--discover-min-stars", type=int, default=int(os.environ.get("DISCOVER_MIN_STARS", 5000)))
+    ap.add_argument("--discover-count", type=int, default=int(os.environ.get("DISCOVER_COUNT", 100)))
+    ap.add_argument("--discover-out", type=str, default=os.environ.get("DISCOVER_OUT", "app/results/discovered_repos.json"))
+
+    # Checkpoints/NDJSON
+    ap.add_argument("--checkpoint-interval-sec", type=int, default=int(os.environ.get("CHECKPOINT_INTERVAL_SEC", 600)))
+    ap.add_argument("--checkpoint-dir", type=str, default=os.environ.get("CHECKPOINT_DIR", "app/results/checkpoints"))
+    ap.add_argument("--ndjson-out", type=str, default=os.environ.get("NDJSON_OUT", "app/results/commit_changes_all.ndjson"))
 
     args = ap.parse_args()
 
-    # deps
     if args.stage in ("deps", "all"):
         try:
             run_deps_stage(args)
@@ -281,7 +303,6 @@ def main():
             print("Error running deps stage:", e)
             sys.exit(1)
 
-    # mining
     if args.stage in ("mining", "all"):
         try:
             candidates = run_mining_stage(args)
@@ -291,7 +312,6 @@ def main():
             print("Error running mining stage:", e)
             sys.exit(1)
 
-    # plots
     if args.stage in ("plots", "all"):
         try:
             run_plots_stage(args)
