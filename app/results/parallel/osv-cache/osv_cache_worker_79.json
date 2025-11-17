@@ -1,0 +1,2715 @@
+{
+  "npm:@modelcontextprotocol/sdk": {},
+  "npm:@types/node": {},
+  "npm:@typescript-eslint/eslint-plugin": {},
+  "npm:@typescript-eslint/parser": {},
+  "npm:commander": {},
+  "npm:eslint": {},
+  "npm:eslint-config-prettier": {
+    "vulns": [
+      {
+        "id": "GHSA-f29h-pxvx-f335",
+        "summary": "eslint-config-prettier, eslint-plugin-prettier, synckit, @pkgr/core, napi-postinstall have embedded malicious code",
+        "details": "eslint-config-prettier 8.10.1, 9.1.1, 10.1.6, and 10.1.7 has embedded malicious code for a supply chain compromise. Installing an affected package executes an install.js file that launches the node-gyp.dll malware on Windows.",
+        "aliases": [
+          "CVE-2025-54313"
+        ],
+        "modified": "2025-07-22T16:23:21Z",
+        "published": "2025-07-19T18:30:33Z",
+        "database_specific": {
+          "cwe_ids": [
+            "CWE-506"
+          ],
+          "github_reviewed": true,
+          "nvd_published_at": "2025-07-19T17:15:23Z",
+          "github_reviewed_at": "2025-07-21T21:01:18Z",
+          "severity": "HIGH"
+        },
+        "references": [
+          {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-54313"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/prettier/eslint-config-prettier/issues/339"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/prettier/eslint-config-prettier/commit/9b0b0a47ec28a7a83cf65e8436a8776910379385"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/prettier/eslint-plugin-prettier/commit/ec39dd4400f10c52d10cd991c10fa8de51ceb854"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/un-ts/napi-postinstall/commit/38b4e95cf554e2549b9e1e2c4ff6bff4da9a65f9"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/un-ts/pkgr/commit/e1420c99e44d8a2ae949381f9fbe1af5ba9cb1dd"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/un-ts/synckit/commit/8f2ee32d4f75736a1c8d7e1101190a71e48909e4"
+          },
+          {
+            "type": "WEB",
+            "url": "https://www.stepsecurity.io/blog/supply-chain-security-alert-eslint-config-prettier-package-shows-signs-of-compromise"
+          },
+          {
+            "type": "WEB",
+            "url": "https://www.npmjs.com/package/eslint-config-prettier?activeTab=versions"
+          },
+          {
+            "type": "WEB",
+            "url": "https://www.endorlabs.com/learn/cve-2025-54313-eslint-config-prettier-compromise----high-severity-but-windows-only"
+          },
+          {
+            "type": "WEB",
+            "url": "https://www.bleepingcomputer.com/news/security/popular-npm-linter-packages-hijacked-via-phishing-to-drop-malware"
+          },
+          {
+            "type": "WEB",
+            "url": "https://socket.dev/blog/npm-phishing-campaign-leads-to-prettier-tooling-packages-compromise"
+          },
+          {
+            "type": "WEB",
+            "url": "https://secure.software/npm/packages/got-fetch"
+          },
+          {
+            "type": "WEB",
+            "url": "https://news.ycombinator.com/item?id=44609732"
+          },
+          {
+            "type": "WEB",
+            "url": "https://news.ycombinator.com/item?id=44608811"
+          },
+          {
+            "type": "PACKAGE",
+            "url": "https://github.com/prettier/eslint-config-prettier"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/community-scripts/ProxmoxVE/discussions/6115"
+          },
+          {
+            "type": "WEB",
+            "url": "https://checkmarx.com/zero-post/supply-chain-phishing-campaign-drops-more-malware-into-npm-got-fetch-5-1"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "eslint-config-prettier",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/eslint-config-prettier"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "8.10.1"
+                  },
+                  {
+                    "fixed": "8.10.2"
+                  }
+                ]
+              }
+            ],
+            "versions": [
+              "8.10.1"
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-f29h-pxvx-f335/GHSA-f29h-pxvx-f335.json"
+            }
+          },
+          {
+            "package": {
+              "name": "eslint-config-prettier",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/eslint-config-prettier"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "9.1.1"
+                  },
+                  {
+                    "fixed": "9.1.2"
+                  }
+                ]
+              }
+            ],
+            "versions": [
+              "9.1.1"
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-f29h-pxvx-f335/GHSA-f29h-pxvx-f335.json"
+            }
+          },
+          {
+            "package": {
+              "name": "eslint-config-prettier",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/eslint-config-prettier"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "10.1.6"
+                  },
+                  {
+                    "fixed": "10.1.8"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "last_known_affected_version_range": "<= 10.1.7",
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-f29h-pxvx-f335/GHSA-f29h-pxvx-f335.json"
+            }
+          },
+          {
+            "package": {
+              "name": "eslint-plugin-prettier",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/eslint-plugin-prettier"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "4.2.2"
+                  },
+                  {
+                    "fixed": "4.2.4"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "last_known_affected_version_range": "<= 4.2.3",
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-f29h-pxvx-f335/GHSA-f29h-pxvx-f335.json"
+            }
+          },
+          {
+            "package": {
+              "name": "synckit",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/synckit"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "0.11.9"
+                  },
+                  {
+                    "fixed": "0.11.10"
+                  }
+                ]
+              }
+            ],
+            "versions": [
+              "0.11.9"
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-f29h-pxvx-f335/GHSA-f29h-pxvx-f335.json"
+            }
+          },
+          {
+            "package": {
+              "name": "@pkgr/core",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/%40pkgr/core"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "0.2.8"
+                  },
+                  {
+                    "fixed": "0.2.9"
+                  }
+                ]
+              }
+            ],
+            "versions": [
+              "0.2.8"
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-f29h-pxvx-f335/GHSA-f29h-pxvx-f335.json"
+            }
+          },
+          {
+            "package": {
+              "name": "napi-postinstall",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/napi-postinstall"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "0.3.1"
+                  },
+                  {
+                    "fixed": "0.3.2"
+                  }
+                ]
+              }
+            ],
+            "versions": [
+              "0.3.1"
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-f29h-pxvx-f335/GHSA-f29h-pxvx-f335.json"
+            }
+          },
+          {
+            "package": {
+              "name": "got-fetch",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/got-fetch"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "5.1.11"
+                  },
+                  {
+                    "fixed": "6.0.0"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "last_known_affected_version_range": "<= 5.1.12",
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-f29h-pxvx-f335/GHSA-f29h-pxvx-f335.json"
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "severity": [
+          {
+            "type": "CVSS_V3",
+            "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:L/I:H/A:N"
+          }
+        ]
+      },
+      {
+        "id": "MAL-2025-6022",
+        "summary": "Malicious code in eslint-config-prettier (npm)",
+        "details": "This package installs a windows based malware file node-gyp.dll via install.js",
+        "modified": "2025-07-21T06:24:05Z",
+        "published": "2025-07-21T06:24:05Z",
+        "database_specific": {
+          "malicious-packages-origins": null
+        },
+        "references": [
+          {
+            "type": "WEB",
+            "url": "https://www.bleepingcomputer.com/news/security/popular-npm-linter-packages-hijacked-via-phishing-to-drop-malware/"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "eslint-config-prettier",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/eslint-config-prettier"
+            },
+            "versions": [
+              "8.10.1",
+              "9.1.1",
+              "10.1.6",
+              "10.1.7"
+            ],
+            "database_specific": {
+              "source": "https://github.com/ossf/malicious-packages/blob/main/osv/malicious/npm/eslint-config-prettier/MAL-2025-6022.json"
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "credits": [
+          {
+            "name": "GitHax - Software Supply Chain Threat Intelligence",
+            "contact": [
+              "https://githax.com"
+            ],
+            "type": "FINDER"
+          }
+        ]
+      }
+    ]
+  },
+  "npm:eslint-plugin-prettier": {
+    "vulns": [
+      {
+        "id": "GHSA-f29h-pxvx-f335",
+        "summary": "eslint-config-prettier, eslint-plugin-prettier, synckit, @pkgr/core, napi-postinstall have embedded malicious code",
+        "details": "eslint-config-prettier 8.10.1, 9.1.1, 10.1.6, and 10.1.7 has embedded malicious code for a supply chain compromise. Installing an affected package executes an install.js file that launches the node-gyp.dll malware on Windows.",
+        "aliases": [
+          "CVE-2025-54313"
+        ],
+        "modified": "2025-07-22T16:23:21Z",
+        "published": "2025-07-19T18:30:33Z",
+        "database_specific": {
+          "cwe_ids": [
+            "CWE-506"
+          ],
+          "github_reviewed_at": "2025-07-21T21:01:18Z",
+          "github_reviewed": true,
+          "nvd_published_at": "2025-07-19T17:15:23Z",
+          "severity": "HIGH"
+        },
+        "references": [
+          {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-54313"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/prettier/eslint-config-prettier/issues/339"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/prettier/eslint-config-prettier/commit/9b0b0a47ec28a7a83cf65e8436a8776910379385"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/prettier/eslint-plugin-prettier/commit/ec39dd4400f10c52d10cd991c10fa8de51ceb854"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/un-ts/napi-postinstall/commit/38b4e95cf554e2549b9e1e2c4ff6bff4da9a65f9"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/un-ts/pkgr/commit/e1420c99e44d8a2ae949381f9fbe1af5ba9cb1dd"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/un-ts/synckit/commit/8f2ee32d4f75736a1c8d7e1101190a71e48909e4"
+          },
+          {
+            "type": "WEB",
+            "url": "https://www.stepsecurity.io/blog/supply-chain-security-alert-eslint-config-prettier-package-shows-signs-of-compromise"
+          },
+          {
+            "type": "WEB",
+            "url": "https://www.npmjs.com/package/eslint-config-prettier?activeTab=versions"
+          },
+          {
+            "type": "WEB",
+            "url": "https://www.endorlabs.com/learn/cve-2025-54313-eslint-config-prettier-compromise----high-severity-but-windows-only"
+          },
+          {
+            "type": "WEB",
+            "url": "https://www.bleepingcomputer.com/news/security/popular-npm-linter-packages-hijacked-via-phishing-to-drop-malware"
+          },
+          {
+            "type": "WEB",
+            "url": "https://socket.dev/blog/npm-phishing-campaign-leads-to-prettier-tooling-packages-compromise"
+          },
+          {
+            "type": "WEB",
+            "url": "https://secure.software/npm/packages/got-fetch"
+          },
+          {
+            "type": "WEB",
+            "url": "https://news.ycombinator.com/item?id=44609732"
+          },
+          {
+            "type": "WEB",
+            "url": "https://news.ycombinator.com/item?id=44608811"
+          },
+          {
+            "type": "PACKAGE",
+            "url": "https://github.com/prettier/eslint-config-prettier"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/community-scripts/ProxmoxVE/discussions/6115"
+          },
+          {
+            "type": "WEB",
+            "url": "https://checkmarx.com/zero-post/supply-chain-phishing-campaign-drops-more-malware-into-npm-got-fetch-5-1"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "eslint-config-prettier",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/eslint-config-prettier"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "8.10.1"
+                  },
+                  {
+                    "fixed": "8.10.2"
+                  }
+                ]
+              }
+            ],
+            "versions": [
+              "8.10.1"
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-f29h-pxvx-f335/GHSA-f29h-pxvx-f335.json"
+            }
+          },
+          {
+            "package": {
+              "name": "eslint-config-prettier",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/eslint-config-prettier"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "9.1.1"
+                  },
+                  {
+                    "fixed": "9.1.2"
+                  }
+                ]
+              }
+            ],
+            "versions": [
+              "9.1.1"
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-f29h-pxvx-f335/GHSA-f29h-pxvx-f335.json"
+            }
+          },
+          {
+            "package": {
+              "name": "eslint-config-prettier",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/eslint-config-prettier"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "10.1.6"
+                  },
+                  {
+                    "fixed": "10.1.8"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "last_known_affected_version_range": "<= 10.1.7",
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-f29h-pxvx-f335/GHSA-f29h-pxvx-f335.json"
+            }
+          },
+          {
+            "package": {
+              "name": "eslint-plugin-prettier",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/eslint-plugin-prettier"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "4.2.2"
+                  },
+                  {
+                    "fixed": "4.2.4"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "last_known_affected_version_range": "<= 4.2.3",
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-f29h-pxvx-f335/GHSA-f29h-pxvx-f335.json"
+            }
+          },
+          {
+            "package": {
+              "name": "synckit",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/synckit"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "0.11.9"
+                  },
+                  {
+                    "fixed": "0.11.10"
+                  }
+                ]
+              }
+            ],
+            "versions": [
+              "0.11.9"
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-f29h-pxvx-f335/GHSA-f29h-pxvx-f335.json"
+            }
+          },
+          {
+            "package": {
+              "name": "@pkgr/core",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/%40pkgr/core"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "0.2.8"
+                  },
+                  {
+                    "fixed": "0.2.9"
+                  }
+                ]
+              }
+            ],
+            "versions": [
+              "0.2.8"
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-f29h-pxvx-f335/GHSA-f29h-pxvx-f335.json"
+            }
+          },
+          {
+            "package": {
+              "name": "napi-postinstall",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/napi-postinstall"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "0.3.1"
+                  },
+                  {
+                    "fixed": "0.3.2"
+                  }
+                ]
+              }
+            ],
+            "versions": [
+              "0.3.1"
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-f29h-pxvx-f335/GHSA-f29h-pxvx-f335.json"
+            }
+          },
+          {
+            "package": {
+              "name": "got-fetch",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/got-fetch"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "5.1.11"
+                  },
+                  {
+                    "fixed": "6.0.0"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "last_known_affected_version_range": "<= 5.1.12",
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/07/GHSA-f29h-pxvx-f335/GHSA-f29h-pxvx-f335.json"
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "severity": [
+          {
+            "type": "CVSS_V3",
+            "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:L/I:H/A:N"
+          }
+        ]
+      },
+      {
+        "id": "MAL-2025-6023",
+        "summary": "Malicious code in eslint-plugin-prettier (npm)",
+        "details": "This package installs a windows based malware file node-gyp.dll via install.js",
+        "modified": "2025-07-21T06:24:05Z",
+        "published": "2025-07-21T06:24:05Z",
+        "database_specific": {
+          "malicious-packages-origins": null
+        },
+        "references": [
+          {
+            "type": "WEB",
+            "url": "https://www.bleepingcomputer.com/news/security/popular-npm-linter-packages-hijacked-via-phishing-to-drop-malware/"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "eslint-plugin-prettier",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/eslint-plugin-prettier"
+            },
+            "versions": [
+              "4.2.2",
+              "4.2.3"
+            ],
+            "database_specific": {
+              "source": "https://github.com/ossf/malicious-packages/blob/main/osv/malicious/npm/eslint-plugin-prettier/MAL-2025-6023.json"
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "credits": [
+          {
+            "name": "GitHax - Software Supply Chain Threat Intelligence",
+            "contact": [
+              "https://githax.com"
+            ],
+            "type": "FINDER"
+          }
+        ]
+      }
+    ]
+  },
+  "npm:prettier": {},
+  "npm:typescript": {},
+  "npm:typescript-eslint": {},
+  "npm:undici": {
+    "vulns": [
+      {
+        "id": "GHSA-3787-6prv-h9w3",
+        "summary": "Undici proxy-authorization header not cleared on cross-origin redirect in fetch",
+        "details": "### Impact\n\nUndici already cleared Authorization headers on cross-origin redirects, but did not clear `Proxy-Authorization` headers. \n\n### Patches\n\nThis is patched in v5.28.3 and v6.6.1\n\n### Workarounds\n\nThere are no known workarounds.\n\n### References\n\n- https://fetch.spec.whatwg.org/#authentication-entries\n- https://github.com/nodejs/undici/security/advisories/GHSA-wqq4-5wpv-mx2g",
+        "aliases": [
+          "CVE-2024-24758"
+        ],
+        "modified": "2024-05-02T13:15:07Z",
+        "published": "2024-02-16T16:02:52Z",
+        "related": [
+          "CVE-2024-24758"
+        ],
+        "database_specific": {
+          "severity": "LOW",
+          "cwe_ids": [
+            "CWE-200"
+          ],
+          "nvd_published_at": "2024-02-16T22:15:08Z",
+          "github_reviewed_at": "2024-02-16T16:02:52Z",
+          "github_reviewed": true
+        },
+        "references": [
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/security/advisories/GHSA-3787-6prv-h9w3"
+          },
+          {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-24758"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/commit/b9da3e40f1f096a06b4caedbb27c2568730434ef"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/commit/d3aa574b1259c1d8d329a0f0f495ee82882b1458"
+          },
+          {
+            "type": "PACKAGE",
+            "url": "https://github.com/nodejs/undici"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/releases/tag/v5.28.3"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/releases/tag/v6.6.1"
+          },
+          {
+            "type": "WEB",
+            "url": "https://security.netapp.com/advisory/ntap-20240419-0007"
+          },
+          {
+            "type": "WEB",
+            "url": "http://www.openwall.com/lists/oss-security/2024/03/11/1"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "undici",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/undici"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "5.28.3"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/02/GHSA-3787-6prv-h9w3/GHSA-3787-6prv-h9w3.json",
+              "last_known_affected_version_range": "<= 5.28.2"
+            }
+          },
+          {
+            "package": {
+              "name": "undici",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/undici"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "6.0.0"
+                  },
+                  {
+                    "fixed": "6.6.1"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/02/GHSA-3787-6prv-h9w3/GHSA-3787-6prv-h9w3.json",
+              "last_known_affected_version_range": "<= 6.6.0"
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "severity": [
+          {
+            "type": "CVSS_V3",
+            "score": "CVSS:3.1/AV:N/AC:H/PR:H/UI:R/S:U/C:L/I:L/A:L"
+          }
+        ]
+      },
+      {
+        "id": "GHSA-3cvr-822r-rqcc",
+        "summary": "undici before v5.8.0 vulnerable to CRLF injection in request headers",
+        "details": "### Impact\n\nIt is possible to inject CRLF sequences into request headers in Undici.\n\n```js\nconst undici = require('undici')\n\nconst response = undici.request(\"http://127.0.0.1:1000\", {\n  headers: {'a': \"\\r\\nb\"}\n})\n```\n\nThe same applies to `path` and `method`\n\n### Patches\n\nUpdate to v5.8.0\n\n### Workarounds\n\nSanitize all HTTP headers from untrusted sources to eliminate `\\r\\n`.\n\n### References\n\nhttps://hackerone.com/reports/409943\nhttps://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-12116\n\n### For more information\n\nIf you have any questions or comments about this advisory:\n\n* Open an issue in [undici repository](https://github.com/nodejs/undici/issues)\n* To make a report, follow the [SECURITY](https://github.com/nodejs/node/blob/HEAD/SECURITY.md) document\n",
+        "aliases": [
+          "CVE-2022-31150"
+        ],
+        "modified": "2023-11-08T04:09:27.728154Z",
+        "published": "2022-07-21T20:30:10Z",
+        "database_specific": {
+          "severity": "MODERATE",
+          "cwe_ids": [
+            "CWE-93"
+          ],
+          "nvd_published_at": "2022-07-19T21:15:00Z",
+          "github_reviewed_at": "2022-07-21T20:30:10Z",
+          "github_reviewed": true
+        },
+        "references": [
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/security/advisories/GHSA-3cvr-822r-rqcc"
+          },
+          {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-31150"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/commit/a29a151d0140d095742d21a004023d024fe93259"
+          },
+          {
+            "type": "WEB",
+            "url": "https://hackerone.com/reports/409943"
+          },
+          {
+            "type": "PACKAGE",
+            "url": "https://github.com/nodejs/undici"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/releases/tag/v5.8.0"
+          },
+          {
+            "type": "WEB",
+            "url": "https://security.netapp.com/advisory/ntap-20220915-0002"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "undici",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/undici"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "5.8.0"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-3cvr-822r-rqcc/GHSA-3cvr-822r-rqcc.json"
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "severity": [
+          {
+            "type": "CVSS_V3",
+            "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N"
+          }
+        ]
+      },
+      {
+        "id": "GHSA-3g92-w8c5-73pq",
+        "summary": "Undici vulnerable to data leak when using response.arrayBuffer()",
+        "details": "### Impact\n\nDepending on network and process conditions of a `fetch()` request, `response.arrayBuffer()` might include portion of memory from the Node.js process.\n\n### Patches\n\nThis has been patched in v6.19.2.\n\n### Workarounds\n\nThere are no known workaround.\n\n### References\n\nhttps://github.com/nodejs/undici/issues/3337\nhttps://github.com/nodejs/undici/issues/3328\nhttps://github.com/nodejs/undici/pull/3338\nhttps://github.com/nodejs/undici/commit/f979ec3204ca489abf30e7d20e9fee9ea7711d36",
+        "aliases": [
+          "CVE-2024-38372"
+        ],
+        "modified": "2024-07-09T13:57:47.271493Z",
+        "published": "2024-07-09T13:32:30Z",
+        "related": [
+          "CVE-2024-38372"
+        ],
+        "database_specific": {
+          "severity": "LOW",
+          "cwe_ids": [
+            "CWE-201"
+          ],
+          "nvd_published_at": "2024-07-08T21:15:12Z",
+          "github_reviewed_at": "2024-07-09T13:32:30Z",
+          "github_reviewed": true
+        },
+        "references": [
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/security/advisories/GHSA-3g92-w8c5-73pq"
+          },
+          {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-38372"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/issues/3328"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/issues/3337"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/pull/3338"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/commit/f979ec3204ca489abf30e7d20e9fee9ea7711d36"
+          },
+          {
+            "type": "PACKAGE",
+            "url": "https://github.com/nodejs/undici"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "undici",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/undici"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "6.14.0"
+                  },
+                  {
+                    "fixed": "6.19.2"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/07/GHSA-3g92-w8c5-73pq/GHSA-3g92-w8c5-73pq.json"
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "severity": [
+          {
+            "type": "CVSS_V3",
+            "score": "CVSS:3.1/AV:N/AC:H/PR:H/UI:R/S:U/C:L/I:N/A:N"
+          },
+          {
+            "type": "CVSS_V4",
+            "score": "CVSS:4.0/AV:N/AC:H/AT:N/PR:H/UI:P/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N"
+          }
+        ]
+      },
+      {
+        "id": "GHSA-5r9g-qh6m-jxff",
+        "summary": "CRLF Injection in Nodejs ‘undici’ via host",
+        "details": "### Impact\n\nundici library does not protect `host` HTTP header from CRLF injection vulnerabilities.\n\n### Patches\n\nThis issue was patched in Undici v5.19.1.\n\n### Workarounds\n\nSanitize the `headers.host` string before passing to undici.\n\n### References\n\nReported at https://hackerone.com/reports/1820955.\n\n### Credits\n\nThank you to Zhipeng Zhang ([@timon8](https://hackerone.com/timon8)) for reporting this vulnerability. ",
+        "aliases": [
+          "BIT-node-2023-23936",
+          "BIT-node-min-2023-23936",
+          "CVE-2023-23936"
+        ],
+        "modified": "2024-12-16T15:26:50.318903Z",
+        "published": "2023-02-16T20:46:30Z",
+        "related": [
+          "CVE-2023-23936"
+        ],
+        "database_specific": {
+          "severity": "MODERATE",
+          "cwe_ids": [
+            "CWE-74",
+            "CWE-93"
+          ],
+          "nvd_published_at": "2023-02-16T18:15:00Z",
+          "github_reviewed_at": "2023-02-16T20:46:30Z",
+          "github_reviewed": true
+        },
+        "references": [
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/security/advisories/GHSA-5r9g-qh6m-jxff"
+          },
+          {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-23936"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/commit/a2eff05401358f6595138df963837c24348f2034"
+          },
+          {
+            "type": "WEB",
+            "url": "https://hackerone.com/reports/1820955"
+          },
+          {
+            "type": "PACKAGE",
+            "url": "https://github.com/nodejs/undici"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/releases/tag/v5.19.1"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "undici",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/undici"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "2.0.0"
+                  },
+                  {
+                    "fixed": "5.19.1"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-5r9g-qh6m-jxff/GHSA-5r9g-qh6m-jxff.json"
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "severity": [
+          {
+            "type": "CVSS_V3",
+            "score": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:L/I:L/A:N"
+          }
+        ]
+      },
+      {
+        "id": "GHSA-8qr4-xgw6-wmr3",
+        "summary": "`undici.request` vulnerable to SSRF using absolute URL on `pathname`",
+        "details": "### Impact\n\n`undici` is vulnerable to SSRF (Server-side Request Forgery) when an application takes in **user input** into the `path/pathname` option of `undici.request`.\n\nIf a user specifies a URL such as `http://127.0.0.1` or `//127.0.0.1`\n\n```js\nconst undici = require(\"undici\")\nundici.request({origin: \"http://example.com\", pathname: \"//127.0.0.1\"})\n```\n\nInstead of processing the request as `http://example.org//127.0.0.1` (or `http://example.org/http://127.0.0.1` when `http://127.0.0.1 is used`), it actually processes the request as `http://127.0.0.1/` and sends it to `http://127.0.0.1`.\n\nIf a developer passes in user input into `path` parameter of `undici.request`, it can result in an _SSRF_ as they will assume that the hostname cannot change, when in actual fact it can change because the specified path parameter is combined with the base URL.\n\n### Patches\n\nThis issue was fixed in `undici@5.8.1`.\n\n### Workarounds\n\nThe best workaround is to validate user input before passing it to the `undici.request` call.\n\n## For more information\nIf you have any questions or comments about this advisory:\n\n- Open an issue in [undici repository](https://github.com/nodejs/undici/issues)\n- To make a report, follow the [SECURITY](https://github.com/nodejs/node/blob/HEAD/SECURITY.md) document\n",
+        "aliases": [
+          "CVE-2022-35949"
+        ],
+        "modified": "2023-11-08T04:09:53.898548Z",
+        "published": "2022-08-18T18:59:46Z",
+        "database_specific": {
+          "severity": "MODERATE",
+          "cwe_ids": [
+            "CWE-918"
+          ],
+          "nvd_published_at": "2022-08-12T23:15:00Z",
+          "github_reviewed_at": "2022-08-18T18:59:46Z",
+          "github_reviewed": true
+        },
+        "references": [
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/security/advisories/GHSA-8qr4-xgw6-wmr3"
+          },
+          {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-35949"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/commit/124f7ebf705366b2e1844dff721928d270f87895"
+          },
+          {
+            "type": "PACKAGE",
+            "url": "https://github.com/nodejs/undici"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/releases/tag/v5.8.2"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "undici",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/undici"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "5.8.2"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/08/GHSA-8qr4-xgw6-wmr3/GHSA-8qr4-xgw6-wmr3.json",
+              "last_known_affected_version_range": "<= 5.8.1"
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "severity": [
+          {
+            "type": "CVSS_V3",
+            "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+          }
+        ]
+      },
+      {
+        "id": "GHSA-9f24-jqhm-jfcw",
+        "summary": "fetch(url) leads to a memory leak in undici",
+        "details": "### Impact\n\nCalling `fetch(url)` and not consuming the incoming body ((or consuming it very slowing) will lead to a memory leak. \n\n### Patches\n\nPatched in v6.6.1\n\n### Workarounds\n\nMake sure to always consume the incoming body.\n",
+        "aliases": [
+          "CVE-2024-24750"
+        ],
+        "modified": "2024-04-19T09:30:47Z",
+        "published": "2024-02-16T15:59:38Z",
+        "related": [
+          "CVE-2024-24750"
+        ],
+        "database_specific": {
+          "severity": "MODERATE",
+          "cwe_ids": [
+            "CWE-400",
+            "CWE-401"
+          ],
+          "nvd_published_at": "2024-02-16T22:15:07Z",
+          "github_reviewed_at": "2024-02-16T15:59:38Z",
+          "github_reviewed": true
+        },
+        "references": [
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/security/advisories/GHSA-9f24-jqhm-jfcw"
+          },
+          {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-24750"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/commit/87a48113f1f68f60aa09abb07276d7c35467c663"
+          },
+          {
+            "type": "PACKAGE",
+            "url": "https://github.com/nodejs/undici"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/releases/tag/v6.6.1"
+          },
+          {
+            "type": "WEB",
+            "url": "https://security.netapp.com/advisory/ntap-20240419-0006"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "undici",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/undici"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "6.0.0"
+                  },
+                  {
+                    "fixed": "6.6.1"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/02/GHSA-9f24-jqhm-jfcw/GHSA-9f24-jqhm-jfcw.json",
+              "last_known_affected_version_range": "<= 6.6.0"
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "severity": [
+          {
+            "type": "CVSS_V3",
+            "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+          }
+        ]
+      },
+      {
+        "id": "GHSA-9qxr-qj54-h672",
+        "summary": "Undici's fetch with integrity option is too lax when algorithm is specified but hash value is in incorrect",
+        "details": "### Impact\n\nIf an attacker can alter the `integrity` option passed to `fetch()`, they can let `fetch()` accept requests as valid even if they have been tampered.\n\n### Patches\n\nFixed in https://github.com/nodejs/undici/commit/d542b8cd39ec1ba303f038ea26098c3f355974f3.\nFixes has been released in v5.28.4 and v6.11.1.\n\n\n### Workarounds\n\nEnsure that `integrity` cannot be tampered with.\n\n### References\n\nhttps://hackerone.com/reports/2377760",
+        "aliases": [
+          "CVE-2024-30261"
+        ],
+        "modified": "2025-11-04T19:44:42Z",
+        "published": "2024-04-04T14:20:54Z",
+        "database_specific": {
+          "severity": "LOW",
+          "cwe_ids": [
+            "CWE-284"
+          ],
+          "nvd_published_at": "2024-04-04T15:15:39Z",
+          "github_reviewed_at": "2024-04-04T14:20:54Z",
+          "github_reviewed": true
+        },
+        "references": [
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/security/advisories/GHSA-9qxr-qj54-h672"
+          },
+          {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-30261"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/commit/2b39440bd9ded841c93dd72138f3b1763ae26055"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/commit/d542b8cd39ec1ba303f038ea26098c3f355974f3"
+          },
+          {
+            "type": "WEB",
+            "url": "https://hackerone.com/reports/2377760"
+          },
+          {
+            "type": "PACKAGE",
+            "url": "https://github.com/nodejs/undici"
+          },
+          {
+            "type": "WEB",
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/HQVHWAS6WDXXIU7F72XI55VZ2LTZUB33"
+          },
+          {
+            "type": "WEB",
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/NC3V3HFZ5MOJRZDY5ZELL6REIRSPFROJ"
+          },
+          {
+            "type": "WEB",
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/P6Q4RGETHVYVHDIQGTJGU5AV6NJEI67E"
+          },
+          {
+            "type": "WEB",
+            "url": "https://security.netapp.com/advisory/ntap-20240905-0008"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "undici",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/undici"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "5.28.4"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-9qxr-qj54-h672/GHSA-9qxr-qj54-h672.json"
+            }
+          },
+          {
+            "package": {
+              "name": "undici",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/undici"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "6.0.0"
+                  },
+                  {
+                    "fixed": "6.11.1"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-9qxr-qj54-h672/GHSA-9qxr-qj54-h672.json"
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "severity": [
+          {
+            "type": "CVSS_V3",
+            "score": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:N/I:L/A:N"
+          }
+        ]
+      },
+      {
+        "id": "GHSA-c76h-2ccp-4975",
+        "summary": "Use of Insufficiently Random Values in undici",
+        "details": "### Impact\n\n[Undici `fetch()` uses Math.random()](https://github.com/nodejs/undici/blob/8b06b8250907d92fead664b3368f1d2aa27c1f35/lib/web/fetch/body.js#L113) to choose the boundary for a multipart/form-data request. It is known that the output of Math.random() can be predicted if several of its generated values are known.\n\nIf there is a mechanism in an app that sends multipart requests to an attacker-controlled website, they can use this to leak the necessary values. Therefore, An attacker can tamper with the requests going to the backend APIs if certain conditions are met.\n\n### Patches\n\nThis is fixed in 5.28.5; 6.21.1; 7.2.3.\n\n### Workarounds\n\nDo not issue multipart requests to attacker controlled servers.\n\n### References\n\n* https://hackerone.com/reports/2913312\n* https://blog.securityevaluators.com/hacking-the-javascript-lottery-80cc437e3b7f\n",
+        "aliases": [
+          "CVE-2025-22150"
+        ],
+        "modified": "2025-01-21T21:27:05.225594Z",
+        "published": "2025-01-21T21:10:47Z",
+        "database_specific": {
+          "severity": "MODERATE",
+          "cwe_ids": [
+            "CWE-330"
+          ],
+          "nvd_published_at": "2025-01-21T18:15:14Z",
+          "github_reviewed_at": "2025-01-21T21:10:47Z",
+          "github_reviewed": true
+        },
+        "references": [
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/security/advisories/GHSA-c76h-2ccp-4975"
+          },
+          {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-22150"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/commit/711e20772764c29f6622ddc937c63b6eefdf07d0"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/commit/c2d78cd19fe4f4c621424491e26ce299e65e934a"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/commit/c3acc6050b781b827d80c86cbbab34f14458d385"
+          },
+          {
+            "type": "WEB",
+            "url": "https://hackerone.com/reports/2913312"
+          },
+          {
+            "type": "WEB",
+            "url": "https://blog.securityevaluators.com/hacking-the-javascript-lottery-80cc437e3b7f"
+          },
+          {
+            "type": "PACKAGE",
+            "url": "https://github.com/nodejs/undici"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/blob/8b06b8250907d92fead664b3368f1d2aa27c1f35/lib/web/fetch/body.js#L113"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "undici",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/undici"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "4.5.0"
+                  },
+                  {
+                    "fixed": "5.28.5"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/01/GHSA-c76h-2ccp-4975/GHSA-c76h-2ccp-4975.json"
+            }
+          },
+          {
+            "package": {
+              "name": "undici",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/undici"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "6.0.0"
+                  },
+                  {
+                    "fixed": "6.21.1"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/01/GHSA-c76h-2ccp-4975/GHSA-c76h-2ccp-4975.json"
+            }
+          },
+          {
+            "package": {
+              "name": "undici",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/undici"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "7.0.0"
+                  },
+                  {
+                    "fixed": "7.2.3"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/01/GHSA-c76h-2ccp-4975/GHSA-c76h-2ccp-4975.json"
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "severity": [
+          {
+            "type": "CVSS_V3",
+            "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:N"
+          }
+        ]
+      },
+      {
+        "id": "GHSA-cxrh-j4jr-qwg3",
+        "summary": "undici Denial of Service attack via bad certificate data",
+        "details": "### Impact\n\nApplications that use undici to implement a webhook-like system are vulnerable. If the attacker set up a server with an invalid certificate, and they can force the application to call the webhook repeatedly, then they can cause a memory leak. \n\n### Patches\n\nThis has been patched in https://github.com/nodejs/undici/pull/4088.\n\n### Workarounds\n\nIf a webhook fails, avoid keep calling it repeatedly.\n\n### References\n\nReported as: https://github.com/nodejs/undici/issues/3895",
+        "aliases": [
+          "CVE-2025-47279"
+        ],
+        "modified": "2025-05-16T02:07:00Z",
+        "published": "2025-05-15T14:15:06Z",
+        "related": [
+          "CGA-gf48-w429-582m"
+        ],
+        "database_specific": {
+          "severity": "LOW",
+          "cwe_ids": [
+            "CWE-401"
+          ],
+          "nvd_published_at": "2025-05-15T18:15:38Z",
+          "github_reviewed_at": "2025-05-15T14:15:06Z",
+          "github_reviewed": true
+        },
+        "references": [
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/security/advisories/GHSA-cxrh-j4jr-qwg3"
+          },
+          {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-47279"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/issues/3895"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/pull/4088"
+          },
+          {
+            "type": "PACKAGE",
+            "url": "https://github.com/nodejs/undici"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "undici",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/undici"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "5.29.0"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-cxrh-j4jr-qwg3/GHSA-cxrh-j4jr-qwg3.json"
+            }
+          },
+          {
+            "package": {
+              "name": "undici",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/undici"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "6.0.0"
+                  },
+                  {
+                    "fixed": "6.21.2"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-cxrh-j4jr-qwg3/GHSA-cxrh-j4jr-qwg3.json"
+            }
+          },
+          {
+            "package": {
+              "name": "undici",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/undici"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "7.0.0"
+                  },
+                  {
+                    "fixed": "7.5.0"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/05/GHSA-cxrh-j4jr-qwg3/GHSA-cxrh-j4jr-qwg3.json"
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "severity": [
+          {
+            "type": "CVSS_V3",
+            "score": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:L"
+          }
+        ]
+      },
+      {
+        "id": "GHSA-f772-66g8-q5h3",
+        "summary": "Nodejs ‘undici’ vulnerable to CRLF Injection via Content-Type",
+        "details": "### Impact\n\n`=< undici@5.8.0` users are vulnerable to _CRLF Injection_ on headers when using unsanitized input as request headers, more specifically, inside the `content-type` header.\n\nExample:\n\n```\nimport { request } from 'undici'\n\nconst unsanitizedContentTypeInput =  'application/json\\r\\n\\r\\nGET /foo2 HTTP/1.1'\n\nawait request('http://localhost:3000, {\n    method: 'GET',\n    headers: {\n      'content-type': unsanitizedContentTypeInput\n    },\n})\n```\n\nThe above snippet will perform two requests in a single `request` API call:\n\n1) `http://localhost:3000/`\n2) `http://localhost:3000/foo2`\n\n### Patches\n\nThis issue was patched in Undici v5.8.1\n\n### Workarounds\n\nSanitize input when sending content-type headers using user input.\n\n## For more information\nIf you have any questions or comments about this advisory:\n\n- Open an issue in [undici repository](https://github.com/nodejs/undici/issues)\n- To make a report, follow the [SECURITY](https://github.com/nodejs/node/blob/HEAD/SECURITY.md) document",
+        "aliases": [
+          "CVE-2022-35948"
+        ],
+        "modified": "2023-11-08T04:09:53.836338Z",
+        "published": "2022-08-18T19:02:56Z",
+        "database_specific": {
+          "severity": "MODERATE",
+          "cwe_ids": [
+            "CWE-74",
+            "CWE-93"
+          ],
+          "nvd_published_at": "2022-08-15T11:21:00Z",
+          "github_reviewed_at": "2022-08-18T19:02:56Z",
+          "github_reviewed": true
+        },
+        "references": [
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/security/advisories/GHSA-f772-66g8-q5h3"
+          },
+          {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-35948"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/commit/66165d604fd0aee70a93ed5c44ad4cc2df395f80"
+          },
+          {
+            "type": "PACKAGE",
+            "url": "https://github.com/nodejs/undici"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/releases/tag/v5.8.2"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "undici",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/undici"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "5.8.2"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/08/GHSA-f772-66g8-q5h3/GHSA-f772-66g8-q5h3.json",
+              "last_known_affected_version_range": "<= 5.8.1"
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "severity": [
+          {
+            "type": "CVSS_V3",
+            "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N"
+          }
+        ]
+      },
+      {
+        "id": "GHSA-m4v8-wqvr-p9f7",
+        "summary": "Undici's Proxy-Authorization header not cleared on cross-origin redirect for dispatch, request, stream, pipeline",
+        "details": "### Impact\n\nUndici cleared Authorization and Proxy-Authorization headers for `fetch()`, but did not clear them for `undici.request()`.\n\n### Patches\n\nThis has been patched in https://github.com/nodejs/undici/commit/6805746680d27a5369d7fb67bc05f95a28247d75.\nFixes has been released in v5.28.4 and v6.11.1.\n\n### Workarounds\n\nuse `fetch()` or disable `maxRedirections`.\n\n### References\n\nLinzi Shang reported this.\n\n* https://hackerone.com/reports/2408074\n* https://github.com/nodejs/undici/security/advisories/GHSA-3787-6prv-h9w3",
+        "aliases": [
+          "CVE-2024-30260"
+        ],
+        "modified": "2025-11-04T19:44:28Z",
+        "published": "2024-04-04T14:20:39Z",
+        "database_specific": {
+          "severity": "LOW",
+          "cwe_ids": [
+            "CWE-200",
+            "CWE-285",
+            "CWE-863"
+          ],
+          "nvd_published_at": "2024-04-04T16:15:08Z",
+          "github_reviewed_at": "2024-04-04T14:20:39Z",
+          "github_reviewed": true
+        },
+        "references": [
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/security/advisories/GHSA-m4v8-wqvr-p9f7"
+          },
+          {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-30260"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/commit/64e3402da4e032e68de46acb52800c9a06aaea3f"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/commit/6805746680d27a5369d7fb67bc05f95a28247d75"
+          },
+          {
+            "type": "WEB",
+            "url": "https://hackerone.com/reports/2408074"
+          },
+          {
+            "type": "PACKAGE",
+            "url": "https://github.com/nodejs/undici"
+          },
+          {
+            "type": "WEB",
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/HQVHWAS6WDXXIU7F72XI55VZ2LTZUB33"
+          },
+          {
+            "type": "WEB",
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/NC3V3HFZ5MOJRZDY5ZELL6REIRSPFROJ"
+          },
+          {
+            "type": "WEB",
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/P6Q4RGETHVYVHDIQGTJGU5AV6NJEI67E"
+          },
+          {
+            "type": "WEB",
+            "url": "https://security.netapp.com/advisory/ntap-20240905-0008"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "undici",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/undici"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "5.28.4"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-m4v8-wqvr-p9f7/GHSA-m4v8-wqvr-p9f7.json"
+            }
+          },
+          {
+            "package": {
+              "name": "undici",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/undici"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "6.0.0"
+                  },
+                  {
+                    "fixed": "6.11.1"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/04/GHSA-m4v8-wqvr-p9f7/GHSA-m4v8-wqvr-p9f7.json"
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "severity": [
+          {
+            "type": "CVSS_V3",
+            "score": "CVSS:3.1/AV:N/AC:H/PR:H/UI:R/S:U/C:L/I:L/A:L"
+          }
+        ]
+      },
+      {
+        "id": "GHSA-pgw7-wx7w-2w33",
+        "summary": "ProxyAgent vulnerable to MITM",
+        "details": "### Description\n\n`Undici.ProxyAgent` never verifies the remote server's certificate, and always exposes all request & response data to the proxy. This unexpectedly means that proxies can MitM all HTTPS traffic, and if the proxy's URL is HTTP then it also means that nominally HTTPS requests are actually sent via plain-text HTTP between Undici and the proxy server.\n\n### Impact\n\nThis affects all use of HTTPS via HTTP proxy using **`Undici.ProxyAgent`**  with Undici or Node's global `fetch`. In this case, it removes all HTTPS security from all requests sent using Undici's `ProxyAgent`, allowing trivial MitM attacks by anybody on the network path between the client and the target server (local network users, your ISP, the proxy, the target server's ISP, etc).\nThis less seriously affects HTTPS via HTTPS proxies. When you send HTTPS via a proxy to a remote server, the proxy can freely view or modify all HTTPS traffic unexpectedly (but only the proxy). \n\n### Patches\n\nThis issue was patched in Undici v5.5.1.\n\n### Workarounds\n\nAt the time of writing, the only workaround is to not use `ProxyAgent` as a dispatcher for TLS Connections.",
+        "aliases": [
+          "CVE-2022-32210"
+        ],
+        "modified": "2023-11-08T04:09:35.326222Z",
+        "published": "2022-06-17T01:02:29Z",
+        "related": [
+          "CVE-2022-32210"
+        ],
+        "database_specific": {
+          "severity": "HIGH",
+          "cwe_ids": [
+            "CWE-295"
+          ],
+          "nvd_published_at": "2022-07-14T15:15:00Z",
+          "github_reviewed_at": "2022-06-17T01:02:29Z",
+          "github_reviewed": true
+        },
+        "references": [
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/security/advisories/GHSA-pgw7-wx7w-2w33"
+          },
+          {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-32210"
+          },
+          {
+            "type": "WEB",
+            "url": "https://hackerone.com/reports/1583680"
+          },
+          {
+            "type": "PACKAGE",
+            "url": "https://github.com/nodejs/undici"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "undici",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/undici"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "4.8.2"
+                  },
+                  {
+                    "fixed": "5.5.1"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-pgw7-wx7w-2w33/GHSA-pgw7-wx7w-2w33.json",
+              "last_known_affected_version_range": "<= 5.5.0"
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "severity": [
+          {
+            "type": "CVSS_V3",
+            "score": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:C/C:H/I:H/A:N"
+          }
+        ]
+      },
+      {
+        "id": "GHSA-q768-x9m6-m9qp",
+        "summary": "undici before v5.8.0 vulnerable to uncleared cookies on cross-host / cross-origin redirect",
+        "details": "### Impact\n\nAuthorization headers are already cleared on cross-origin redirect in\nhttps://github.com/nodejs/undici/blob/main/lib/handler/redirect.js#L189, based on https://github.com/nodejs/undici/issues/872.\n\nHowever, cookie headers which are sensitive headers and are official headers found in the spec, remain uncleared. There also has been active discussion of implementing a cookie store https://github.com/nodejs/undici/pull/1441, which suggests that there are active users using cookie headers in undici.\nAs such this may lead to accidental leakage of cookie to a 3rd-party site or a malicious attacker who can control the redirection target (ie. an open redirector) to leak the cookie to the 3rd party site.\n\n### Patches\n\nThis was patched in v5.8.0.\n\n### Workarounds\n\nBy default, this vulnerability is not exploitable.\nDo not enable redirections, i.e. `maxRedirections: 0` (the default). \n\n### References\n\nhttps://hackerone.com/reports/1635514\nhttps://curl.se/docs/CVE-2018-1000007.html\nhttps://curl.se/docs/CVE-2022-27776.html\n\n### For more information\nIf you have any questions or comments about this advisory:\n* Open an issue in [undici repository](https://github.com/nodejs/undici/issues)\n* To make a report, follow the [SECURITY](https://github.com/nodejs/node/blob/HEAD/SECURITY.md) document\n",
+        "aliases": [
+          "CVE-2022-31151"
+        ],
+        "modified": "2024-12-05T15:41:55.533076Z",
+        "published": "2022-07-21T20:31:05Z",
+        "related": [
+          "CVE-2023-45143"
+        ],
+        "database_specific": {
+          "severity": "LOW",
+          "cwe_ids": [
+            "CWE-346",
+            "CWE-601",
+            "CWE-93"
+          ],
+          "nvd_published_at": "2022-07-21T04:15:00Z",
+          "github_reviewed_at": "2022-07-21T20:31:05Z",
+          "github_reviewed": true
+        },
+        "references": [
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/security/advisories/GHSA-q768-x9m6-m9qp"
+          },
+          {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-31151"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/issues/872"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/pull/1441"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/commit/0a5bee9465e627be36bac88edf7d9bbc9626126d"
+          },
+          {
+            "type": "WEB",
+            "url": "https://hackerone.com/reports/1635514"
+          },
+          {
+            "type": "PACKAGE",
+            "url": "https://github.com/nodejs/undici"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/blob/main/lib/handler/redirect.js#L189"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/releases/tag/v5.8.0"
+          },
+          {
+            "type": "WEB",
+            "url": "https://security.netapp.com/advisory/ntap-20220909-0006"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "undici",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/undici"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "5.8.0"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/07/GHSA-q768-x9m6-m9qp/GHSA-q768-x9m6-m9qp.json"
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "severity": [
+          {
+            "type": "CVSS_V3",
+            "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N"
+          }
+        ]
+      },
+      {
+        "id": "GHSA-r6ch-mqf9-qc9w",
+        "summary": "Regular Expression Denial of Service in Headers",
+        "details": "### Impact\nThe `Headers.set()` and `Headers.append()` methods are vulnerable to Regular Expression Denial of Service (ReDoS) attacks when untrusted values are passed into the functions. This is due to the inefficient regular expression used to normalize the values in the `headerValueNormalize()` utility function.\n\n### Patches\n\nThis vulnerability was patched in v5.19.1.\n\n### Workarounds\nThere is no workaround. Please update to an unaffected version.\n\n### References\n\n* https://hackerone.com/bugs?report_id=1784449\n\n### Credits\n\nCarter Snook reported this vulnerability.\n",
+        "aliases": [
+          "CVE-2023-24807"
+        ],
+        "modified": "2023-11-08T04:11:48.635999Z",
+        "published": "2023-02-16T20:46:10Z",
+        "related": [
+          "CVE-2023-24807"
+        ],
+        "database_specific": {
+          "severity": "HIGH",
+          "cwe_ids": [
+            "CWE-1333"
+          ],
+          "nvd_published_at": "2023-02-16T18:15:00Z",
+          "github_reviewed_at": "2023-02-16T20:46:10Z",
+          "github_reviewed": true
+        },
+        "references": [
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/security/advisories/GHSA-r6ch-mqf9-qc9w"
+          },
+          {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-24807"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/commit/f2324e549943f0b0937b09fb1c0c16cc7c93abdf"
+          },
+          {
+            "type": "PACKAGE",
+            "url": "https://github.com/nodejs/undici"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/releases/tag/v5.19.1"
+          },
+          {
+            "type": "WEB",
+            "url": "https://hackerone.com/bugs?report_id=1784449"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "undici",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/undici"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "5.19.1"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/02/GHSA-r6ch-mqf9-qc9w/GHSA-r6ch-mqf9-qc9w.json"
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "severity": [
+          {
+            "type": "CVSS_V3",
+            "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          }
+        ]
+      },
+      {
+        "id": "GHSA-wqq4-5wpv-mx2g",
+        "summary": "Undici's cookie header not cleared on cross-origin redirect in fetch",
+        "details": "### Impact\n\nUndici clears Authorization headers on cross-origin redirects, but does not clear `Cookie` headers. By design, `cookie` headers are [forbidden request headers](https://fetch.spec.whatwg.org/#forbidden-request-header), disallowing them to be set in `RequestInit.headers` in browser environments. Since Undici handles headers more liberally than the specification, there was a disconnect from the assumptions the spec made, and Undici's implementation of fetch.\n\nAs such this may lead to accidental leakage of cookie to a 3rd-party site or a malicious attacker who can control the redirection target (ie. an open redirector) to leak the cookie to the 3rd party site.\n\n### Patches\n\nThis was patched in [e041de359221ebeae04c469e8aff4145764e6d76](https://github.com/nodejs/undici/commit/e041de359221ebeae04c469e8aff4145764e6d76), which is included in version 5.26.2.\n",
+        "aliases": [
+          "CVE-2023-45143"
+        ],
+        "modified": "2024-12-05T15:42:14.323907Z",
+        "published": "2023-10-16T14:05:37Z",
+        "related": [
+          "CVE-2023-45143"
+        ],
+        "database_specific": {
+          "severity": "LOW",
+          "cwe_ids": [
+            "CWE-200"
+          ],
+          "nvd_published_at": "2023-10-12T17:15:10Z",
+          "github_reviewed_at": "2023-10-16T14:05:37Z",
+          "github_reviewed": true
+        },
+        "references": [
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/security/advisories/GHSA-q768-x9m6-m9qp"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/security/advisories/GHSA-wqq4-5wpv-mx2g"
+          },
+          {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-45143"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/commit/e041de359221ebeae04c469e8aff4145764e6d76"
+          },
+          {
+            "type": "WEB",
+            "url": "https://hackerone.com/reports/2166948"
+          },
+          {
+            "type": "PACKAGE",
+            "url": "https://github.com/nodejs/undici"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/nodejs/undici/releases/tag/v5.26.2"
+          },
+          {
+            "type": "WEB",
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/3N4NJ7FR4X4FPZUGNTQAPSTVB2HB2Y4A"
+          },
+          {
+            "type": "WEB",
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/E72T67UPDRXHIDLO3OROR25YAMN4GGW5"
+          },
+          {
+            "type": "WEB",
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/FNA62Q767CFAFHBCDKYNPBMZWB7TWYVU"
+          },
+          {
+            "type": "WEB",
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/HT7T2R4MQKLIF4ODV4BDLPARWFPCJ5CZ"
+          },
+          {
+            "type": "WEB",
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/LKYHSZQFDNR7RSA7LHVLLIAQMVYCUGBG"
+          },
+          {
+            "type": "WEB",
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/X6QXN4ORIVF6XBW4WWFE7VNPVC74S45Y"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "undici",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/undici"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "5.26.2"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/10/GHSA-wqq4-5wpv-mx2g/GHSA-wqq4-5wpv-mx2g.json"
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "severity": [
+          {
+            "type": "CVSS_V3",
+            "score": "CVSS:3.1/AV:N/AC:H/PR:H/UI:R/S:U/C:L/I:L/A:L"
+          }
+        ]
+      }
+    ]
+  },
+  "npm:zod": {
+    "vulns": [
+      {
+        "id": "GHSA-m95q-7qp3-xv42",
+        "summary": "Zod denial of service vulnerability",
+        "details": "Zod version 3.22.2 allows an attacker to perform a denial of service while validating emails.",
+        "aliases": [
+          "CVE-2023-4316"
+        ],
+        "modified": "2024-09-06T19:11:37Z",
+        "published": "2023-09-28T21:30:58Z",
+        "database_specific": {
+          "severity": "MODERATE",
+          "github_reviewed_at": "2023-10-02T16:26:26Z",
+          "cwe_ids": [
+            "CWE-1333"
+          ],
+          "nvd_published_at": "2023-09-28T21:15:10Z",
+          "github_reviewed": true
+        },
+        "references": [
+          {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-4316"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/colinhacks/zod/issues/2609"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/colinhacks/zod/pull/2824"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/colinhacks/zod/commit/2ba00fe2377f4d53947a84b8cdb314a63bbd6dd4"
+          },
+          {
+            "type": "WEB",
+            "url": "https://fluidattacks.com/advisories/swift"
+          },
+          {
+            "type": "PACKAGE",
+            "url": "https://github.com/colinhacks/zod"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/colinhacks/zod/releases/tag/v3.22.3"
+          },
+          {
+            "type": "WEB",
+            "url": "https://www.npmjs.com/package/zod"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "zod",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/zod"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "3.22.3"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/09/GHSA-m95q-7qp3-xv42/GHSA-m95q-7qp3-xv42.json",
+              "last_known_affected_version_range": "<= 3.22.2"
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "severity": [
+          {
+            "type": "CVSS_V3",
+            "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+          }
+        ]
+      }
+    ]
+  },
+  "npm:@types/express": {},
+  "npm:express": {
+    "vulns": [
+      {
+        "id": "GHSA-cm5g-3pgc-8rg4",
+        "summary": "Express ressource injection",
+        "details": "A vulnerability has been identified in the Express response.links function, allowing for arbitrary resource injection in the Link header when unsanitized data is used.\n\nThe issue arises from improper sanitization in `Link` header values, which can allow a combination of characters like `,`, `;`, and `<>` to preload malicious resources.\n\nThis vulnerability is especially relevant for dynamic parameters.",
+        "aliases": [
+          "CVE-2024-10491"
+        ],
+        "modified": "2024-12-19T17:52:09Z",
+        "published": "2024-10-29T18:30:37Z",
+        "database_specific": {
+          "github_reviewed_at": "2024-11-25T21:31:20Z",
+          "nvd_published_at": "2024-10-29T17:15:03Z",
+          "severity": "MODERATE",
+          "cwe_ids": [
+            "CWE-74"
+          ],
+          "github_reviewed": true
+        },
+        "references": [
+          {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-10491"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/expressjs/express/issues/6222"
+          },
+          {
+            "type": "PACKAGE",
+            "url": "https://github.com/expressjs/express"
+          },
+          {
+            "type": "WEB",
+            "url": "https://www.herodevs.com/vulnerability-directory/cve-2024-10491"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "express",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/express"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "4.0.0-rc1"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "last_known_affected_version_range": "<= 3.21.4",
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-cm5g-3pgc-8rg4/GHSA-cm5g-3pgc-8rg4.json"
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "severity": [
+          {
+            "type": "CVSS_V3",
+            "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:L/I:N/A:N"
+          }
+        ]
+      },
+      {
+        "id": "GHSA-gpvr-g6gh-9mc2",
+        "summary": "No Charset in Content-Type Header in express",
+        "details": "Vulnerable versions of express do not specify a charset field in the content-type header while displaying 400 level response messages. The lack of enforcing user's browser to set correct charset, could be leveraged by an attacker to perform a cross-site scripting attack, using non-standard encodings, like UTF-7.\n\n\n## Recommendation\n\nFor express 3.x, update express to version 3.11 or later.\nFor express 4.x, update express to version 4.5 or later. ",
+        "aliases": [
+          "CVE-2014-6393"
+        ],
+        "modified": "2023-11-08T03:57:43.877257Z",
+        "published": "2018-10-23T17:22:54Z",
+        "database_specific": {
+          "github_reviewed_at": "2020-06-16T21:37:54Z",
+          "nvd_published_at": "2017-08-09T18:29:00Z",
+          "severity": "MODERATE",
+          "cwe_ids": [
+            "CWE-79"
+          ],
+          "github_reviewed": true
+        },
+        "references": [
+          {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2014-6393"
+          },
+          {
+            "type": "WEB",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1203190"
+          },
+          {
+            "type": "ADVISORY",
+            "url": "https://github.com/advisories/GHSA-gpvr-g6gh-9mc2"
+          },
+          {
+            "type": "WEB",
+            "url": "https://www.npmjs.com/advisories/8"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "express",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/express"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "3.11.0"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/10/GHSA-gpvr-g6gh-9mc2/GHSA-gpvr-g6gh-9mc2.json"
+            }
+          },
+          {
+            "package": {
+              "name": "express",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/express"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "4.0.0"
+                  },
+                  {
+                    "fixed": "4.5.0"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2018/10/GHSA-gpvr-g6gh-9mc2/GHSA-gpvr-g6gh-9mc2.json"
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "severity": [
+          {
+            "type": "CVSS_V3",
+            "score": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+          }
+        ]
+      },
+      {
+        "id": "GHSA-jj78-5fmv-mv28",
+        "summary": "Express Open Redirect vulnerability",
+        "details": "URL Redirection to Untrusted Site ('Open Redirect') vulnerability in Express. This vulnerability affects the use of the Express Response object. This issue impacts Express: from 3.4.5 before 4.0.0-rc1.",
+        "aliases": [
+          "CVE-2024-9266"
+        ],
+        "modified": "2024-10-09T23:46:55Z",
+        "published": "2024-10-03T21:31:05Z",
+        "database_specific": {
+          "github_reviewed_at": "2024-10-09T17:03:12Z",
+          "nvd_published_at": "2024-10-03T19:15:05Z",
+          "severity": "LOW",
+          "cwe_ids": [
+            "CWE-601"
+          ],
+          "github_reviewed": true
+        },
+        "references": [
+          {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-9266"
+          },
+          {
+            "type": "PACKAGE",
+            "url": "https://github.com/expressjs/express"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/expressjs/express/compare/3.4.4...3.4.5"
+          },
+          {
+            "type": "WEB",
+            "url": "https://www.herodevs.com/vulnerability-directory/cve-2024-9266"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "express",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/express"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "3.4.5"
+                  },
+                  {
+                    "fixed": "4.0.0-rc1"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/10/GHSA-jj78-5fmv-mv28/GHSA-jj78-5fmv-mv28.json"
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "severity": [
+          {
+            "type": "CVSS_V3",
+            "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:N/A:N"
+          },
+          {
+            "type": "CVSS_V4",
+            "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:N/SA:N/E:P"
+          }
+        ]
+      },
+      {
+        "id": "GHSA-qw6h-vgh9-j6wx",
+        "summary": "express vulnerable to XSS via response.redirect()",
+        "details": "### Impact\n\nIn express <4.20.0, passing untrusted user input - even after sanitizing it - to `response.redirect()` may execute untrusted code\n\n### Patches\n\nthis issue is patched in express 4.20.0\n\n### Workarounds\n\nusers are encouraged to upgrade to the patched version of express, but otherwise can workaround this issue by making sure any untrusted inputs are safe, ideally by validating them against an explicit allowlist\n\n### Details\n\nsuccessful exploitation of this vector requires the following:\n\n1. The attacker MUST control the input to response.redirect()\n1. express MUST NOT redirect before the template appears\n1. the browser MUST NOT complete redirection before:\n1. the user MUST click on the link in the template\n",
+        "aliases": [
+          "CVE-2024-43796"
+        ],
+        "modified": "2024-11-18T16:27:11Z",
+        "published": "2024-09-10T19:41:04Z",
+        "related": [
+          "CGA-7rmh-796c-qmq8",
+          "CGA-8w92-879x-f9wc",
+          "CGA-jq8v-jx6x-3fpc"
+        ],
+        "database_specific": {
+          "github_reviewed_at": "2024-09-10T19:41:04Z",
+          "nvd_published_at": "2024-09-10T15:15:17Z",
+          "severity": "LOW",
+          "cwe_ids": [
+            "CWE-79"
+          ],
+          "github_reviewed": true
+        },
+        "references": [
+          {
+            "type": "WEB",
+            "url": "https://github.com/expressjs/express/security/advisories/GHSA-qw6h-vgh9-j6wx"
+          },
+          {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-43796"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/expressjs/express/commit/54271f69b511fea198471e6ff3400ab805d6b553"
+          },
+          {
+            "type": "PACKAGE",
+            "url": "https://github.com/expressjs/express"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "express",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/express"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "4.20.0"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-qw6h-vgh9-j6wx/GHSA-qw6h-vgh9-j6wx.json"
+            }
+          },
+          {
+            "package": {
+              "name": "express",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/express"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "5.0.0-alpha.1"
+                  },
+                  {
+                    "fixed": "5.0.0"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/09/GHSA-qw6h-vgh9-j6wx/GHSA-qw6h-vgh9-j6wx.json"
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "severity": [
+          {
+            "type": "CVSS_V3",
+            "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L"
+          },
+          {
+            "type": "CVSS_V4",
+            "score": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:L"
+          }
+        ]
+      },
+      {
+        "id": "GHSA-rv95-896h-c2vc",
+        "summary": "Express.js Open Redirect in malformed URLs",
+        "details": "### Impact\n\nVersions of Express.js prior to 4.19.2 and pre-release alpha and beta versions before 5.0.0-beta.3 are affected by an open redirect vulnerability using malformed URLs.\n\nWhen a user of Express performs a redirect using a user-provided URL Express performs an encode [using `encodeurl`](https://github.com/pillarjs/encodeurl) on the contents before passing it to the `location` header. This can cause malformed URLs to be evaluated in unexpected ways by common redirect allow list implementations in Express applications, leading to an Open Redirect via bypass of a properly implemented allow list.\n\nThe main method impacted is `res.location()` but this is also called from within `res.redirect()`.\n\n### Patches\n\nhttps://github.com/expressjs/express/commit/0867302ddbde0e9463d0564fea5861feb708c2dd\nhttps://github.com/expressjs/express/commit/0b746953c4bd8e377123527db11f9cd866e39f94\n\nAn initial fix went out with `express@4.19.0`, we then patched a feature regression in `4.19.1` and added improved handling for the bypass in `4.19.2`.\n\n### Workarounds\n\nThe fix for this involves pre-parsing the url string with either `require('node:url').parse` or `new URL`. These are steps you can take on your own before passing the user input string to `res.location` or `res.redirect`.\n\n### References\n\nhttps://github.com/expressjs/express/pull/5539\nhttps://github.com/koajs/koa/issues/1800\nhttps://expressjs.com/en/4x/api.html#res.location",
+        "aliases": [
+          "CVE-2024-29041"
+        ],
+        "modified": "2025-07-21T16:57:31Z",
+        "published": "2024-03-25T19:40:26Z",
+        "related": [
+          "CGA-5389-98xc-vr78",
+          "CGA-qg2p-wmx3-mx9q",
+          "CGA-rjrm-49wc-v48x",
+          "CGA-w26h-h47r-f6rx",
+          "CVE-2024-29041"
+        ],
+        "database_specific": {
+          "github_reviewed_at": "2024-03-25T19:40:26Z",
+          "nvd_published_at": "2024-03-25T21:15:46Z",
+          "severity": "MODERATE",
+          "cwe_ids": [
+            "CWE-1286",
+            "CWE-601"
+          ],
+          "github_reviewed": true
+        },
+        "references": [
+          {
+            "type": "WEB",
+            "url": "https://github.com/expressjs/express/security/advisories/GHSA-rv95-896h-c2vc"
+          },
+          {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-29041"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/koajs/koa/issues/1800"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/expressjs/express/pull/5539"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/expressjs/express/commit/0867302ddbde0e9463d0564fea5861feb708c2dd"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/expressjs/express/commit/0b746953c4bd8e377123527db11f9cd866e39f94"
+          },
+          {
+            "type": "WEB",
+            "url": "https://expressjs.com/en/4x/api.html#res.location"
+          },
+          {
+            "type": "PACKAGE",
+            "url": "https://github.com/expressjs/express"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "express",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/express"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "4.19.2"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-rv95-896h-c2vc/GHSA-rv95-896h-c2vc.json"
+            }
+          },
+          {
+            "package": {
+              "name": "express",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/express"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "5.0.0-alpha.1"
+                  },
+                  {
+                    "fixed": "5.0.0-beta.3"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/03/GHSA-rv95-896h-c2vc/GHSA-rv95-896h-c2vc.json"
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "severity": [
+          {
+            "type": "CVSS_V3",
+            "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+          }
+        ]
+      }
+    ]
+  },
+  "npm:dotenv": {}
+}

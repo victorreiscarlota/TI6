@@ -1,0 +1,15 @@
+[2025-11-17 12:21:29] TIMEOUT_OR_ERROR: process exited code 3221225786; stderr: Traceback (most recent call last):
+  File "C:\Users\victo\AppData\Local\Temp\mine_supervisor_e6dcb06x\worker_out.json.runner.py", line 2, in <module>
+    import json, sys, os, traceback
+  File "C:\Python311\Lib\json\__init__.py", line 106, in <module>
+    from .decoder import JSONDecoder, JSONDecodeError
+  File "C:\Python311\Lib\json\decoder.py", line 3, in <module>
+    import re
+  File "C:\Python311\Lib\re\__init__.py", line 124, in <module>
+    import enum
+  File "C:\Python311\Lib\enum.py", li
+[2025-11-17 12:23:43] START
+[2025-11-17 12:23:47] CLONE_OK time_ms=3891.7
+[2025-11-17 12:23:48] COMMITS_INITIAL=0 recent_mode=False
+[2025-11-17 12:23:48] REMOVAL_RECENT none found -> fallback original list
+[2025-11-17 12:23:48] FINISHED total_records=0

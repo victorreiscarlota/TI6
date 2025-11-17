@@ -1,0 +1,290 @@
+{
+  "npm:@semantic-release/git": {},
+  "npm:boxen": {},
+  "npm:chalk": {
+    "vulns": [
+      {
+        "id": "MAL-2025-46969",
+        "summary": "Malicious code in chalk (npm)",
+        "details": "The package was compromised and malicious code added.\n\n---\n_-= Per source details. Do not edit below this line.=-_\n\n## Source: ghsa-malware (985b6546ed08c8482326a4819faec318c27c1f6d7518acdf384d5f5a8c1453aa)\nAny computer that has this package installed or running should be considered fully compromised. All secrets and keys stored on that computer should be rotated immediately from a different computer. The package should be removed, but as full control of the computer may have been given to an outside entity, there is no guarantee that removing the package will remove all malicious software resulting from installing it.\n",
+        "aliases": [
+          "GHSA-2v46-p5h4-248w"
+        ],
+        "modified": "2025-09-12T01:13:34Z",
+        "published": "2025-09-08T17:11:19Z",
+        "database_specific": {
+          "malicious-packages-origins": [
+            {
+              "versions": [
+                "5.6.1"
+              ],
+              "import_time": "2025-09-09T00:35:48.404674353Z",
+              "sha256": "985b6546ed08c8482326a4819faec318c27c1f6d7518acdf384d5f5a8c1453aa",
+              "modified_time": "2025-09-08T18:23:16Z",
+              "source": "ghsa-malware",
+              "id": "GHSA-2v46-p5h4-248w"
+            },
+            {
+              "versions": [
+                "5.6.1"
+              ],
+              "import_time": "2025-09-10T00:34:05.214580215Z",
+              "sha256": "9e4e6ffb9078f031d148a99152d1a63bffe9c267f969ac88d6d9b355cd8d211c",
+              "modified_time": "2025-09-08T18:23:16Z",
+              "source": "ghsa-malware",
+              "id": "GHSA-2v46-p5h4-248w"
+            },
+            {
+              "versions": [
+                "5.6.1"
+              ],
+              "import_time": "2025-09-11T00:34:35.448176777Z",
+              "sha256": "64c35cc6f93b797f929d31b27a664a0a23481218c1ed47a374c7d38ccf30a663",
+              "modified_time": "2025-09-10T17:52:52Z",
+              "source": "ghsa-malware",
+              "id": "GHSA-2v46-p5h4-248w"
+            },
+            {
+              "versions": [
+                "5.6.1"
+              ],
+              "import_time": "2025-09-12T00:33:58.009713106Z",
+              "sha256": "51098385745159b51bf05a6f6a1082961f4598d6f9ae81f34430ecbb9c9faffb",
+              "modified_time": "2025-09-10T17:52:52Z",
+              "source": "ghsa-malware",
+              "id": "GHSA-2v46-p5h4-248w"
+            }
+          ]
+        },
+        "references": [
+          {
+            "type": "ARTICLE",
+            "url": "https://www.aikido.dev/blog/npm-debug-and-chalk-packages-compromised"
+          },
+          {
+            "type": "ARTICLE",
+            "url": "https://www.bleepingcomputer.com/news/security/hackers-hijack-npm-packages-with-2-billion-weekly-downloads-in-supply-chain-attack/"
+          },
+          {
+            "type": "ADVISORY",
+            "url": "https://github.com/advisories/GHSA-2v46-p5h4-248w"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "chalk",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/chalk"
+            },
+            "versions": [
+              "5.6.1"
+            ],
+            "database_specific": {
+              "cwes": [
+                {
+                  "cweId": "CWE-506",
+                  "name": "Embedded Malicious Code",
+                  "description": "The product contains code that appears to be malicious in nature."
+                },
+                {
+                  "cweId": "CWE-506",
+                  "name": "Embedded Malicious Code",
+                  "description": "The product contains code that appears to be malicious in nature."
+                },
+                {
+                  "cweId": "CWE-506",
+                  "name": "Embedded Malicious Code",
+                  "description": "The product contains code that appears to be malicious in nature."
+                },
+                {
+                  "cweId": "CWE-506",
+                  "name": "Embedded Malicious Code",
+                  "description": "The product contains code that appears to be malicious in nature."
+                }
+              ],
+              "source": "https://github.com/ossf/malicious-packages/blob/main/osv/malicious/npm/chalk/MAL-2025-46969.json"
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "credits": [
+          {
+            "name": "Amazon Inspector",
+            "contact": [
+              "actran@amazon.com"
+            ],
+            "type": "FINDER"
+          }
+        ]
+      }
+    ]
+  },
+  "npm:default-pager": {},
+  "npm:doctoc": {},
+  "npm:husky": {},
+  "npm:lint-staged": {},
+  "npm:meow": {},
+  "npm:msee": {},
+  "npm:prettier": {},
+  "npm:semantic-release": {
+    "vulns": [
+      {
+        "id": "GHSA-r2j6-p67h-q639",
+        "summary": "Secret disclosure when containing characters that become URI encoded",
+        "details": "### Impact\n\nSecrets that would normally be masked by `semantic-release` can be accidentally disclosed if they contain characters that become encoded when included in a URL.\n\n### Patches\n\nFixed in v17.2.3\n\n### Workarounds\n\nSecrets that do not contain characters that become encoded when included in a URL are already masked properly.",
+        "aliases": [
+          "CVE-2020-26226"
+        ],
+        "modified": "2023-11-08T04:03:15.095998Z",
+        "published": "2020-11-18T21:19:14Z",
+        "related": [
+          "CVE-2020-26226"
+        ],
+        "database_specific": {
+          "nvd_published_at": null,
+          "cwe_ids": [
+            "CWE-116"
+          ],
+          "severity": "HIGH",
+          "github_reviewed": true,
+          "github_reviewed_at": "2020-11-18T21:18:55Z"
+        },
+        "references": [
+          {
+            "type": "WEB",
+            "url": "https://github.com/semantic-release/semantic-release/security/advisories/GHSA-r2j6-p67h-q639"
+          },
+          {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-26226"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/semantic-release/semantic-release/commit/ca90b34c4a9333438cc4d69faeb43362bb991e5a"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "semantic-release",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/semantic-release"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "17.2.3"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "last_known_affected_version_range": "<= 17.2.2",
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/11/GHSA-r2j6-p67h-q639/GHSA-r2j6-p67h-q639.json"
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "severity": [
+          {
+            "type": "CVSS_V3",
+            "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N"
+          }
+        ]
+      },
+      {
+        "id": "GHSA-x2pg-mjhr-2m5x",
+        "summary": "Exposure of Sensitive Information to an Unauthorized Actor in semantic-release",
+        "details": "### Impact\n_What kind of vulnerability is it? Who is impacted?_\n\nSecrets that would normally be masked by semantic-release can be accidentally disclosed if they contain characters that are excluded from uri encoding by [encodeURI](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI). Occurrence is further limited to execution contexts where push access to the related repository is not available without modifying the repository url to inject credentials.\n\n### Patches\n_Has the problem been patched? What versions should users upgrade to?_\n\nFixed in 19.0.3\n\n### Workarounds\n_Is there a way for users to fix or remediate the vulnerability without upgrading?_\n\nSecrets that do not contain characters that are excluded from encoding with `encodeURI` when included in a URL are already masked properly.\n\n### References\n_Are there any links users can visit to find out more?_\n* https://github.com/semantic-release/semantic-release/releases/tag/v19.0.3\n* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI\n\n### For more information\nIf you have any questions or comments about this advisory:\n* Open a discussion in [semantic-release discussions](https://github.com/semantic-release/semantic-release/discussions)\n",
+        "aliases": [
+          "CVE-2022-31051"
+        ],
+        "modified": "2023-11-08T04:09:24.253769Z",
+        "published": "2022-06-09T23:51:25Z",
+        "database_specific": {
+          "nvd_published_at": "2022-06-09T20:15:00Z",
+          "cwe_ids": [
+            "CWE-200"
+          ],
+          "severity": "MODERATE",
+          "github_reviewed": true,
+          "github_reviewed_at": "2022-06-09T23:51:25Z"
+        },
+        "references": [
+          {
+            "type": "WEB",
+            "url": "https://github.com/semantic-release/semantic-release/security/advisories/GHSA-x2pg-mjhr-2m5x"
+          },
+          {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-31051"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/semantic-release/semantic-release/pull/2449"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/semantic-release/semantic-release/pull/2459"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/semantic-release/semantic-release/commit/58a226f29c04ee56bbb02cc661f020d568849cad"
+          },
+          {
+            "type": "WEB",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI"
+          },
+          {
+            "type": "PACKAGE",
+            "url": "https://github.com/semantic-release/semantic-release"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/semantic-release/semantic-release/releases/tag/v19.0.3"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "semantic-release",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/semantic-release"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "17.0.4"
+                  },
+                  {
+                    "fixed": "19.0.3"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/06/GHSA-x2pg-mjhr-2m5x/GHSA-x2pg-mjhr-2m5x.json"
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "severity": [
+          {
+            "type": "CVSS_V3",
+            "score": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:N/A:N"
+          }
+        ]
+      }
+    ]
+  },
+  "npm:through2": {},
+  "npm:update-notifier": {}
+}

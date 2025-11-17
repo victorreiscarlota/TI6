@@ -7583,5 +7583,176 @@
   "object.assign": [
     0,
     []
+  ],
+  "karma-safari-launcher": [
+    0,
+    []
+  ],
+  "load-grunt-tasks": [
+    0,
+    []
+  ],
+  "node-html-encoder": [
+    0,
+    []
+  ],
+  "changez-angular": [
+    0,
+    []
+  ],
+  "grunt-eslint": [
+    0,
+    []
+  ],
+  "sorted-object": [
+    0,
+    []
+  ],
+  "jquery-2.2": [
+    0,
+    []
+  ],
+  "browserstacktunnel-wrapper": [
+    0,
+    []
+  ],
+  "karma-script-launcher": [
+    0,
+    []
+  ],
+  "dgeni": [
+    0,
+    []
+  ],
+  "grunt-contrib-connect": [
+    0,
+    []
+  ],
+  "karma-jasmine": [
+    0,
+    []
+  ],
+  "karma": [
+    2,
+    [
+      "GHSA-7x7c-qm48-pq9c",
+      "GHSA-rc3x-jf5g-xvc5"
+    ]
+  ],
+  "grunt-contrib-copy": [
+    0,
+    []
+  ],
+  "grunt-shell": [
+    0,
+    []
+  ],
+  "log4js": [
+    1,
+    [
+      "GHSA-82v2-mx6x-wq7q"
+    ]
+  ],
+  "commitplease": [
+    0,
+    []
+  ],
+  "event-stream": [
+    1,
+    [
+      "GHSA-mh6f-8j2x-4483"
+    ]
+  ],
+  "grunt-bump": [
+    0,
+    []
+  ],
+  "grunt-contrib-clean": [
+    0,
+    []
+  ],
+  "cross-spawn": [
+    1,
+    [
+      "GHSA-3xgq-45jj-v275"
+    ]
+  ],
+  "q-io": [
+    0,
+    []
+  ],
+  "sax": [
+    0,
+    []
+  ],
+  "promises-aplus-tests": [
+    0,
+    []
+  ],
+  "karma-junit-reporter": [
+    0,
+    []
+  ],
+  "gulp-eslint": [
+    0,
+    []
+  ],
+  "firebase-tools": [
+    1,
+    [
+      "GHSA-rcm2-22f3-pqv3"
+    ]
+  ],
+  "dgeni-packages": [
+    0,
+    []
+  ],
+  "protractor": [
+    0,
+    []
+  ],
+  "serve-index": [
+    1,
+    [
+      "GHSA-v633-x5vv-hqwc"
+    ]
+  ],
+  "karma-browserstack-launcher": [
+    0,
+    []
+  ],
+  "sauce-connect": [
+    1,
+    [
+      "GHSA-mq76-m7gv-xhfm"
+    ]
+  ],
+  "gulp-sourcemaps": [
+    0,
+    []
+  ],
+  "rewire": [
+    0,
+    []
+  ],
+  "jasmine-core": [
+    0,
+    []
+  ],
+  "karma-chrome-launcher": [
+    0,
+    []
+  ],
+  "karma-firefox-launcher": [
+    0,
+    []
+  ],
+  "npm-run": [
+    0,
+    []
+  ],
+  "typescript-eslint": [
+    0,
+    []
   ]
 }

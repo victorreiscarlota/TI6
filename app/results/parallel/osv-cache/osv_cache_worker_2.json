@@ -1,0 +1,445 @@
+{
+  "npm:@babel/runtime": {
+    "vulns": [
+      {
+        "id": "GHSA-968p-4wvh-cqc8",
+        "summary": "Babel has inefficient RegExp complexity in generated code with .replace when transpiling named capturing groups",
+        "details": "### Impact\n\nWhen using Babel to compile [regular expression named capturing groups](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Named_capturing_group), Babel will generate a polyfill for the `.replace` method that has quadratic complexity on some specific replacement pattern strings (i.e. the second argument passed to `.replace`).\n\nYour generated code is vulnerable if _all_ the following conditions are true:\n- You use Babel to compile [regular expression named capturing groups](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Named_capturing_group)\n- You use the `.replace` method on a regular expression that contains named capturing groups\n- **Your code uses untrusted strings as the second argument of `.replace`**\n\nIf you are using `@babel/preset-env` with the [`targets`](https://babeljs.io/docs/options#targets) option, the transform that injects the vulnerable code is automatically enabled if:\n- you use [_duplicated_ named capturing groups](https://github.com/tc39/proposal-duplicate-named-capturing-groups), and target any browser older than Chrome/Edge 126, Opera 112, Firefox 129, Safari 17.4, or Node.js 23\n- you use any [named capturing groups](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions/Named_capturing_group), and target any browser older than Chrome 64, Opera 71, Edge 79, Firefox 78, Safari 11.1, or Node.js 10\n\nYou can verify what transforms `@babel/preset-env` is using by enabling the [`debug` option](https://babeljs.io/docs/babel-preset-env#debug).\n\n\n### Patches\n\nThis problem has been fixed in `@babel/helpers` and `@babel/runtime` 7.26.10 and 8.0.0-alpha.17, please upgrade. It's likely that you do not directly depend on `@babel/helpers`, and instead you depend on `@babel/core` (which itself depends on `@babel/helpers`). Upgrading to `@babel/core` 7.26.10 is not required, but it guarantees that you are on a new enough `@babel/helpers` version.\n\nPlease note that just updating your Babel dependencies is not enough: you will also need to re-compile your code.\n\n### Workarounds\n\nIf you are passing user-provided strings as the second argument of `.replace` on regular expressions that contain named capturing groups, validate the input and make sure it does not contain the substring `$<` if it's then not followed by `>` (possibly with other characters in between).\n\n### References\n\nThis vulnerability was reported and fixed in https://github.com/babel/babel/pull/17173.",
+        "aliases": [
+          "CVE-2025-27789"
+        ],
+        "modified": "2025-04-16T15:39:50Z",
+        "published": "2025-03-11T20:30:18Z",
+        "related": [
+          "CGA-3phx-qxx7-8vqw",
+          "CGA-46ch-ch69-qmcw",
+          "CGA-g6rv-q8mg-pp3f",
+          "CGA-g7xj-r4gh-6jhr",
+          "CGA-j8cm-jvwv-37vw",
+          "CGA-m6wq-wmrx-cp34",
+          "CGA-mwpg-44pj-qpj8",
+          "CGA-qgr4-9ff9-9j58",
+          "CGA-rh34-93h2-vxqh",
+          "CGA-v5pv-jcc5-rq8m"
+        ],
+        "database_specific": {
+          "cwe_ids": [
+            "CWE-1333"
+          ],
+          "github_reviewed_at": "2025-03-11T20:30:18Z",
+          "github_reviewed": true,
+          "nvd_published_at": "2025-03-11T20:15:18Z",
+          "severity": "MODERATE"
+        },
+        "references": [
+          {
+            "type": "WEB",
+            "url": "https://github.com/babel/babel/security/advisories/GHSA-968p-4wvh-cqc8"
+          },
+          {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-27789"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/babel/babel/pull/17173"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/babel/babel/commit/d5952e80c0faa5ec20e35085531b6e572d31dad4"
+          },
+          {
+            "type": "PACKAGE",
+            "url": "https://github.com/babel/babel"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "@babel/helpers",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/%40babel/helpers"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "7.26.10"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-968p-4wvh-cqc8/GHSA-968p-4wvh-cqc8.json"
+            }
+          },
+          {
+            "package": {
+              "name": "@babel/runtime",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/%40babel/runtime"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "7.26.10"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-968p-4wvh-cqc8/GHSA-968p-4wvh-cqc8.json"
+            }
+          },
+          {
+            "package": {
+              "name": "@babel/runtime-corejs2",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/%40babel/runtime-corejs2"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "7.26.10"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-968p-4wvh-cqc8/GHSA-968p-4wvh-cqc8.json"
+            }
+          },
+          {
+            "package": {
+              "name": "@babel/runtime-corejs3",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/%40babel/runtime-corejs3"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "7.26.10"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-968p-4wvh-cqc8/GHSA-968p-4wvh-cqc8.json"
+            }
+          },
+          {
+            "package": {
+              "name": "@babel/helpers",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/%40babel/helpers"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "8.0.0-alpha.0"
+                  },
+                  {
+                    "fixed": "8.0.0-alpha.17"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-968p-4wvh-cqc8/GHSA-968p-4wvh-cqc8.json",
+              "last_known_affected_version_range": "< 8.0.0-alpha.16"
+            }
+          },
+          {
+            "package": {
+              "name": "@babel/runtime",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/%40babel/runtime"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "8.0.0-alpha.0"
+                  },
+                  {
+                    "fixed": "8.0.0-alpha.17"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-968p-4wvh-cqc8/GHSA-968p-4wvh-cqc8.json",
+              "last_known_affected_version_range": "< 8.0.0-alpha.16"
+            }
+          },
+          {
+            "package": {
+              "name": "@babel/runtime-corejs2",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/%40babel/runtime-corejs2"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "8.0.0-alpha.0"
+                  },
+                  {
+                    "fixed": "8.0.0-alpha.17"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-968p-4wvh-cqc8/GHSA-968p-4wvh-cqc8.json",
+              "last_known_affected_version_range": "< 8.0.0-alpha.16"
+            }
+          },
+          {
+            "package": {
+              "name": "@babel/runtime-corejs3",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/%40babel/runtime-corejs3"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "8.0.0-alpha.0"
+                  },
+                  {
+                    "fixed": "8.0.0-alpha.17"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/03/GHSA-968p-4wvh-cqc8/GHSA-968p-4wvh-cqc8.json",
+              "last_known_affected_version_range": "< 8.0.0-alpha.16"
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "severity": [
+          {
+            "type": "CVSS_V3",
+            "score": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          }
+        ]
+      }
+    ]
+  },
+  "npm:babel-preset-airbnb": {},
+  "npm:babel-tape-runner": {},
+  "npm:confusing-browser-globals": {},
+  "npm:eclint": {},
+  "npm:eslint": {},
+  "npm:eslint-config-airbnb-base": {},
+  "npm:eslint-find-rules": {},
+  "npm:eslint-plugin-import": {},
+  "npm:eslint-plugin-jsx-a11y": {},
+  "npm:eslint-plugin-react": {},
+  "npm:eslint-plugin-react-hooks": {},
+  "npm:in-publish": {},
+  "npm:markdownlint": {},
+  "npm:markdownlint-cli": {},
+  "npm:react": {
+    "vulns": [
+      {
+        "id": "GHSA-g53w-52xc-2j85",
+        "summary": "Cross-Site Scripting in react",
+        "details": "Affected versions of `react` are vulnerable to Cross-Site Scripting (XSS). The package fails to properly sanitize input used to create keys. This may allow attackers to execute arbitrary JavaScript if a key is generated from user input.\n\n\n## Recommendation\n\nIf you are using `react` 0.5.x, upgrade to version 0.5.2 or later.\nIf you are using `react` 0.4.x, upgrade to version 0.4.2 or later.",
+        "aliases": [
+          "CVE-2013-7035"
+        ],
+        "modified": "2023-11-08T03:57:27.158332Z",
+        "published": "2020-09-04T16:52:57Z",
+        "database_specific": {
+          "cwe_ids": [
+            "CWE-79"
+          ],
+          "github_reviewed_at": "2020-08-31T18:58:42Z",
+          "github_reviewed": true,
+          "nvd_published_at": null,
+          "severity": "MODERATE"
+        },
+        "references": [
+          {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2013-7035"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/facebook/react/commit/393a889aaceb761f058b09a701f889fa8f8b4e64"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/facebook/react/commit/94a9a3e752fe089ab23f3a90c26d20d46d62ab10"
+          },
+          {
+            "type": "PACKAGE",
+            "url": "https://github.com/facebook/react"
+          },
+          {
+            "type": "WEB",
+            "url": "https://reactjs.org/blog/2013/12/18/react-v0.5.2-v0.4.2.html"
+          },
+          {
+            "type": "WEB",
+            "url": "https://snyk.io/vuln/npm:react:20131217"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "react",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/react"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "0.4.0"
+                  },
+                  {
+                    "fixed": "0.4.2"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-g53w-52xc-2j85/GHSA-g53w-52xc-2j85.json"
+            }
+          },
+          {
+            "package": {
+              "name": "react",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/react"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "0.5.0"
+                  },
+                  {
+                    "fixed": "0.5.2"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-g53w-52xc-2j85/GHSA-g53w-52xc-2j85.json"
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "severity": [
+          {
+            "type": "CVSS_V3",
+            "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+          }
+        ]
+      },
+      {
+        "id": "GHSA-hg79-j56m-fxgv",
+        "summary": "Cross-Site Scripting in react",
+        "details": "Versions of `react` prior to 0.14.0 are vulnerable to Cross-Site Scripting (XSS). The package's `createElement` function fails to properly validate its input object, allowing attackers to execute arbitrary JavaScript in a victim's browser.\n\n\n## Recommendation\n\nUpgrade to version 0.14.0 or later.",
+        "modified": "2021-10-01T20:15:16Z",
+        "published": "2020-09-04T15:26:04Z",
+        "database_specific": {
+          "cwe_ids": [
+            "CWE-79"
+          ],
+          "github_reviewed_at": "2020-08-31T18:55:53Z",
+          "github_reviewed": true,
+          "nvd_published_at": null,
+          "severity": "HIGH"
+        },
+        "references": [
+          {
+            "type": "PACKAGE",
+            "url": "https://github.com/facebook/react"
+          },
+          {
+            "type": "WEB",
+            "url": "https://reactjs.org/blog/2015/10/07/react-v0.14.html#notable-enhancements"
+          },
+          {
+            "type": "WEB",
+            "url": "https://reactjs.org/blog/2019/10/22/react-release-channels.html#experimental-channel"
+          },
+          {
+            "type": "WEB",
+            "url": "https://snyk.io/vuln/npm:react:20150318"
+          },
+          {
+            "type": "WEB",
+            "url": "https://www.npmjs.com/advisories/1347"
+          },
+          {
+            "type": "WEB",
+            "url": "http://danlec.com/blog/xss-via-a-spoofed-react-element"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "react",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/react"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "0.0.1"
+                  },
+                  {
+                    "fixed": "0.14.0"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/09/GHSA-hg79-j56m-fxgv/GHSA-hg79-j56m-fxgv.json"
+            }
+          }
+        ],
+        "schema_version": "1.7.3"
+      }
+    ]
+  },
+  "npm:safe-publish-latest": {},
+  "npm:tape": {},
+  "npm:object.entries": {}
+}

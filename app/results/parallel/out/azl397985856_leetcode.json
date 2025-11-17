@@ -1,0 +1,16 @@
+[
+  {
+    "repo": "azl397985856/leetcode",
+    "commit": "2bda93eb5ff4059fd711c27d8f90db2598156427",
+    "commit_date": "2021-03-12T11:12:49+08:00",
+    "commit_message": "feat: 精选1227题",
+    "lines_of_code_before": 656,
+    "lines_of_code_after": 656,
+    "avg_complexity_before": 3.5483870967741935,
+    "avg_complexity_after": 3.5483870967741935,
+    "dependencies_before": 0,
+    "dependencies_after": 0,
+    "vulnerable_dependencies_before": 0,
+    "vulnerable_dependencies_after": 0
+  }
+]

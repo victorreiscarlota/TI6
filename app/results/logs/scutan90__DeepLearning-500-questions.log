@@ -1,0 +1,8 @@
+[2025-11-17 12:20:38] START
+[2025-11-17 12:20:44] CLONE_OK time_ms=6118.7
+[2025-11-17 12:20:44] FINISHED candidates=0
+[2025-11-17 12:23:42] START
+[2025-11-17 12:23:44] CLONE_OK time_ms=2175.3
+[2025-11-17 12:23:45] COMMITS_INITIAL=0 recent_mode=False
+[2025-11-17 12:23:45] REMOVAL_RECENT none found -> fallback original list
+[2025-11-17 12:23:45] FINISHED total_records=0

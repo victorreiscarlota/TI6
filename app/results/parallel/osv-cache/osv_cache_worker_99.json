@@ -1,0 +1,15 @@
+{
+  "npm:eslint": {},
+  "npm:eslint-config-gulp": {},
+  "npm:eslint-plugin-node": {},
+  "npm:expect": {},
+  "npm:glob-watcher": {},
+  "npm:gulp-cli": {},
+  "npm:mkdirp": {},
+  "npm:mocha": {},
+  "npm:nyc": {},
+  "npm:rimraf": {},
+  "npm:undertaker": {},
+  "npm:vinyl-fs": {},
+  "npm:coveralls": {}
+}

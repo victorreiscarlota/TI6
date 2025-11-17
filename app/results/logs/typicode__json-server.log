@@ -1,0 +1,28 @@
+[2025-11-17 12:20:39] START
+[2025-11-17 12:20:42] CLONE_OK time_ms=2541.9
+[2025-11-17 12:21:09] OSV aggregate dep_total=27 vulnerable=4 time_ms=6977.1
+[2025-11-17 12:21:09] OSV aggregate dep_total=27 vulnerable=4 time_ms=0.0
+[2025-11-17 12:21:09] COMMIT 6aa56d9 no removals time_ms=14258.3
+[2025-11-17 12:21:12] OSV aggregate dep_total=27 vulnerable=4 time_ms=291.6
+[2025-11-17 12:21:12] OSV aggregate dep_total=27 vulnerable=4 time_ms=0.0
+[2025-11-17 12:21:12] COMMIT 780e246 no removals time_ms=3524.5
+[2025-11-17 12:21:16] OSV aggregate dep_total=27 vulnerable=4 time_ms=0.0
+[2025-11-17 12:21:16] OSV aggregate dep_total=27 vulnerable=4 time_ms=0.0
+[2025-11-17 12:21:16] COMMIT f1e736b no removals time_ms=3841.3
+[2025-11-17 12:21:19] OSV aggregate dep_total=23 vulnerable=4 time_ms=0.0
+[2025-11-17 12:21:19] OSV aggregate dep_total=27 vulnerable=4 time_ms=0.0
+[2025-11-17 12:21:19] COMMIT 161e01f no removals time_ms=3004.4
+[2025-11-17 12:21:22] OSV aggregate dep_total=23 vulnerable=4 time_ms=0.0
+[2025-11-17 12:21:22] OSV aggregate dep_total=23 vulnerable=4 time_ms=0.0
+[2025-11-17 12:21:22] COMMIT 59d6aa9 no removals time_ms=2958.1
+[2025-11-17 12:21:25] OSV aggregate dep_total=23 vulnerable=4 time_ms=0.0
+[2025-11-17 12:21:25] OSV aggregate dep_total=23 vulnerable=4 time_ms=0.0
+[2025-11-17 12:21:26] COMMIT 9a20083 no removals time_ms=3647.2
+[2025-11-17 12:21:28] TIMEOUT_OR_ERROR: process exited code 3221225786; stderr: Traceback (most recent call last):
+  File "C:\Users\victo\AppData\Local\Temp\mine_supervisor__6xos5oc\worker_out.json.runner.py", line 7, in <module>
+    res = _worker_analyze(*['typicode/json-server', None, 'C:\\Users\\victo\\AppData\\Local\\Temp\\mine_supervisor__6xos5oc\\worker_out.json', 600, 1200, 40, False, False, False, None, None, False])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-17 12:23:46] START
+[2025-11-17 12:23:52] CLONE_OK time_ms=6145.5
+[2025-11-17 12:27:54] COMMITS_INITIAL=290 recent_mode=False
+[2025-11-17 12:30:22] TIMEOUT_OR_ERROR: timeout after 400 seconds

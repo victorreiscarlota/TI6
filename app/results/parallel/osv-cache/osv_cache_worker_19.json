@@ -1,0 +1,537 @@
+{
+  "npm:@eslint/js": {},
+  "npm:@sindresorhus/tsconfig": {},
+  "npm:@tailwindcss/typography": {},
+  "npm:@tinyhttp/app": {},
+  "npm:@tinyhttp/cors": {},
+  "npm:@tinyhttp/logger": {},
+  "npm:@types/node": {},
+  "npm:chalk": {
+    "vulns": [
+      {
+        "id": "MAL-2025-46969",
+        "summary": "Malicious code in chalk (npm)",
+        "details": "The package was compromised and malicious code added.\n\n---\n_-= Per source details. Do not edit below this line.=-_\n\n## Source: ghsa-malware (985b6546ed08c8482326a4819faec318c27c1f6d7518acdf384d5f5a8c1453aa)\nAny computer that has this package installed or running should be considered fully compromised. All secrets and keys stored on that computer should be rotated immediately from a different computer. The package should be removed, but as full control of the computer may have been given to an outside entity, there is no guarantee that removing the package will remove all malicious software resulting from installing it.\n",
+        "aliases": [
+          "GHSA-2v46-p5h4-248w"
+        ],
+        "modified": "2025-09-12T01:13:34Z",
+        "published": "2025-09-08T17:11:19Z",
+        "database_specific": {
+          "malicious-packages-origins": [
+            {
+              "source": "ghsa-malware",
+              "import_time": "2025-09-09T00:35:48.404674353Z",
+              "sha256": "985b6546ed08c8482326a4819faec318c27c1f6d7518acdf384d5f5a8c1453aa",
+              "modified_time": "2025-09-08T18:23:16Z",
+              "id": "GHSA-2v46-p5h4-248w",
+              "versions": [
+                "5.6.1"
+              ]
+            },
+            {
+              "source": "ghsa-malware",
+              "import_time": "2025-09-10T00:34:05.214580215Z",
+              "sha256": "9e4e6ffb9078f031d148a99152d1a63bffe9c267f969ac88d6d9b355cd8d211c",
+              "modified_time": "2025-09-08T18:23:16Z",
+              "id": "GHSA-2v46-p5h4-248w",
+              "versions": [
+                "5.6.1"
+              ]
+            },
+            {
+              "source": "ghsa-malware",
+              "import_time": "2025-09-11T00:34:35.448176777Z",
+              "sha256": "64c35cc6f93b797f929d31b27a664a0a23481218c1ed47a374c7d38ccf30a663",
+              "modified_time": "2025-09-10T17:52:52Z",
+              "id": "GHSA-2v46-p5h4-248w",
+              "versions": [
+                "5.6.1"
+              ]
+            },
+            {
+              "source": "ghsa-malware",
+              "import_time": "2025-09-12T00:33:58.009713106Z",
+              "sha256": "51098385745159b51bf05a6f6a1082961f4598d6f9ae81f34430ecbb9c9faffb",
+              "modified_time": "2025-09-10T17:52:52Z",
+              "id": "GHSA-2v46-p5h4-248w",
+              "versions": [
+                "5.6.1"
+              ]
+            }
+          ]
+        },
+        "references": [
+          {
+            "type": "ARTICLE",
+            "url": "https://www.aikido.dev/blog/npm-debug-and-chalk-packages-compromised"
+          },
+          {
+            "type": "ARTICLE",
+            "url": "https://www.bleepingcomputer.com/news/security/hackers-hijack-npm-packages-with-2-billion-weekly-downloads-in-supply-chain-attack/"
+          },
+          {
+            "type": "ADVISORY",
+            "url": "https://github.com/advisories/GHSA-2v46-p5h4-248w"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "chalk",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/chalk"
+            },
+            "versions": [
+              "5.6.1"
+            ],
+            "database_specific": {
+              "source": "https://github.com/ossf/malicious-packages/blob/main/osv/malicious/npm/chalk/MAL-2025-46969.json",
+              "cwes": [
+                {
+                  "cweId": "CWE-506",
+                  "description": "The product contains code that appears to be malicious in nature.",
+                  "name": "Embedded Malicious Code"
+                },
+                {
+                  "cweId": "CWE-506",
+                  "description": "The product contains code that appears to be malicious in nature.",
+                  "name": "Embedded Malicious Code"
+                },
+                {
+                  "cweId": "CWE-506",
+                  "description": "The product contains code that appears to be malicious in nature.",
+                  "name": "Embedded Malicious Code"
+                },
+                {
+                  "cweId": "CWE-506",
+                  "description": "The product contains code that appears to be malicious in nature.",
+                  "name": "Embedded Malicious Code"
+                }
+              ]
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "credits": [
+          {
+            "name": "Amazon Inspector",
+            "contact": [
+              "actran@amazon.com"
+            ],
+            "type": "FINDER"
+          }
+        ]
+      }
+    ]
+  },
+  "npm:chokidar": {},
+  "npm:concurrently": {},
+  "npm:dot-prop": {
+    "vulns": [
+      {
+        "id": "GHSA-ff7x-qrg7-qggm",
+        "summary": "dot-prop Prototype Pollution vulnerability",
+        "details": "Prototype pollution vulnerability in dot-prop npm package versions before 4.2.1 and versions 5.x before 5.1.1 allows an attacker to add arbitrary properties to JavaScript language constructs such as objects.",
+        "aliases": [
+          "CVE-2020-8116"
+        ],
+        "modified": "2023-11-08T04:04:13.408457Z",
+        "published": "2020-07-29T20:56:59Z",
+        "related": [
+          "CVE-2020-8116"
+        ],
+        "database_specific": {
+          "nvd_published_at": "2020-02-04T20:15:00Z",
+          "cwe_ids": [
+            "CWE-1321",
+            "CWE-425",
+            "CWE-471"
+          ],
+          "severity": "HIGH",
+          "github_reviewed": true,
+          "github_reviewed_at": "2020-07-29T20:51:37Z"
+        },
+        "references": [
+          {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-8116"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/sindresorhus/dot-prop/issues/63"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/sindresorhus/dot-prop/commit/3039c8c07f6fdaa8b595ec869ae0895686a7a0f2"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/sindresorhus/dot-prop/commit/c914124f418f55edea27928e89c94d931babe587"
+          },
+          {
+            "type": "WEB",
+            "url": "https://hackerone.com/reports/719856"
+          },
+          {
+            "type": "ADVISORY",
+            "url": "https://github.com/advisories/GHSA-ff7x-qrg7-qggm"
+          },
+          {
+            "type": "PACKAGE",
+            "url": "https://github.com/sindresorhus/dot-prop"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/sindresorhus/dot-prop/tree/v4"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "dot-prop",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/dot-prop"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "4.2.1"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/07/GHSA-ff7x-qrg7-qggm/GHSA-ff7x-qrg7-qggm.json"
+            }
+          },
+          {
+            "package": {
+              "name": "dot-prop",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/dot-prop"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "5.0.0"
+                  },
+                  {
+                    "fixed": "5.1.1"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2020/07/GHSA-ff7x-qrg7-qggm/GHSA-ff7x-qrg7-qggm.json"
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "severity": [
+          {
+            "type": "CVSS_V3",
+            "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L"
+          }
+        ]
+      }
+    ]
+  },
+  "npm:eslint": {},
+  "npm:eta": {
+    "vulns": [
+      {
+        "id": "GHSA-mf6x-hrgr-658f",
+        "summary": "Eta vulnerable to Code Injection via templates rendered with user-defined data",
+        "details": "Versions of the package eta before 2.0.0 are vulnerable to Remote Code Execution (RCE) by overwriting template engine configuration variables with view options received from The Express render API. **Note:** This is exploitable only for users who are rendering templates with user-defined data.",
+        "aliases": [
+          "CVE-2022-25967"
+        ],
+        "modified": "2023-11-08T04:08:52.941788Z",
+        "published": "2023-01-30T06:30:27Z",
+        "database_specific": {
+          "github_reviewed_at": "2023-02-01T01:34:42Z",
+          "cwe_ids": [
+            "CWE-94"
+          ],
+          "github_reviewed": true,
+          "nvd_published_at": "2023-01-30T05:15:00Z",
+          "severity": "HIGH"
+        },
+        "references": [
+          {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-25967"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/eta-dev/eta/commit/5651392462ee0ff19d77c8481081a99e5b9138dd"
+          },
+          {
+            "type": "PACKAGE",
+            "url": "https://github.com/eta-dev/eta"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/eta-dev/eta/blob/9c8e4263d3a559444a3881a85c1607bf344d0b28/src/compile-string.ts%23L21"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/eta-dev/eta/blob/9c8e4263d3a559444a3881a85c1607bf344d0b28/src/file-handlers.ts%23L182"
+          },
+          {
+            "type": "WEB",
+            "url": "https://security.snyk.io/vuln/SNYK-JS-ETA-2936803"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "eta",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/eta"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "2.0.0"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-mf6x-hrgr-658f/GHSA-mf6x-hrgr-658f.json"
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "severity": [
+          {
+            "type": "CVSS_V3",
+            "score": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+          }
+        ]
+      },
+      {
+        "id": "GHSA-xrh7-m5pp-39r6",
+        "summary": "XSS Attack with Express API",
+        "details": "### Impact\nXSS attack - anyone using the Express API is impacted\n\n### Patches\nThe problem has been resolved. Users should upgrade to version 2.0.0.\n\n### Workarounds\nDon't pass user supplied data directly to `res.renderFile`. \n\n### References\n_Are there any links users can visit to find out more?_\nSee https://github.com/eta-dev/eta/releases/tag/v2.0.0",
+        "aliases": [
+          "CVE-2023-23630"
+        ],
+        "modified": "2023-11-08T04:11:41.918090Z",
+        "published": "2023-01-31T22:39:40Z",
+        "database_specific": {
+          "github_reviewed_at": "2023-01-31T22:39:40Z",
+          "cwe_ids": [
+            "CWE-79"
+          ],
+          "github_reviewed": true,
+          "nvd_published_at": "2023-02-01T01:15:00Z",
+          "severity": "HIGH"
+        },
+        "references": [
+          {
+            "type": "WEB",
+            "url": "https://github.com/eta-dev/eta/security/advisories/GHSA-xrh7-m5pp-39r6"
+          },
+          {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-23630"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/eta-dev/eta/commit/5651392462ee0ff19d77c8481081a99e5b9138dd"
+          },
+          {
+            "type": "PACKAGE",
+            "url": "https://github.com/eta-dev/eta"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/eta-dev/eta/releases/tag/v2.0.0"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "eta",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/eta"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "2.0.0"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/01/GHSA-xrh7-m5pp-39r6/GHSA-xrh7-m5pp-39r6.json"
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "severity": [
+          {
+            "type": "CVSS_V3",
+            "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:H"
+          }
+        ]
+      }
+    ]
+  },
+  "npm:get-port": {},
+  "npm:globals": {},
+  "npm:husky": {},
+  "npm:inflection": {},
+  "npm:json5": {
+    "vulns": [
+      {
+        "id": "GHSA-9c47-m6qq-7p4h",
+        "summary": "Prototype Pollution in JSON5 via Parse Method",
+        "details": "The `parse` method of the JSON5 library before and including version `2.2.1` does not restrict parsing of keys named `__proto__`, allowing specially crafted strings to pollute the prototype of the resulting object.\n\nThis vulnerability pollutes the prototype of the object returned by `JSON5.parse` and not the global Object prototype, which is the commonly understood definition of Prototype Pollution. However, polluting the prototype of a single object can have significant security impact for an application if the object is later used in trusted operations.\n\n## Impact\nThis vulnerability could allow an attacker to set arbitrary and unexpected keys on the object returned from `JSON5.parse`. The actual impact will depend on how applications utilize the returned object and how they filter unwanted keys, but could include denial of service, cross-site scripting, elevation of privilege, and in extreme cases, remote code execution.\n\n## Mitigation\nThis vulnerability is patched in json5 v2.2.2 and later. A patch has also been backported for json5 v1 in versions v1.0.2 and later.\n\n## Details\n \nSuppose a developer wants to allow users and admins to perform some risky operation, but they want to restrict what non-admins can do. To accomplish this, they accept a JSON blob from the user, parse it using `JSON5.parse`, confirm that the provided data does not set some sensitive keys, and then performs the risky operation using the validated data:\n \n```js\nconst JSON5 = require('json5');\n\nconst doSomethingDangerous = (props) => {\n  if (props.isAdmin) {\n    console.log('Doing dangerous thing as admin.');\n  } else {\n    console.log('Doing dangerous thing as user.');\n  }\n};\n\nconst secCheckKeysSet = (obj, searchKeys) => {\n  let searchKeyFound = false;\n  Object.keys(obj).forEach((key) => {\n    if (searchKeys.indexOf(key) > -1) {\n      searchKeyFound = true;\n    }\n  });\n  return searchKeyFound;\n};\n\nconst props = JSON5.parse('{\"foo\": \"bar\"}');\nif (!secCheckKeysSet(props, ['isAdmin', 'isMod'])) {\n  doSomethingDangerous(props); // \"Doing dangerous thing as user.\"\n} else {\n  throw new Error('Forbidden...');\n}\n```\n \nIf the user attempts to set the `isAdmin` key, their request will be rejected:\n \n```js\nconst props = JSON5.parse('{\"foo\": \"bar\", \"isAdmin\": true}');\nif (!secCheckKeysSet(props, ['isAdmin', 'isMod'])) {\n  doSomethingDangerous(props);\n} else {\n  throw new Error('Forbidden...'); // Error: Forbidden...\n}\n```\n \nHowever, users can instead set the `__proto__` key to `{\"isAdmin\": true}`. `JSON5` will parse this key and will set the `isAdmin` key on the prototype of the returned object, allowing the user to bypass the security check and run their request as an admin:\n \n```js\nconst props = JSON5.parse('{\"foo\": \"bar\", \"__proto__\": {\"isAdmin\": true}}');\nif (!secCheckKeysSet(props, ['isAdmin', 'isMod'])) {\n  doSomethingDangerous(props); // \"Doing dangerous thing as admin.\"\n} else {\n  throw new Error('Forbidden...');\n}\n ```",
+        "aliases": [
+          "CVE-2022-46175"
+        ],
+        "modified": "2024-02-13T21:31:39Z",
+        "published": "2022-12-29T01:51:03Z",
+        "database_specific": {
+          "severity": "HIGH",
+          "github_reviewed_at": "2022-12-29T01:51:03Z",
+          "cwe_ids": [
+            "CWE-1321"
+          ],
+          "nvd_published_at": "2022-12-24T04:15:00Z",
+          "github_reviewed": true
+        },
+        "references": [
+          {
+            "type": "WEB",
+            "url": "https://github.com/json5/json5/security/advisories/GHSA-9c47-m6qq-7p4h"
+          },
+          {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-46175"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/json5/json5/issues/199"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/json5/json5/issues/295"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/json5/json5/pull/298"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/json5/json5/commit/62a65408408d40aeea14c7869ed327acead12972"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/json5/json5/commit/7774c1097993bc3ce9f0ac4b722a32bf7d6871c8"
+          },
+          {
+            "type": "PACKAGE",
+            "url": "https://github.com/json5/json5"
+          },
+          {
+            "type": "WEB",
+            "url": "https://lists.debian.org/debian-lts-announce/2023/11/msg00021.html"
+          },
+          {
+            "type": "WEB",
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/3S26TLPLVFAJTUN3VIXFDEBEXDYO22CE"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "json5",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/json5"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "2.0.0"
+                  },
+                  {
+                    "fixed": "2.2.2"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-9c47-m6qq-7p4h/GHSA-9c47-m6qq-7p4h.json"
+            }
+          },
+          {
+            "package": {
+              "name": "json5",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/json5"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "1.0.2"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2022/12/GHSA-9c47-m6qq-7p4h/GHSA-9c47-m6qq-7p4h.json"
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "severity": [
+          {
+            "type": "CVSS_V3",
+            "score": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:L/A:H"
+          }
+        ]
+      }
+    ]
+  },
+  "npm:lowdb": {},
+  "npm:milliparsec": {},
+  "npm:sirv": {},
+  "npm:sort-on": {},
+  "npm:tempy": {},
+  "npm:tsx": {},
+  "npm:type-fest": {},
+  "npm:typescript": {},
+  "npm:typescript-eslint": {},
+  "npm:@typicode/eslint-config": {},
+  "npm:tailwindcss": {}
+}

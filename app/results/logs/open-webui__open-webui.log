@@ -1,0 +1,131 @@
+[2025-11-17 12:14:40] START
+[2025-11-17 12:14:42] CLONE_OK time_ms=2006.6
+[2025-11-17 12:14:44] OSV pkg=svelte vulns=2
+[2025-11-17 12:14:44] OSV pkg=@codemirror/lang-javascript vulns=0
+[2025-11-17 12:14:44] OSV pkg=@codemirror/lang-python vulns=0
+[2025-11-17 12:14:44] OSV pkg=async vulns=1
+[2025-11-17 12:14:44] OSV pkg=svelte-sonner vulns=0
+[2025-11-17 12:14:45] OSV pkg=turndown-plugin-gfm vulns=0
+[2025-11-17 12:14:45] OSV pkg=yaml vulns=1
+[2025-11-17 12:14:45] OSV pkg=@tiptap/extension-bubble-menu vulns=0
+[2025-11-17 12:14:45] OSV pkg=@tiptap/extension-list vulns=0
+[2025-11-17 12:14:45] OSV pkg=@tiptap/extension-file-handler vulns=0
+[2025-11-17 12:14:46] OSV pkg=@tiptap/extension-table vulns=0
+[2025-11-17 12:14:46] OSV pkg=leaflet vulns=0
+[2025-11-17 12:14:47] OSV pkg=@tailwindcss/typography vulns=0
+[2025-11-17 12:14:47] OSV pkg=i18next-parser vulns=0
+[2025-11-17 12:14:47] OSV pkg=@codemirror/language-data vulns=0
+[2025-11-17 12:14:47] OSV pkg=svelte-check vulns=0
+[2025-11-17 12:14:47] OSV pkg=fuse.js vulns=0
+[2025-11-17 12:14:48] OSV pkg=alpinejs vulns=0
+[2025-11-17 12:14:48] OSV pkg=prosemirror-keymap vulns=0
+[2025-11-17 12:14:48] OSV pkg=@sveltejs/adapter-static vulns=0
+[2025-11-17 12:14:48] OSV pkg=lowlight vulns=0
+[2025-11-17 12:14:49] OSV pkg=eventsource-parser vulns=0
+[2025-11-17 12:14:49] OSV pkg=@sveltejs/kit vulns=6
+[2025-11-17 12:14:50] OSV pkg=prosemirror-tables vulns=0
+[2025-11-17 12:14:50] OSV pkg=prosemirror-example-setup vulns=0
+[2025-11-17 12:14:50] OSV pkg=mermaid vulns=7
+[2025-11-17 12:14:50] OSV pkg=@floating-ui/dom vulns=0
+[2025-11-17 12:14:50] OSV pkg=@azure/msal-browser vulns=0
+[2025-11-17 12:14:51] OSV pkg=vitest vulns=1
+[2025-11-17 12:14:51] OSV pkg=jspdf vulns=5
+[2025-11-17 12:14:51] OSV pkg=@typescript-eslint/eslint-plugin vulns=0
+[2025-11-17 12:14:51] OSV pkg=@codemirror/theme-one-dark vulns=0
+[2025-11-17 12:14:51] OSV pkg=uuid vulns=0
+[2025-11-17 12:14:51] OSV pkg=chart.js vulns=1
+[2025-11-17 12:14:52] OSV pkg=kokoro-js vulns=0
+[2025-11-17 12:14:52] OSV pkg=cypress vulns=0
+[2025-11-17 12:14:52] OSV pkg=eslint-plugin-svelte vulns=0
+[2025-11-17 12:14:52] OSV pkg=@sveltejs/adapter-node vulns=1
+[2025-11-17 12:14:53] OSV pkg=prosemirror-markdown vulns=0
+[2025-11-17 12:14:53] OSV pkg=@tiptap/pm vulns=0
+[2025-11-17 12:14:53] OSV pkg=yjs vulns=0
+[2025-11-17 12:14:53] OSV pkg=tslib vulns=0
+[2025-11-17 12:14:53] OSV pkg=@tiptap/suggestion vulns=0
+[2025-11-17 12:14:53] OSV pkg=typescript vulns=0
+[2025-11-17 12:14:53] OSV pkg=js-sha256 vulns=0
+[2025-11-17 12:14:54] OSV pkg=@pyscript/core vulns=0
+[2025-11-17 12:14:54] OSV pkg=@sveltejs/svelte-virtual-list vulns=0
+[2025-11-17 12:14:55] OSV pkg=@sveltejs/vite-plugin-svelte vulns=0
+[2025-11-17 12:14:55] OSV pkg=i18next-browser-languagedetector vulns=0
+[2025-11-17 12:14:55] OSV pkg=eslint-plugin-cypress vulns=0
+[2025-11-17 12:14:55] OSV pkg=html-entities vulns=0
+[2025-11-17 12:14:55] OSV pkg=eslint-config-prettier vulns=2
+[2025-11-17 12:14:55] OSV pkg=sass-embedded vulns=0
+[2025-11-17 12:14:55] OSV pkg=@tiptap/extension-drag-handle vulns=0
+[2025-11-17 12:14:56] OSV pkg=prosemirror-collab vulns=0
+[2025-11-17 12:14:56] OSV pkg=@tiptap/extension-link vulns=0
+[2025-11-17 12:14:56] OSV pkg=vite-plugin-static-copy vulns=1
+[2025-11-17 12:14:57] OSV pkg=@sveltejs/adapter-auto vulns=0
+[2025-11-17 12:14:57] OSV pkg=@tailwindcss/container-queries vulns=0
+[2025-11-17 12:17:38] START
+[2025-11-17 12:17:43] CLONE_OK time_ms=4905.4
+[2025-11-17 12:17:46] OSV pkg=async vulns=1
+[2025-11-17 12:17:47] OSV pkg=vega vulns=8
+[2025-11-17 12:17:47] OSV pkg=vitest vulns=1
+[2025-11-17 12:17:48] OSV pkg=bits-ui vulns=0
+[2025-11-17 12:17:48] OSV pkg=prosemirror-schema-list vulns=0
+[2025-11-17 12:17:48] OSV pkg=@floating-ui/dom vulns=0
+[2025-11-17 12:17:48] OSV pkg=html-entities vulns=0
+[2025-11-17 12:17:48] OSV pkg=@azure/msal-browser vulns=0
+[2025-11-17 12:17:49] OSV pkg=@tiptap/extension-file-handler vulns=0
+[2025-11-17 12:17:49] OSV pkg=@mediapipe/tasks-vision vulns=0
+[2025-11-17 12:17:49] OSV pkg=marked vulns=12
+[2025-11-17 12:17:49] OSV pkg=uuid vulns=0
+[2025-11-17 12:17:49] OSV pkg=prosemirror-commands vulns=0
+[2025-11-17 12:17:49] OSV pkg=@sveltejs/adapter-node vulns=1
+[2025-11-17 12:17:50] OSV pkg=codemirror-lang-hcl vulns=0
+[2025-11-17 12:17:50] OSV pkg=prosemirror-tables vulns=0
+[2025-11-17 12:17:50] OSV pkg=@typescript-eslint/parser vulns=0
+[2025-11-17 12:17:50] OSV pkg=svelte-confetti vulns=0
+[2025-11-17 12:17:50] OSV pkg=vega-lite vulns=0
+[2025-11-17 12:17:51] OSV pkg=@tiptap/extension-code-block-lowlight vulns=0
+[2025-11-17 12:17:51] OSV pkg=pyodide vulns=0
+[2025-11-17 12:17:51] OSV pkg=vite-plugin-static-copy vulns=1
+[2025-11-17 12:17:52] OSV pkg=prosemirror-example-setup vulns=0
+[2025-11-17 12:17:52] OSV pkg=@sveltejs/adapter-auto vulns=0
+[2025-11-17 12:17:52] OSV pkg=@tiptap/starter-kit vulns=0
+[2025-11-17 12:17:53] OSV pkg=prosemirror-collab vulns=0
+[2025-11-17 12:17:53] OSV pkg=prosemirror-markdown vulns=0
+[2025-11-17 12:17:53] OSV pkg=i18next-parser vulns=0
+[2025-11-17 12:17:53] OSV pkg=eventsource-parser vulns=0
+[2025-11-17 12:17:54] OSV pkg=i18next-resources-to-backend vulns=0
+[2025-11-17 12:17:54] OSV pkg=svelte-check vulns=0
+[2025-11-17 12:17:54] OSV pkg=svelte-sonner vulns=0
+[2025-11-17 12:17:54] OSV pkg=@xyflow/svelte vulns=0
+[2025-11-17 12:17:55] OSV pkg=prosemirror-state vulns=0
+[2025-11-17 12:17:55] OSV pkg=@tiptap/extension-link vulns=0
+[2025-11-17 12:17:55] OSV pkg=@tiptap/suggestion vulns=0
+[2025-11-17 12:17:55] OSV pkg=yjs vulns=0
+[2025-11-17 12:17:55] OSV pkg=prettier vulns=0
+[2025-11-17 12:17:55] OSV pkg=dompurify vulns=8
+[2025-11-17 12:17:56] OSV pkg=@tailwindcss/container-queries vulns=0
+[2025-11-17 12:17:56] OSV pkg=codemirror vulns=1
+[2025-11-17 12:17:56] OSV pkg=heic2any vulns=0
+[2025-11-17 12:17:56] OSV pkg=prosemirror-schema-basic vulns=0
+[2025-11-17 12:17:56] OSV pkg=turndown-plugin-gfm vulns=0
+[2025-11-17 12:17:57] OSV pkg=prosemirror-view vulns=0
+[2025-11-17 12:17:57] OSV pkg=@sveltejs/vite-plugin-svelte vulns=0
+[2025-11-17 12:17:57] OSV pkg=@sveltejs/adapter-static vulns=0
+[2025-11-17 12:17:57] OSV pkg=@tailwindcss/typography vulns=0
+[2025-11-17 12:17:58] OSV pkg=sass-embedded vulns=0
+[2025-11-17 12:17:58] OSV pkg=sortablejs vulns=0
+[2025-11-17 12:17:59] OSV pkg=@tiptap/extension-bubble-menu vulns=0
+[2025-11-17 12:17:59] OSV pkg=typescript vulns=0
+[2025-11-17 12:17:59] OSV pkg=@codemirror/lang-javascript vulns=0
+[2025-11-17 12:17:59] OSV pkg=focus-trap vulns=0
+[2025-11-17 12:17:59] OSV pkg=@tiptap/extension-list vulns=0
+[2025-11-17 12:17:59] OSV pkg=@pyscript/core vulns=0
+[2025-11-17 12:17:59] OSV pkg=@codemirror/theme-one-dark vulns=0
+[2025-11-17 12:18:00] OSV pkg=@huggingface/transformers vulns=0
+[2025-11-17 12:20:39] START
+[2025-11-17 12:20:44] CLONE_OK time_ms=5021.6
+[2025-11-17 12:21:28] TIMEOUT_OR_ERROR: process exited code 3221225786; stderr: Traceback (most recent call last):
+  File "C:\Users\victo\AppData\Local\Temp\mine_supervisor_hr4h6yqu\worker_out.json.runner.py", line 7, in <module>
+    res = _worker_analyze(*['open-webui/open-webui', None, 'C:\\Users\\victo\\AppData\\Local\\Temp\\mine_supervisor_hr4h6yqu\\worker_out.json', 600, 1200, 40, False, False, False, None, None, False])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-17 12:23:42] START
+[2025-11-17 12:23:45] CLONE_OK time_ms=3126.2
+[2025-11-17 12:26:18] COMMITS_INITIAL=292 recent_mode=False
+[2025-11-17 12:30:22] TIMEOUT_OR_ERROR: timeout after 400 seconds

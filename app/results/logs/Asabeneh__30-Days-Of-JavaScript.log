@@ -1,0 +1,14 @@
+[2025-11-17 12:21:28] TIMEOUT_OR_ERROR: process exited code 1; stderr: Fatal Python error: init_import_site: Failed to import the site module
+Python runtime state: initialized
+Traceback (most recent call last):
+  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 980, in exec_module
+  File "<frozen site>", line 616, in <module>
+  File "<frozen site>", line 599, 
+[2025-11-17 12:23:56] START
+[2025-11-17 12:24:04] CLONE_OK time_ms=7581.0
+[2025-11-17 12:24:04] COMMITS_INITIAL=0 recent_mode=False
+[2025-11-17 12:24:04] REMOVAL_RECENT none found -> fallback original list
+[2025-11-17 12:24:04] FINISHED total_records=0

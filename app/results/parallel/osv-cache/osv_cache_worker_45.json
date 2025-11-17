@@ -1,0 +1,11 @@
+{
+  "npm:remark-cli": {},
+  "npm:remark-lint": {},
+  "npm:remark-lint-alphabetize-lists": {},
+  "npm:remark-lint-hiring-without-whiteboards-links": {},
+  "npm:remark-lint-no-tabs": {},
+  "npm:remark-lint-no-trailing-spaces": {},
+  "npm:remark-lint-no-url-trailing-slash": {},
+  "npm:remark-lint-unordered-list-marker-style": {},
+  "npm:remark-preset-lint-recommended": {}
+}

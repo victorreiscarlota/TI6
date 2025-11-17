@@ -1,0 +1,18 @@
+[2025-11-17 12:21:28] TIMEOUT_OR_ERROR: process exited code 3221225786; stderr: Traceback (most recent call last):
+  File "C:\Users\victo\AppData\Local\Temp\mine_supervisor_elp7x0ct\worker_out.json.runner.py", line 2, in <module>
+    import json, sys, os, traceback
+  File "C:\Python311\Lib\json\__init__.py", line 106, in <module>
+    from .decoder import JSONDecoder, JSONDecodeError
+  File "C:\Python311\Lib\json\decoder.py", line 3, in <module>
+    import re
+  File "C:\Python311\Lib\re\__init__.py", line 327, in <module>
+    import copyreg
+  File "<frozen importlib._bootstr
+[2025-11-17 12:23:45] START
+[2025-11-17 12:23:50] CLONE_OK time_ms=4999.2
+[2025-11-17 12:24:40] COMMITS_INITIAL=23 recent_mode=False
+[2025-11-17 12:28:32] REMOVAL_RECENT selected=1 target=20
+[2025-11-17 12:28:34] OSV aggregate dep_total=11 vulnerable=2 time_ms=1095.8
+[2025-11-17 12:28:34] OSV aggregate dep_total=11 vulnerable=2 time_ms=0.0
+[2025-11-17 12:29:24] COMMIT 5bd3043 removed=1 added=1 deps_before=11 deps_after=11 vuln_before=2 vuln_after=2 time_ms=52821.5
+[2025-11-17 12:29:24] FINISHED total_records=1

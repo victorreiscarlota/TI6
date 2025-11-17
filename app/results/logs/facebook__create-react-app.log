@@ -1,0 +1,67 @@
+[2025-11-17 12:17:38] START
+[2025-11-17 12:17:40] CLONE_OK time_ms=1851.8
+[2025-11-17 12:18:08] OSV pkg=babel-jest vulns=0
+[2025-11-17 12:18:09] OSV pkg=@svgr/webpack vulns=0
+[2025-11-17 12:18:09] OSV pkg=sass-loader vulns=0
+[2025-11-17 12:18:09] OSV pkg=bootstrap vulns=9
+[2025-11-17 12:18:09] OSV pkg=@testing-library/react vulns=0
+[2025-11-17 12:18:09] OSV pkg=confusing-browser-globals vulns=0
+[2025-11-17 12:18:09] OSV pkg=core-js vulns=0
+[2025-11-17 12:18:09] OSV pkg=@babel/plugin-proposal-optional-chaining vulns=0
+[2025-11-17 12:18:09] OSV pkg=globby vulns=0
+[2025-11-17 12:18:09] OSV pkg=immer vulns=3
+[2025-11-17 12:18:09] OSV pkg=dva vulns=0
+[2025-11-17 12:18:09] OSV pkg=regenerator-runtime vulns=0
+[2025-11-17 12:18:09] OSV pkg=@typescript-eslint/eslint-plugin vulns=0
+[2025-11-17 12:18:09] OSV pkg=css-loader vulns=0
+[2025-11-17 12:18:09] OSV pkg=cross-env vulns=0
+[2025-11-17 12:18:09] OSV pkg=@rushstack/eslint-patch vulns=0
+[2025-11-17 12:18:09] OSV pkg=react-refresh vulns=0
+[2025-11-17 12:18:09] OSV pkg=puppeteer vulns=1
+[2025-11-17 12:18:09] OSV pkg=alex vulns=0
+[2025-11-17 12:18:09] OSV pkg=escape-string-regexp vulns=0
+[2025-11-17 12:18:10] OSV pkg=ky vulns=0
+[2025-11-17 12:18:10] OSV pkg=postcss-preset-env vulns=0
+[2025-11-17 12:18:10] OSV pkg=@typescript-eslint/parser vulns=0
+[2025-11-17 12:18:10] OSV pkg=babel-preset-react-app vulns=0
+[2025-11-17 12:18:11] OSV pkg=promise vulns=0
+[2025-11-17 12:18:11] OSV pkg=identity-obj-proxy vulns=0
+[2025-11-17 12:18:11] OSV pkg=@docusaurus/core vulns=0
+[2025-11-17 12:18:11] OSV pkg=chalk vulns=1
+[2025-11-17 12:18:11] OSV pkg=wait-for-localhost vulns=0
+[2025-11-17 12:18:11] OSV pkg=eslint-plugin-import vulns=0
+[2025-11-17 12:18:11] OSV pkg=settle-promise vulns=0
+[2025-11-17 12:18:12] OSV pkg=history vulns=0
+[2025-11-17 12:18:12] OSV pkg=raf vulns=0
+[2025-11-17 12:18:12] OSV pkg=prompts vulns=0
+[2025-11-17 12:18:12] OSV pkg=babel-plugin-tester vulns=0
+[2025-11-17 12:18:12] OSV pkg=typescript vulns=0
+[2025-11-17 12:18:12] OSV pkg=husky vulns=0
+[2025-11-17 12:18:12] OSV pkg=camelcase vulns=0
+[2025-11-17 12:18:13] OSV pkg=validate-npm-package-name vulns=0
+[2025-11-17 12:18:13] OSV pkg=source-map vulns=0
+[2025-11-17 12:18:13] OSV pkg=babel-plugin-transform-react-remove-prop-types vulns=0
+[2025-11-17 12:18:13] OSV pkg=eslint-plugin-jsx-a11y vulns=0
+[2025-11-17 12:18:13] OSV pkg=lerna-changelog vulns=0
+[2025-11-17 12:18:13] OSV pkg=text-table vulns=0
+[2025-11-17 12:18:13] OSV pkg=@babel/runtime vulns=1
+[2025-11-17 12:18:14] OSV pkg=postcss-normalize vulns=0
+[2025-11-17 12:18:14] OSV pkg=open vulns=1
+[2025-11-17 12:18:14] OSV pkg=react-dom vulns=1
+[2025-11-17 12:18:14] OSV pkg=chokidar vulns=0
+[2025-11-17 12:18:14] OSV pkg=@pmmmwh/react-refresh-webpack-plugin vulns=0
+[2025-11-17 12:18:14] OSV pkg=@babel/plugin-proposal-nullish-coalescing-operator vulns=0
+[2025-11-17 12:18:14] OSV pkg=anser vulns=0
+[2025-11-17 12:18:14] OSV pkg=@types/jest vulns=0
+[2025-11-17 12:18:14] OSV pkg=@babel/plugin-proposal-decorators vulns=0
+[2025-11-17 12:18:14] OSV pkg=envinfo vulns=0
+[2025-11-17 12:18:14] OSV pkg=case-sensitive-paths-webpack-plugin vulns=0
+[2025-11-17 12:20:38] START
+[2025-11-17 12:20:43] CLONE_OK time_ms=5025.8
+[2025-11-17 12:21:28] TIMEOUT_OR_ERROR: process exited code 3221225786; stderr: Traceback (most recent call last):
+  File "C:\Users\victo\AppData\Local\Temp\mine_supervisor_bkez357y\worker_out.json.runner.py", line 7, in <module>
+    res = _worker_analyze(*['facebook/create-react-app', None, 'C:\\Users\\victo\\AppData\\Local\\Temp\\mine_supervisor_bkez357y\\worker_out.json', 600, 1200, 40, False, False, False, None, None, False])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-17 12:23:42] START
+[2025-11-17 12:23:44] CLONE_OK time_ms=2726.0
+[2025-11-17 12:30:22] TIMEOUT_OR_ERROR: timeout after 400 seconds

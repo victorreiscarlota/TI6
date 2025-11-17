@@ -1,0 +1,58 @@
+[
+  {
+    "repo": "danielmiessler/Fabric",
+    "commit": "c26e0bcdc5006fe25e7b8bad4512679a600978e1",
+    "commit_date": "2025-10-21T08:08:37+00:00",
+    "commit_message": "chore(deps-dev): bump vite",
+    "lines_of_code_before": 2492,
+    "lines_of_code_after": 2492,
+    "avg_complexity_before": 2.0296296296296297,
+    "avg_complexity_after": 2.0296296296296297,
+    "dependencies_before": 46,
+    "dependencies_after": 46,
+    "vulnerable_dependencies_before": 9,
+    "vulnerable_dependencies_after": 9
+  },
+  {
+    "repo": "danielmiessler/Fabric",
+    "commit": "59695428e3a6a2393a0c18f61241a6afad46262f",
+    "commit_date": "2025-09-11T10:54:55-07:00",
+    "commit_message": "feat: update Vite and Rollup dependencies to latest versions",
+    "lines_of_code_before": 2492,
+    "lines_of_code_after": 2492,
+    "avg_complexity_before": 2.0296296296296297,
+    "avg_complexity_after": 2.0296296296296297,
+    "dependencies_before": 46,
+    "dependencies_after": 46,
+    "vulnerable_dependencies_before": 9,
+    "vulnerable_dependencies_after": 9
+  },
+  {
+    "repo": "danielmiessler/Fabric",
+    "commit": "40273053456779070e978b1b5baaf1a5279967f9",
+    "commit_date": "2025-05-24T00:29:20-07:00",
+    "commit_message": "feat: upgrade PDF.js to v4.2 and refactor worker initialization",
+    "lines_of_code_before": 2459,
+    "lines_of_code_after": 2488,
+    "avg_complexity_before": 2.029850746268657,
+    "avg_complexity_after": 2.0296296296296297,
+    "dependencies_before": 46,
+    "dependencies_after": 46,
+    "vulnerable_dependencies_before": 9,
+    "vulnerable_dependencies_after": 9
+  },
+  {
+    "repo": "danielmiessler/Fabric",
+    "commit": "4446b456ba43b536f9804e3f8478cadac8c4a9ec",
+    "commit_date": "2025-05-23T17:47:33-07:00",
+    "commit_message": "docs: reorganize web documentation and add installation scripts",
+    "lines_of_code_before": 2402,
+    "lines_of_code_after": 2402,
+    "avg_complexity_before": 1.9924242424242424,
+    "avg_complexity_after": 1.9924242424242424,
+    "dependencies_before": 46,
+    "dependencies_after": 46,
+    "vulnerable_dependencies_before": 9,
+    "vulnerable_dependencies_after": 9
+  }
+]

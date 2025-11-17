@@ -1,0 +1,22 @@
+[2025-11-17 12:20:39] START
+[2025-11-17 12:20:44] CLONE_OK time_ms=4816.6
+[2025-11-17 12:20:52] OSV aggregate dep_total=0 vulnerable=0 time_ms=0.0
+[2025-11-17 12:20:52] OSV aggregate dep_total=0 vulnerable=0 time_ms=0.0
+[2025-11-17 12:20:52] COMMIT 6cbf9e9 no removals time_ms=5850.4
+[2025-11-17 12:20:56] OSV aggregate dep_total=0 vulnerable=0 time_ms=0.0
+[2025-11-17 12:20:56] OSV aggregate dep_total=0 vulnerable=0 time_ms=0.0
+[2025-11-17 12:20:56] COMMIT 3edc228 no removals time_ms=4076.9
+[2025-11-17 12:20:57] COMMIT 83ee1cc skip(no before pkg.json)
+[2025-11-17 12:20:57] FINISHED candidates=0
+[2025-11-17 12:23:51] START
+[2025-11-17 12:23:59] CLONE_OK time_ms=7342.1
+[2025-11-17 12:24:09] COMMITS_INITIAL=3 recent_mode=False
+[2025-11-17 12:24:37] REMOVAL_RECENT none found -> fallback original list
+[2025-11-17 12:24:39] OSV aggregate dep_total=0 vulnerable=0 time_ms=0.0
+[2025-11-17 12:24:39] OSV aggregate dep_total=0 vulnerable=0 time_ms=0.0
+[2025-11-17 12:24:39] COMMIT 6cbf9e9 no removal/addition skip
+[2025-11-17 12:24:40] OSV aggregate dep_total=0 vulnerable=0 time_ms=0.0
+[2025-11-17 12:24:40] OSV aggregate dep_total=0 vulnerable=0 time_ms=0.0
+[2025-11-17 12:24:40] COMMIT 3edc228 no removal/addition skip
+[2025-11-17 12:24:41] COMMIT 83ee1cc skip(no before pkg.json)
+[2025-11-17 12:24:41] FINISHED total_records=0

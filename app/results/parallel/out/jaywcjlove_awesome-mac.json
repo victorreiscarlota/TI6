@@ -1,0 +1,72 @@
+[
+  {
+    "repo": "jaywcjlove/awesome-mac",
+    "commit": "99239d0b9dc340705dbf3f3095275bb5d6f41df7",
+    "commit_date": "2025-07-30T01:20:05+08:00",
+    "commit_message": "released v1.10.0",
+    "lines_of_code_before": 0,
+    "lines_of_code_after": 0,
+    "avg_complexity_before": 0.0,
+    "avg_complexity_after": 0.0,
+    "dependencies_before": 5,
+    "dependencies_after": 5,
+    "vulnerable_dependencies_before": 0,
+    "vulnerable_dependencies_after": 0
+  },
+  {
+    "repo": "jaywcjlove/awesome-mac",
+    "commit": "143c45b043d21affbe622d00acb1259ac927acc2",
+    "commit_date": "2025-05-23T05:14:02+08:00",
+    "commit_message": "released v1.9.0",
+    "lines_of_code_before": 0,
+    "lines_of_code_after": 0,
+    "avg_complexity_before": 0.0,
+    "avg_complexity_after": 0.0,
+    "dependencies_before": 5,
+    "dependencies_after": 5,
+    "vulnerable_dependencies_before": 0,
+    "vulnerable_dependencies_after": 0
+  },
+  {
+    "repo": "jaywcjlove/awesome-mac",
+    "commit": "f0dd66a9d2897cd2b9bada73766984fbff96b7c4",
+    "commit_date": "2025-01-04T14:35:21+08:00",
+    "commit_message": "released v1.8.0",
+    "lines_of_code_before": 0,
+    "lines_of_code_after": 0,
+    "avg_complexity_before": 0.0,
+    "avg_complexity_after": 0.0,
+    "dependencies_before": 5,
+    "dependencies_after": 5,
+    "vulnerable_dependencies_before": 0,
+    "vulnerable_dependencies_after": 0
+  },
+  {
+    "repo": "jaywcjlove/awesome-mac",
+    "commit": "56e5810563ef848dca61ad91539f099d77f25777",
+    "commit_date": "2024-08-22T01:16:59+08:00",
+    "commit_message": "released v1.7.0",
+    "lines_of_code_before": 0,
+    "lines_of_code_after": 0,
+    "avg_complexity_before": 0.0,
+    "avg_complexity_after": 0.0,
+    "dependencies_before": 5,
+    "dependencies_after": 5,
+    "vulnerable_dependencies_before": 0,
+    "vulnerable_dependencies_after": 0
+  },
+  {
+    "repo": "jaywcjlove/awesome-mac",
+    "commit": "35ec137f394e5abb8db21db406a4e96b108b171a",
+    "commit_date": "2024-05-29T01:42:50+08:00",
+    "commit_message": "released v1.6.0",
+    "lines_of_code_before": 0,
+    "lines_of_code_after": 0,
+    "avg_complexity_before": 0.0,
+    "avg_complexity_after": 0.0,
+    "dependencies_before": 5,
+    "dependencies_after": 5,
+    "vulnerable_dependencies_before": 0,
+    "vulnerable_dependencies_after": 0
+  }
+]

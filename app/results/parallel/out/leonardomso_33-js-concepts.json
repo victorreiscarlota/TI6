@@ -1,0 +1,30 @@
+[
+  {
+    "repo": "leonardomso/33-js-concepts",
+    "commit": "6cbf9e9dc4ca94c7cc30db4ca09b6c312971dda9",
+    "commit_date": "2021-04-19T09:08:23-03:00",
+    "commit_message": "Added new Github Action for checking links",
+    "lines_of_code_before": 6,
+    "lines_of_code_after": 5,
+    "avg_complexity_before": 0.0,
+    "avg_complexity_after": 0.0,
+    "dependencies_before": 0,
+    "dependencies_after": 0,
+    "vulnerable_dependencies_before": 0,
+    "vulnerable_dependencies_after": 0
+  },
+  {
+    "repo": "leonardomso/33-js-concepts",
+    "commit": "3edc22851ccd8720e1cc1168850cb159e7831453",
+    "commit_date": "2018-10-15T22:24:39-03:00",
+    "commit_message": "Fix package.json",
+    "lines_of_code_before": 6,
+    "lines_of_code_after": 6,
+    "avg_complexity_before": 0.0,
+    "avg_complexity_after": 0.0,
+    "dependencies_before": 0,
+    "dependencies_after": 0,
+    "vulnerable_dependencies_before": 0,
+    "vulnerable_dependencies_after": 0
+  }
+]

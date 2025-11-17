@@ -278,8 +278,8 @@ def main():
     ap.add_argument("--mining-csv-out", dest="mining_csv_out", default="app/results/commit_changes_all.csv")
     ap.add_argument("--plots", default="app/results/plots")
     ap.add_argument("--final-out", dest="final_out", default="app/results/final_dataset.json")
-    ap.add_argument("--repo-timeout", dest="repo_timeout", type=int, default=int(os.environ.get("REPO_TIMEOUT", 1800)))
-    ap.add_argument("--clone-timeout", dest="clone_timeout", type=int, default=int(os.environ.get("CLONE_TIMEOUT", 600)))
+    ap.add_argument("--repo-timeout", dest="repo_timeout", type=int, default=int(os.environ.get("REPO_TIMEOUT", 400)))
+    ap.add_argument("--clone-timeout", dest="clone_timeout", type=int, default=int(os.environ.get("CLONE_TIMEOUT", 400)))
 
     # Descoberta
     ap.add_argument("--discover-language", type=str, default=os.environ.get("DISCOVER_LANGUAGE", "JavaScript"))

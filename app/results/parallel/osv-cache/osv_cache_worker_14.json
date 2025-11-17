@@ -1,0 +1,7 @@
+{
+  "npm:fs-extra": {},
+  "npm:idoc": {},
+  "npm:remark": {},
+  "npm:remark-gfm": {},
+  "npm:to-vfile": {}
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "repo": "poteto/hiring-without-whiteboards",
+    "commit": "103d283d13c225bbf33ca7ae1020e07f31845024",
+    "commit_date": "2022-08-26T11:32:52-07:00",
+    "commit_message": "Make remark-cli quiet (#1247)",
+    "lines_of_code_before": 1,
+    "lines_of_code_after": 1,
+    "avg_complexity_before": 0.0,
+    "avg_complexity_after": 0.0,
+    "dependencies_before": 9,
+    "dependencies_after": 9,
+    "vulnerable_dependencies_before": 0,
+    "vulnerable_dependencies_after": 0
+  },
+  {
+    "repo": "poteto/hiring-without-whiteboards",
+    "commit": "2512c3fcde5bd2ae18493c14ca89047eb0cb57f2",
+    "commit_date": "2021-06-21T14:57:59-07:00",
+    "commit_message": "Add github action for CI (#1102)",
+    "lines_of_code_before": 1,
+    "lines_of_code_after": 1,
+    "avg_complexity_before": 0.0,
+    "avg_complexity_after": 0.0,
+    "dependencies_before": 9,
+    "dependencies_after": 9,
+    "vulnerable_dependencies_before": 0,
+    "vulnerable_dependencies_after": 0
+  },
+  {
+    "repo": "poteto/hiring-without-whiteboards",
+    "commit": "fafc7c22a6a4c0200b7a858e09036a9b9b0e6abe",
+    "commit_date": "2019-03-03T16:59:20-08:00",
+    "commit_message": "Lint trailing spaces",
+    "lines_of_code_before": 1,
+    "lines_of_code_after": 1,
+    "avg_complexity_before": 0.0,
+    "avg_complexity_after": 0.0,
+    "dependencies_before": 8,
+    "dependencies_after": 9,
+    "vulnerable_dependencies_before": 0,
+    "vulnerable_dependencies_after": 0
+  },
+  {
+    "repo": "poteto/hiring-without-whiteboards",
+    "commit": "7c74f7bad59de92ec246085477e61fb6abbf4b76",
+    "commit_date": "2019-03-03T16:57:26-08:00",
+    "commit_message": "Update deps & node version",
+    "lines_of_code_before": 1,
+    "lines_of_code_after": 1,
+    "avg_complexity_before": 0.0,
+    "avg_complexity_after": 0.0,
+    "dependencies_before": 8,
+    "dependencies_after": 8,
+    "vulnerable_dependencies_before": 0,
+    "vulnerable_dependencies_after": 0
+  }
+]

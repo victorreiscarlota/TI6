@@ -1,0 +1,9 @@
+[2025-11-17 12:21:27] START
+[2025-11-17 12:21:28] TIMEOUT_OR_ERROR: process exited code 3221225786; stderr: Traceback (most recent call last):
+  File "C:\Users\victo\AppData\Local\Temp\mine_supervisor_ot5wpmfj\worker_out.json.runner.py", line 7, in <module>
+    res = _worker_analyze(*['moment/moment', None, 'C:\\Users\\victo\\AppData\\Local\\Temp\\mine_supervisor_ot5wpmfj\\worker_out.json', 600, 1200, 40, False, False, False, None, None, False])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-17 12:23:44] START
+[2025-11-17 12:23:49] CLONE_OK time_ms=4789.6
+[2025-11-17 12:25:57] COMMITS_INITIAL=184 recent_mode=False
+[2025-11-17 12:30:22] TIMEOUT_OR_ERROR: timeout after 400 seconds

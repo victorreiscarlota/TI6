@@ -1,0 +1,34 @@
+[2025-11-17 12:20:38] START
+[2025-11-17 12:20:42] CLONE_OK time_ms=4111.8
+[2025-11-17 12:21:02] OSV aggregate dep_total=27 vulnerable=4 time_ms=5242.7
+[2025-11-17 12:21:02] OSV aggregate dep_total=27 vulnerable=4 time_ms=0.0
+[2025-11-17 12:21:02] COMMIT 25e52e2 no removals time_ms=11762.8
+[2025-11-17 12:21:05] OSV aggregate dep_total=27 vulnerable=4 time_ms=0.0
+[2025-11-17 12:21:05] OSV aggregate dep_total=27 vulnerable=4 time_ms=0.0
+[2025-11-17 12:21:06] COMMIT edb69c8 no removals time_ms=3447.9
+[2025-11-17 12:21:09] OSV aggregate dep_total=27 vulnerable=4 time_ms=0.0
+[2025-11-17 12:21:09] OSV aggregate dep_total=27 vulnerable=4 time_ms=0.0
+[2025-11-17 12:21:09] COMMIT 8d7b03c no removals time_ms=3306.3
+[2025-11-17 12:21:13] OSV aggregate dep_total=27 vulnerable=4 time_ms=259.4
+[2025-11-17 12:21:13] OSV aggregate dep_total=27 vulnerable=4 time_ms=0.0
+[2025-11-17 12:21:13] COMMIT b8bb94f no removals time_ms=3944.4
+[2025-11-17 12:21:17] OSV aggregate dep_total=27 vulnerable=4 time_ms=0.0
+[2025-11-17 12:21:17] OSV aggregate dep_total=27 vulnerable=4 time_ms=0.0
+[2025-11-17 12:21:17] COMMIT 6b8c64f no removals time_ms=3580.1
+[2025-11-17 12:21:19] OSV aggregate dep_total=27 vulnerable=4 time_ms=0.0
+[2025-11-17 12:21:19] OSV aggregate dep_total=27 vulnerable=4 time_ms=0.0
+[2025-11-17 12:21:19] COMMIT 9d4b436 no removals time_ms=2763.6
+[2025-11-17 12:21:22] OSV aggregate dep_total=27 vulnerable=4 time_ms=0.0
+[2025-11-17 12:21:22] OSV aggregate dep_total=27 vulnerable=4 time_ms=0.0
+[2025-11-17 12:21:22] COMMIT 5ee1f72 no removals time_ms=2568.3
+[2025-11-17 12:21:25] OSV aggregate dep_total=27 vulnerable=4 time_ms=0.0
+[2025-11-17 12:21:25] OSV aggregate dep_total=27 vulnerable=4 time_ms=0.0
+[2025-11-17 12:21:25] COMMIT 9d491c6 no removals time_ms=3471.3
+[2025-11-17 12:21:28] TIMEOUT_OR_ERROR: process exited code 3221225786; stderr: Traceback (most recent call last):
+  File "C:\Users\victo\AppData\Local\Temp\mine_supervisor_usgrudis\worker_out.json.runner.py", line 7, in <module>
+    res = _worker_analyze(*['hakimel/reveal.js', None, 'C:\\Users\\victo\\AppData\\Local\\Temp\\mine_supervisor_usgrudis\\worker_out.json', 600, 1200, 40, False, False, False, None, None, False])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-17 12:23:48] START
+[2025-11-17 12:23:55] CLONE_OK time_ms=6888.0
+[2025-11-17 12:26:01] COMMITS_INITIAL=152 recent_mode=False
+[2025-11-17 12:30:22] TIMEOUT_OR_ERROR: timeout after 400 seconds

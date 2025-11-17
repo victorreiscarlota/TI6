@@ -1,0 +1,141 @@
+[2025-11-17 12:14:38] START
+[2025-11-17 12:14:40] CLONE_OK time_ms=2026.6
+[2025-11-17 12:14:42] OSV pkg=js-yaml vulns=4
+[2025-11-17 12:14:42] OSV pkg=eslint vulns=0
+[2025-11-17 12:14:43] OSV pkg=vitest vulns=1
+[2025-11-17 12:14:43] OSV pkg=rehype-stringify vulns=0
+[2025-11-17 12:14:43] OSV pkg=@shikijs/colorized-brackets vulns=0
+[2025-11-17 12:14:43] OSV pkg=prismjs vulns=6
+[2025-11-17 12:14:43] OSV pkg=eslint-config-prettier vulns=2
+[2025-11-17 12:14:44] OSV pkg=shiki vulns=0
+[2025-11-17 12:14:44] OSV pkg=front-matter vulns=0
+[2025-11-17 12:14:44] OSV pkg=sass vulns=0
+[2025-11-17 12:14:44] OSV pkg=remark-gfm vulns=0
+[2025-11-17 12:14:44] OSV pkg=astro vulns=9
+[2025-11-17 12:14:45] OSV pkg=remark-rehype vulns=0
+[2025-11-17 12:14:45] OSV pkg=fs-extra vulns=0
+[2025-11-17 12:14:45] OSV pkg=hast-util-to-string vulns=0
+[2025-11-17 12:14:45] OSV pkg=remark-parse vulns=0
+[2025-11-17 12:14:45] OSV pkg=unist-util-visit vulns=0
+[2025-11-17 12:14:45] OSV pkg=unist-util-visit-parents vulns=0
+[2025-11-17 12:14:45] OSV pkg=prettier vulns=0
+[2025-11-17 12:14:45] OSV pkg=rehype-unwrap-images vulns=0
+[2025-11-17 12:14:45] OSV pkg=glob vulns=0
+[2025-11-17 12:14:45] OSV pkg=sharp vulns=2
+[2025-11-17 12:14:45] OSV pkg=prettier-plugin-astro vulns=0
+[2025-11-17 12:14:45] OSV pkg=unified vulns=0
+[2025-11-17 12:14:45] OSV aggregate dep_total=24 vulnerable=6 time_ms=3293.4
+[2025-11-17 12:14:45] OSV pkg=js-yaml vulns=4
+[2025-11-17 12:14:45] OSV pkg=eslint vulns=0
+[2025-11-17 12:14:45] OSV pkg=vitest vulns=1
+[2025-11-17 12:14:45] OSV pkg=rehype-stringify vulns=0
+[2025-11-17 12:14:45] OSV pkg=@shikijs/colorized-brackets vulns=0
+[2025-11-17 12:14:45] OSV pkg=prismjs vulns=6
+[2025-11-17 12:14:45] OSV pkg=eslint-config-prettier vulns=2
+[2025-11-17 12:14:45] OSV pkg=shiki vulns=0
+[2025-11-17 12:14:45] OSV pkg=front-matter vulns=0
+[2025-11-17 12:14:45] OSV pkg=sass vulns=0
+[2025-11-17 12:14:45] OSV pkg=remark-gfm vulns=0
+[2025-11-17 12:14:45] OSV pkg=astro vulns=9
+[2025-11-17 12:14:45] OSV pkg=remark-rehype vulns=0
+[2025-11-17 12:14:45] OSV pkg=fs-extra vulns=0
+[2025-11-17 12:14:45] OSV pkg=hast-util-to-string vulns=0
+[2025-11-17 12:14:45] OSV pkg=remark-parse vulns=0
+[2025-11-17 12:14:45] OSV pkg=unist-util-visit vulns=0
+[2025-11-17 12:14:45] OSV pkg=unist-util-visit-parents vulns=0
+[2025-11-17 12:14:45] OSV pkg=prettier vulns=0
+[2025-11-17 12:14:45] OSV pkg=rehype-unwrap-images vulns=0
+[2025-11-17 12:14:45] OSV pkg=glob vulns=0
+[2025-11-17 12:14:45] OSV pkg=sharp vulns=2
+[2025-11-17 12:14:45] OSV pkg=prettier-plugin-astro vulns=0
+[2025-11-17 12:14:45] OSV pkg=unified vulns=0
+[2025-11-17 12:14:45] OSV aggregate dep_total=24 vulnerable=6 time_ms=7.6
+[2025-11-17 12:14:45] COMMIT 1744b80 no removals time_ms=4754.0
+[2025-11-17 12:14:46] OSV pkg=js-yaml vulns=4
+[2025-11-17 12:14:46] OSV pkg=eslint vulns=0
+[2025-11-17 12:14:46] OSV pkg=vitest vulns=1
+[2025-11-17 12:17:38] START
+[2025-11-17 12:17:46] CLONE_OK time_ms=7814.6
+[2025-11-17 12:17:48] OSV pkg=rehype-stringify vulns=0
+[2025-11-17 12:17:49] OSV pkg=shiki vulns=0
+[2025-11-17 12:17:49] OSV pkg=glob vulns=0
+[2025-11-17 12:17:49] OSV pkg=eslint vulns=0
+[2025-11-17 12:17:49] OSV pkg=unist-util-visit-parents vulns=0
+[2025-11-17 12:17:49] OSV pkg=front-matter vulns=0
+[2025-11-17 12:17:49] OSV pkg=prettier vulns=0
+[2025-11-17 12:17:49] OSV pkg=prismjs vulns=6
+[2025-11-17 12:17:49] OSV pkg=rehype-unwrap-images vulns=0
+[2025-11-17 12:17:49] OSV pkg=remark-rehype vulns=0
+[2025-11-17 12:17:49] OSV pkg=eslint-config-prettier vulns=2
+[2025-11-17 12:17:49] OSV pkg=fs-extra vulns=0
+[2025-11-17 12:17:49] OSV pkg=vitest vulns=1
+[2025-11-17 12:17:49] OSV pkg=sass vulns=0
+[2025-11-17 12:17:50] OSV pkg=astro vulns=9
+[2025-11-17 12:17:50] OSV pkg=@shikijs/colorized-brackets vulns=0
+[2025-11-17 12:17:50] OSV pkg=unist-util-visit vulns=0
+[2025-11-17 12:17:50] OSV pkg=js-yaml vulns=4
+[2025-11-17 12:17:50] OSV pkg=unified vulns=0
+[2025-11-17 12:17:50] OSV pkg=remark-parse vulns=0
+[2025-11-17 12:17:50] OSV pkg=hast-util-to-string vulns=0
+[2025-11-17 12:17:51] OSV pkg=prettier-plugin-astro vulns=0
+[2025-11-17 12:17:51] OSV pkg=sharp vulns=2
+[2025-11-17 12:17:51] OSV pkg=remark-gfm vulns=0
+[2025-11-17 12:17:51] OSV aggregate dep_total=24 vulnerable=6 time_ms=2810.4
+[2025-11-17 12:17:51] OSV pkg=rehype-stringify vulns=0
+[2025-11-17 12:17:51] OSV pkg=shiki vulns=0
+[2025-11-17 12:17:51] OSV pkg=glob vulns=0
+[2025-11-17 12:17:51] OSV pkg=eslint vulns=0
+[2025-11-17 12:17:51] OSV pkg=unist-util-visit-parents vulns=0
+[2025-11-17 12:17:51] OSV pkg=front-matter vulns=0
+[2025-11-17 12:17:51] OSV pkg=prettier vulns=0
+[2025-11-17 12:17:51] OSV pkg=prismjs vulns=6
+[2025-11-17 12:17:51] OSV pkg=rehype-unwrap-images vulns=0
+[2025-11-17 12:17:51] OSV pkg=remark-rehype vulns=0
+[2025-11-17 12:17:51] OSV pkg=eslint-config-prettier vulns=2
+[2025-11-17 12:17:51] OSV pkg=fs-extra vulns=0
+[2025-11-17 12:17:51] OSV pkg=vitest vulns=1
+[2025-11-17 12:17:51] OSV pkg=sass vulns=0
+[2025-11-17 12:17:51] OSV pkg=astro vulns=9
+[2025-11-17 12:17:51] OSV pkg=@shikijs/colorized-brackets vulns=0
+[2025-11-17 12:17:51] OSV pkg=unist-util-visit vulns=0
+[2025-11-17 12:17:51] OSV pkg=js-yaml vulns=4
+[2025-11-17 12:17:51] OSV pkg=unified vulns=0
+[2025-11-17 12:17:51] OSV pkg=remark-parse vulns=0
+[2025-11-17 12:17:51] OSV pkg=hast-util-to-string vulns=0
+[2025-11-17 12:17:51] OSV pkg=prettier-plugin-astro vulns=0
+[2025-11-17 12:17:51] OSV pkg=sharp vulns=2
+[2025-11-17 12:17:51] OSV pkg=remark-gfm vulns=0
+[2025-11-17 12:17:51] OSV aggregate dep_total=24 vulnerable=6 time_ms=7.9
+[2025-11-17 12:17:51] COMMIT 1744b80 no removals time_ms=4288.3
+[2025-11-17 12:17:51] OSV pkg=rehype-stringify vulns=0
+[2025-11-17 12:17:51] OSV pkg=shiki vulns=0
+[2025-11-17 12:20:38] START
+[2025-11-17 12:20:43] CLONE_OK time_ms=5204.6
+[2025-11-17 12:21:05] OSV aggregate dep_total=24 vulnerable=6 time_ms=3073.1
+[2025-11-17 12:21:05] OSV aggregate dep_total=24 vulnerable=6 time_ms=0.0
+[2025-11-17 12:21:05] COMMIT 1744b80 no removals time_ms=10200.6
+[2025-11-17 12:21:08] OSV aggregate dep_total=24 vulnerable=6 time_ms=0.0
+[2025-11-17 12:21:08] OSV aggregate dep_total=24 vulnerable=6 time_ms=0.0
+[2025-11-17 12:21:09] COMMIT d560793 no removals time_ms=3723.2
+[2025-11-17 12:21:12] OSV aggregate dep_total=24 vulnerable=6 time_ms=0.0
+[2025-11-17 12:21:12] OSV aggregate dep_total=24 vulnerable=6 time_ms=0.0
+[2025-11-17 12:21:12] COMMIT dff11ff no removals time_ms=3540.7
+[2025-11-17 12:21:15] OSV aggregate dep_total=24 vulnerable=6 time_ms=0.0
+[2025-11-17 12:21:15] OSV aggregate dep_total=24 vulnerable=6 time_ms=0.0
+[2025-11-17 12:21:15] COMMIT 490fd16 no removals time_ms=3253.7
+[2025-11-17 12:21:18] OSV aggregate dep_total=24 vulnerable=6 time_ms=0.0
+[2025-11-17 12:21:18] OSV aggregate dep_total=24 vulnerable=6 time_ms=0.0
+[2025-11-17 12:21:18] COMMIT 3038b93 no removals time_ms=2959.4
+[2025-11-17 12:21:21] OSV aggregate dep_total=24 vulnerable=6 time_ms=0.0
+[2025-11-17 12:21:21] OSV aggregate dep_total=24 vulnerable=6 time_ms=0.0
+[2025-11-17 12:21:21] COMMIT 8f12361 no removals time_ms=2982.7
+[2025-11-17 12:21:24] OSV aggregate dep_total=24 vulnerable=6 time_ms=0.0
+[2025-11-17 12:21:24] OSV aggregate dep_total=24 vulnerable=6 time_ms=0.0
+[2025-11-17 12:21:25] COMMIT a1d2e0a no removals time_ms=3287.8
+[2025-11-17 12:21:28] TIMEOUT_OR_ERROR: process exited code 3221225786; stderr: Traceback (most recent call last):
+  File "C:\Users\victo\AppData\Local\Temp\mine_supervisor_704a5_8d\worker_out.json.runner.py", line 7, in <module>
+    res = _worker_analyze(*['Chalarangelo/30-seconds-of-code', None, 'C:\\Users\\victo\\AppData\\Local\\Temp\\mine_supervisor_704a5_8d\\worker_out.json', 600, 1200, 40, False, False, False, None, None, False])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-17 12:23:43] START
+[2025-11-17 12:23:48] CLONE_OK time_ms=4255.6
+[2025-11-17 12:30:22] TIMEOUT_OR_ERROR: timeout after 400 seconds

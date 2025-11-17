@@ -1,0 +1,21 @@
+[2025-11-17 12:20:38] START
+[2025-11-17 12:20:44] CLONE_OK time_ms=6600.6
+[2025-11-17 12:21:18] OSV aggregate dep_total=1 vulnerable=0 time_ms=573.4
+[2025-11-17 12:21:18] OSV aggregate dep_total=1 vulnerable=0 time_ms=0.0
+[2025-11-17 12:21:18] COMMIT 41cfe64 no removals time_ms=32640.1
+[2025-11-17 12:21:28] TIMEOUT_OR_ERROR: process exited code 3221225786; stderr: Traceback (most recent call last):
+  File "C:\Users\victo\AppData\Local\Temp\mine_supervisor_j48wkiu8\worker_out.json.runner.py", line 7, in <module>
+    res = _worker_analyze(*['FortAwesome/Font-Awesome', None, 'C:\\Users\\victo\\AppData\\Local\\Temp\\mine_supervisor_j48wkiu8\\worker_out.json', 600, 1200, 40, False, False, False, None, None, False])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-17 12:23:52] START
+[2025-11-17 12:24:00] CLONE_OK time_ms=7359.1
+[2025-11-17 12:24:03] COMMITS_INITIAL=3 recent_mode=False
+[2025-11-17 12:26:52] REMOVAL_RECENT none found -> fallback original list
+[2025-11-17 12:26:55] OSV aggregate dep_total=1 vulnerable=0 time_ms=750.2
+[2025-11-17 12:26:55] OSV aggregate dep_total=1 vulnerable=0 time_ms=0.0
+[2025-11-17 12:26:55] COMMIT 41cfe64 no removal/addition skip
+[2025-11-17 12:26:59] OSV aggregate dep_total=1 vulnerable=0 time_ms=0.0
+[2025-11-17 12:26:59] OSV aggregate dep_total=1 vulnerable=0 time_ms=0.0
+[2025-11-17 12:26:59] COMMIT b476ed9 no removal/addition skip
+[2025-11-17 12:27:01] COMMIT 14189d0 skip(no before pkg.json)
+[2025-11-17 12:27:01] FINISHED total_records=0

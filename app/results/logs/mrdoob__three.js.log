@@ -1,0 +1,94 @@
+[2025-11-17 12:17:38] START
+[2025-11-17 12:17:45] CLONE_OK time_ms=6299.0
+[2025-11-17 12:17:49] OSV pkg=pixelmatch vulns=0
+[2025-11-17 12:17:49] OSV pkg=rollup vulns=1
+[2025-11-17 12:17:49] OSV pkg=jimp vulns=0
+[2025-11-17 12:17:49] OSV pkg=qunit vulns=0
+[2025-11-17 12:17:50] OSV pkg=concurrently vulns=0
+[2025-11-17 12:17:50] OSV pkg=jsdoc vulns=0
+[2025-11-17 12:17:50] OSV pkg=eslint-plugin-html vulns=0
+[2025-11-17 12:17:50] OSV pkg=puppeteer vulns=1
+[2025-11-17 12:17:50] OSV pkg=magic-string vulns=0
+[2025-11-17 12:17:50] OSV pkg=eslint-plugin-import vulns=0
+[2025-11-17 12:17:51] OSV pkg=rollup-plugin-filesize vulns=0
+[2025-11-17 12:17:51] OSV pkg=@rollup/plugin-terser vulns=0
+[2025-11-17 12:17:51] OSV pkg=eslint-config-mdcs vulns=0
+[2025-11-17 12:17:52] OSV pkg=@rollup/plugin-node-resolve vulns=0
+[2025-11-17 12:17:52] OSV pkg=eslint-plugin-compat vulns=0
+[2025-11-17 12:17:52] OSV pkg=servez vulns=0
+[2025-11-17 12:17:52] OSV pkg=eslint vulns=0
+[2025-11-17 12:17:52] OSV aggregate dep_total=17 vulnerable=2 time_ms=4704.6
+[2025-11-17 12:17:52] OSV pkg=pixelmatch vulns=0
+[2025-11-17 12:17:52] OSV pkg=rollup vulns=1
+[2025-11-17 12:17:52] OSV pkg=jimp vulns=0
+[2025-11-17 12:17:52] OSV pkg=qunit vulns=0
+[2025-11-17 12:17:52] OSV pkg=concurrently vulns=0
+[2025-11-17 12:17:52] OSV pkg=jsdoc vulns=0
+[2025-11-17 12:17:52] OSV pkg=eslint-plugin-html vulns=0
+[2025-11-17 12:17:52] OSV pkg=puppeteer vulns=1
+[2025-11-17 12:17:52] OSV pkg=magic-string vulns=0
+[2025-11-17 12:17:52] OSV pkg=eslint-plugin-import vulns=0
+[2025-11-17 12:17:52] OSV pkg=rollup-plugin-filesize vulns=0
+[2025-11-17 12:17:52] OSV pkg=@rollup/plugin-terser vulns=0
+[2025-11-17 12:17:52] OSV pkg=eslint-config-mdcs vulns=0
+[2025-11-17 12:17:52] OSV pkg=@rollup/plugin-node-resolve vulns=0
+[2025-11-17 12:17:52] OSV pkg=eslint-plugin-compat vulns=0
+[2025-11-17 12:17:52] OSV pkg=servez vulns=0
+[2025-11-17 12:17:52] OSV pkg=eslint vulns=0
+[2025-11-17 12:17:52] OSV aggregate dep_total=17 vulnerable=2 time_ms=6.6
+[2025-11-17 12:17:52] COMMIT f265b19 no removals time_ms=7385.5
+[2025-11-17 12:17:53] OSV pkg=pixelmatch vulns=0
+[2025-11-17 12:17:53] OSV pkg=rollup vulns=1
+[2025-11-17 12:17:53] OSV pkg=jimp vulns=0
+[2025-11-17 12:17:53] OSV pkg=qunit vulns=0
+[2025-11-17 12:17:53] OSV pkg=concurrently vulns=0
+[2025-11-17 12:17:53] OSV pkg=jsdoc vulns=0
+[2025-11-17 12:17:53] OSV pkg=eslint-plugin-html vulns=0
+[2025-11-17 12:17:53] OSV pkg=puppeteer vulns=1
+[2025-11-17 12:17:53] OSV pkg=magic-string vulns=0
+[2025-11-17 12:17:53] OSV pkg=eslint-plugin-import vulns=0
+[2025-11-17 12:17:53] OSV pkg=rollup-plugin-filesize vulns=0
+[2025-11-17 12:17:53] OSV pkg=@rollup/plugin-terser vulns=0
+[2025-11-17 12:17:53] OSV pkg=eslint-config-mdcs vulns=0
+[2025-11-17 12:17:53] OSV pkg=@rollup/plugin-node-resolve vulns=0
+[2025-11-17 12:17:53] OSV pkg=eslint-plugin-compat vulns=0
+[2025-11-17 12:17:53] OSV pkg=servez vulns=0
+[2025-11-17 12:17:53] OSV pkg=eslint vulns=0
+[2025-11-17 12:17:53] OSV aggregate dep_total=17 vulnerable=2 time_ms=6.0
+[2025-11-17 12:17:53] OSV pkg=pixelmatch vulns=0
+[2025-11-17 12:17:53] OSV pkg=rollup vulns=1
+[2025-11-17 12:17:53] OSV pkg=jimp vulns=0
+[2025-11-17 12:17:53] OSV pkg=qunit vulns=0
+[2025-11-17 12:17:53] OSV pkg=concurrently vulns=0
+[2025-11-17 12:17:53] OSV pkg=jsdoc vulns=0
+[2025-11-17 12:17:53] OSV pkg=eslint-plugin-html vulns=0
+[2025-11-17 12:17:53] OSV pkg=puppeteer vulns=1
+[2025-11-17 12:17:53] OSV pkg=magic-string vulns=0
+[2025-11-17 12:17:53] OSV pkg=eslint-plugin-import vulns=0
+[2025-11-17 12:17:53] OSV pkg=rollup-plugin-filesize vulns=0
+[2025-11-17 12:17:53] OSV pkg=@rollup/plugin-terser vulns=0
+[2025-11-17 12:20:38] START
+[2025-11-17 12:20:52] CLONE_OK time_ms=14150.5
+[2025-11-17 12:21:13] OSV aggregate dep_total=17 vulnerable=2 time_ms=3816.4
+[2025-11-17 12:21:13] OSV aggregate dep_total=17 vulnerable=2 time_ms=0.0
+[2025-11-17 12:21:13] COMMIT f265b19 no removals time_ms=9870.7
+[2025-11-17 12:21:17] OSV aggregate dep_total=17 vulnerable=2 time_ms=0.0
+[2025-11-17 12:21:17] OSV aggregate dep_total=17 vulnerable=2 time_ms=0.0
+[2025-11-17 12:21:17] COMMIT b839e00 no removals time_ms=3778.0
+[2025-11-17 12:21:20] OSV aggregate dep_total=17 vulnerable=2 time_ms=0.0
+[2025-11-17 12:21:20] OSV aggregate dep_total=17 vulnerable=2 time_ms=0.0
+[2025-11-17 12:21:20] COMMIT 6823e43 no removals time_ms=3032.4
+[2025-11-17 12:21:23] OSV aggregate dep_total=17 vulnerable=2 time_ms=0.0
+[2025-11-17 12:21:23] OSV aggregate dep_total=17 vulnerable=2 time_ms=0.0
+[2025-11-17 12:21:23] COMMIT 7ff8fe1 no removals time_ms=3324.2
+[2025-11-17 12:21:24] OSV aggregate dep_total=17 vulnerable=2 time_ms=0.0
+[2025-11-17 12:21:24] OSV aggregate dep_total=17 vulnerable=2 time_ms=0.0
+[2025-11-17 12:21:25] COMMIT ebe7669 no removals time_ms=1203.2
+[2025-11-17 12:21:28] TIMEOUT_OR_ERROR: process exited code 3221225786; stderr: Traceback (most recent call last):
+  File "C:\Users\victo\AppData\Local\Temp\mine_supervisor_wcmdav19\worker_out.json.runner.py", line 7, in <module>
+    res = _worker_analyze(*['mrdoob/three.js', None, 'C:\\Users\\victo\\AppData\\Local\\Temp\\mine_supervisor_wcmdav19\\worker_out.json', 600, 1200, 40, False, False, False, None, None, False])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-17 12:23:46] START
+[2025-11-17 12:23:59] CLONE_OK time_ms=12579.5
+[2025-11-17 12:28:43] COMMITS_INITIAL=479 recent_mode=False
+[2025-11-17 12:30:22] TIMEOUT_OR_ERROR: timeout after 400 seconds

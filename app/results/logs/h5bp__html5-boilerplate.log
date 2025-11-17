@@ -1,0 +1,24 @@
+[2025-11-17 12:20:39] START
+[2025-11-17 12:20:42] CLONE_OK time_ms=3092.7
+[2025-11-17 12:21:06] OSV aggregate dep_total=21 vulnerable=2 time_ms=2275.5
+[2025-11-17 12:21:06] OSV aggregate dep_total=21 vulnerable=2 time_ms=0.0
+[2025-11-17 12:21:06] COMMIT 83ba9d2 no removals time_ms=13297.3
+[2025-11-17 12:21:10] OSV aggregate dep_total=21 vulnerable=2 time_ms=0.0
+[2025-11-17 12:21:10] OSV aggregate dep_total=21 vulnerable=2 time_ms=0.0
+[2025-11-17 12:21:10] COMMIT 94f79e4 no removals time_ms=4471.1
+[2025-11-17 12:21:19] OSV aggregate dep_total=21 vulnerable=2 time_ms=726.8
+[2025-11-17 12:21:19] OSV aggregate dep_total=21 vulnerable=2 time_ms=0.0
+[2025-11-17 12:21:20] COMMIT 15bf554 no removals time_ms=9176.1
+[2025-11-17 12:21:23] OSV aggregate dep_total=21 vulnerable=2 time_ms=0.0
+[2025-11-17 12:21:23] OSV aggregate dep_total=21 vulnerable=2 time_ms=0.0
+[2025-11-17 12:21:23] COMMIT ac08a17 no removals time_ms=3355.4
+[2025-11-17 12:21:27] OSV aggregate dep_total=21 vulnerable=2 time_ms=0.0
+[2025-11-17 12:21:27] OSV aggregate dep_total=21 vulnerable=2 time_ms=0.0
+[2025-11-17 12:21:27] COMMIT 2eb593d no removals time_ms=4132.2
+[2025-11-17 12:21:28] TIMEOUT_OR_ERROR: process exited code 3221225786; stderr: Traceback (most recent call last):
+  File "C:\Users\victo\AppData\Local\Temp\mine_supervisor_xp4bzyvi\worker_out.json.runner.py", line 7, in <module>
+    res = _worker_analyze(*['h5bp/html5-boilerplate', None, 'C:\\Users\\victo\\AppData\\Local\\Temp\\mine_supervisor_xp4bzyvi\\worker_out.json', 600, 1200, 40, False, False, False, None, None, False])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-17 12:23:44] START
+[2025-11-17 12:23:50] CLONE_OK time_ms=5142.3
+[2025-11-17 12:30:22] TIMEOUT_OR_ERROR: timeout after 400 seconds

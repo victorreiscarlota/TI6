@@ -1,0 +1,37 @@
+[2025-11-17 12:20:38] START
+[2025-11-17 12:20:41] CLONE_OK time_ms=3653.2
+[2025-11-17 12:20:58] OSV aggregate dep_total=27 vulnerable=10 time_ms=5601.6
+[2025-11-17 12:20:58] OSV aggregate dep_total=27 vulnerable=10 time_ms=0.0
+[2025-11-17 12:20:58] COMMIT f299b52 no removals time_ms=11804.5
+[2025-11-17 12:21:02] OSV aggregate dep_total=27 vulnerable=10 time_ms=0.0
+[2025-11-17 12:21:02] OSV aggregate dep_total=27 vulnerable=10 time_ms=0.0
+[2025-11-17 12:21:02] COMMIT ded9bc6 no removals time_ms=3899.6
+[2025-11-17 12:21:06] OSV aggregate dep_total=27 vulnerable=10 time_ms=0.0
+[2025-11-17 12:21:06] OSV aggregate dep_total=27 vulnerable=10 time_ms=0.0
+[2025-11-17 12:21:06] COMMIT aa816b3 no removals time_ms=3895.9
+[2025-11-17 12:21:12] OSV aggregate dep_total=27 vulnerable=10 time_ms=0.0
+[2025-11-17 12:21:12] OSV aggregate dep_total=27 vulnerable=10 time_ms=0.0
+[2025-11-17 12:21:12] COMMIT d7fbc52 no removals time_ms=5765.2
+[2025-11-17 12:21:13] OSV aggregate dep_total=27 vulnerable=10 time_ms=0.0
+[2025-11-17 12:21:13] OSV aggregate dep_total=27 vulnerable=10 time_ms=0.0
+[2025-11-17 12:21:13] COMMIT 2e1c0f2 no removals time_ms=1328.2
+[2025-11-17 12:21:17] OSV aggregate dep_total=27 vulnerable=10 time_ms=0.0
+[2025-11-17 12:21:17] OSV aggregate dep_total=27 vulnerable=10 time_ms=0.0
+[2025-11-17 12:21:17] COMMIT 1b6c282 no removals time_ms=3635.2
+[2025-11-17 12:21:20] OSV aggregate dep_total=27 vulnerable=10 time_ms=0.0
+[2025-11-17 12:21:20] OSV aggregate dep_total=27 vulnerable=10 time_ms=0.0
+[2025-11-17 12:21:20] COMMIT a370ac8 no removals time_ms=3384.8
+[2025-11-17 12:21:23] OSV aggregate dep_total=27 vulnerable=10 time_ms=0.0
+[2025-11-17 12:21:23] OSV aggregate dep_total=27 vulnerable=10 time_ms=0.0
+[2025-11-17 12:21:24] COMMIT 1144918 no removals time_ms=3176.3
+[2025-11-17 12:21:27] OSV aggregate dep_total=27 vulnerable=10 time_ms=0.0
+[2025-11-17 12:21:27] OSV aggregate dep_total=27 vulnerable=10 time_ms=0.0
+[2025-11-17 12:21:27] COMMIT b185fce no removals time_ms=3326.6
+[2025-11-17 12:21:28] TIMEOUT_OR_ERROR: process exited code 3221225786; stderr: Traceback (most recent call last):
+  File "C:\Users\victo\AppData\Local\Temp\mine_supervisor_byc0gx3n\worker_out.json.runner.py", line 7, in <module>
+    res = _worker_analyze(*['lodash/lodash', None, 'C:\\Users\\victo\\AppData\\Local\\Temp\\mine_supervisor_byc0gx3n\\worker_out.json', 600, 1200, 40, False, False, False, None, None, False])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-17 12:23:42] START
+[2025-11-17 12:23:45] CLONE_OK time_ms=3133.4
+[2025-11-17 12:27:04] COMMITS_INITIAL=409 recent_mode=False
+[2025-11-17 12:30:22] TIMEOUT_OR_ERROR: timeout after 400 seconds

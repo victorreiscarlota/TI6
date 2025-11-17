@@ -1,0 +1,58 @@
+[2025-11-17 12:20:44] START
+[2025-11-17 12:20:46] CLONE_OK time_ms=2474.8
+[2025-11-17 12:21:00] OSV aggregate dep_total=9 vulnerable=0 time_ms=2631.4
+[2025-11-17 12:21:00] OSV aggregate dep_total=9 vulnerable=0 time_ms=0.0
+[2025-11-17 12:21:00] COMMIT 103d283 no removals time_ms=9040.1
+[2025-11-17 12:21:04] OSV aggregate dep_total=9 vulnerable=0 time_ms=0.0
+[2025-11-17 12:21:04] OSV aggregate dep_total=9 vulnerable=0 time_ms=0.0
+[2025-11-17 12:21:04] COMMIT 2512c3f no removals time_ms=4322.9
+[2025-11-17 12:21:08] OSV aggregate dep_total=8 vulnerable=0 time_ms=0.0
+[2025-11-17 12:21:08] OSV aggregate dep_total=9 vulnerable=0 time_ms=0.0
+[2025-11-17 12:21:08] COMMIT fafc7c2 no removals time_ms=3894.6
+[2025-11-17 12:21:12] OSV aggregate dep_total=8 vulnerable=0 time_ms=0.0
+[2025-11-17 12:21:12] OSV aggregate dep_total=8 vulnerable=0 time_ms=0.0
+[2025-11-17 12:21:12] COMMIT 7c74f7b no removals time_ms=3912.5
+[2025-11-17 12:21:15] OSV aggregate dep_total=7 vulnerable=0 time_ms=0.0
+[2025-11-17 12:21:15] OSV aggregate dep_total=8 vulnerable=0 time_ms=0.0
+[2025-11-17 12:21:15] COMMIT 9e1a513 no removals time_ms=3338.7
+[2025-11-17 12:21:18] OSV aggregate dep_total=7 vulnerable=0 time_ms=0.0
+[2025-11-17 12:21:18] OSV aggregate dep_total=7 vulnerable=0 time_ms=0.0
+[2025-11-17 12:21:18] COMMIT 9783036 no removals time_ms=3031.8
+[2025-11-17 12:21:21] OSV aggregate dep_total=4 vulnerable=0 time_ms=0.0
+[2025-11-17 12:21:21] OSV aggregate dep_total=7 vulnerable=0 time_ms=0.0
+[2025-11-17 12:21:21] COMMIT 58073c6 no removals time_ms=2804.7
+[2025-11-17 12:21:24] OSV aggregate dep_total=4 vulnerable=0 time_ms=0.0
+[2025-11-17 12:21:24] OSV aggregate dep_total=4 vulnerable=0 time_ms=0.0
+[2025-11-17 12:21:24] COMMIT f8deec8 no removals time_ms=3231.7
+[2025-11-17 12:21:25] COMMIT 0dcf177 skip(no before pkg.json)
+[2025-11-17 12:21:25] FINISHED candidates=0
+[2025-11-17 12:23:57] START
+[2025-11-17 12:24:06] CLONE_OK time_ms=9697.7
+[2025-11-17 12:24:18] COMMITS_INITIAL=9 recent_mode=False
+[2025-11-17 12:25:44] REMOVAL_RECENT none found -> fallback original list
+[2025-11-17 12:25:47] OSV aggregate dep_total=9 vulnerable=0 time_ms=3054.4
+[2025-11-17 12:25:47] OSV aggregate dep_total=9 vulnerable=0 time_ms=0.0
+[2025-11-17 12:25:48] COMMIT 103d283 no removal/addition skip
+[2025-11-17 12:25:48] OSV aggregate dep_total=9 vulnerable=0 time_ms=0.0
+[2025-11-17 12:25:48] OSV aggregate dep_total=9 vulnerable=0 time_ms=0.0
+[2025-11-17 12:25:49] COMMIT 2512c3f no removal/addition skip
+[2025-11-17 12:25:49] OSV aggregate dep_total=8 vulnerable=0 time_ms=0.0
+[2025-11-17 12:25:49] OSV aggregate dep_total=9 vulnerable=0 time_ms=0.0
+[2025-11-17 12:25:59] COMMIT fafc7c2 removed=0 added=1 deps_before=8 deps_after=9 vuln_before=0 vuln_after=0 time_ms=10609.1
+[2025-11-17 12:26:01] OSV aggregate dep_total=8 vulnerable=0 time_ms=0.0
+[2025-11-17 12:26:01] OSV aggregate dep_total=8 vulnerable=0 time_ms=0.0
+[2025-11-17 12:26:01] COMMIT 7c74f7b no removal/addition skip
+[2025-11-17 12:26:02] OSV aggregate dep_total=7 vulnerable=0 time_ms=0.0
+[2025-11-17 12:26:02] OSV aggregate dep_total=8 vulnerable=0 time_ms=0.0
+[2025-11-17 12:26:03] COMMIT 9e1a513 removed=0 added=1 deps_before=7 deps_after=8 vuln_before=0 vuln_after=0 time_ms=2188.4
+[2025-11-17 12:26:04] OSV aggregate dep_total=7 vulnerable=0 time_ms=0.0
+[2025-11-17 12:26:04] OSV aggregate dep_total=7 vulnerable=0 time_ms=0.0
+[2025-11-17 12:26:04] COMMIT 9783036 no removal/addition skip
+[2025-11-17 12:26:05] OSV aggregate dep_total=4 vulnerable=0 time_ms=0.0
+[2025-11-17 12:26:05] OSV aggregate dep_total=7 vulnerable=0 time_ms=0.0
+[2025-11-17 12:26:06] COMMIT 58073c6 removed=0 added=3 deps_before=4 deps_after=7 vuln_before=0 vuln_after=0 time_ms=1980.9
+[2025-11-17 12:26:07] OSV aggregate dep_total=4 vulnerable=0 time_ms=0.0
+[2025-11-17 12:26:07] OSV aggregate dep_total=4 vulnerable=0 time_ms=0.0
+[2025-11-17 12:26:08] COMMIT f8deec8 no removal/addition skip
+[2025-11-17 12:26:08] COMMIT 0dcf177 skip(no before pkg.json)
+[2025-11-17 12:26:08] FINISHED total_records=0

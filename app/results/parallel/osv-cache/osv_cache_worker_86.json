@@ -1,0 +1,12 @@
+{
+  "npm:celeste": {},
+  "npm:doctoc": {},
+  "npm:remark": {},
+  "npm:remark-cli": {},
+  "npm:remark-parse": {},
+  "npm:remark-preset-lint-recommended": {},
+  "npm:remark-stringify": {},
+  "npm:remark-toc": {},
+  "npm:unified": {},
+  "npm:unified-stream": {}
+}

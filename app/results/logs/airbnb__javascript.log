@@ -7,3 +7,158 @@ ModuleNotFoundError: No module named 'app'
 [2025-11-17 10:56:28] CLONE_OK
 [2025-11-17 10:56:45] COMMITS_TOUCHING_PACKAGE_JSON=389
 [2025-11-17 10:56:45] COMMITS_LIMITED_TO=20 (limit_commits=20)
+[2025-11-17 12:14:38] START
+[2025-11-17 12:14:39] CLONE_OK time_ms=1057.4
+[2025-11-17 12:14:43] OSV pkg=eslint vulns=0
+[2025-11-17 12:14:43] OSV pkg=eslint-plugin-jsx-a11y vulns=0
+[2025-11-17 12:14:43] OSV pkg=eslint-find-rules vulns=0
+[2025-11-17 12:14:43] OSV pkg=@babel/runtime vulns=1
+[2025-11-17 12:14:43] OSV pkg=babel-tape-runner vulns=0
+[2025-11-17 12:14:43] OSV pkg=markdownlint-cli vulns=0
+[2025-11-17 12:14:43] OSV pkg=in-publish vulns=0
+[2025-11-17 12:14:43] OSV pkg=markdownlint vulns=0
+[2025-11-17 12:14:43] OSV pkg=eslint-plugin-import vulns=0
+[2025-11-17 12:14:43] OSV pkg=safe-publish-latest vulns=0
+[2025-11-17 12:14:43] OSV pkg=confusing-browser-globals vulns=0
+[2025-11-17 12:14:43] OSV pkg=eslint-plugin-react-hooks vulns=0
+[2025-11-17 12:14:43] OSV pkg=eslint-config-airbnb-base vulns=0
+[2025-11-17 12:14:43] OSV pkg=eclint vulns=0
+[2025-11-17 12:14:43] OSV pkg=eslint-plugin-react vulns=0
+[2025-11-17 12:14:43] OSV pkg=tape vulns=0
+[2025-11-17 12:14:43] OSV pkg=react vulns=2
+[2025-11-17 12:14:43] OSV pkg=babel-preset-airbnb vulns=0
+[2025-11-17 12:14:43] OSV aggregate dep_total=18 vulnerable=2 time_ms=4.2
+[2025-11-17 12:14:43] OSV pkg=eslint vulns=0
+[2025-11-17 12:14:43] OSV pkg=eslint-plugin-jsx-a11y vulns=0
+[2025-11-17 12:14:43] OSV pkg=eslint-find-rules vulns=0
+[2025-11-17 12:14:43] OSV pkg=@babel/runtime vulns=1
+[2025-11-17 12:14:43] OSV pkg=babel-tape-runner vulns=0
+[2025-11-17 12:14:43] OSV pkg=markdownlint-cli vulns=0
+[2025-11-17 12:14:43] OSV pkg=in-publish vulns=0
+[2025-11-17 12:14:43] OSV pkg=markdownlint vulns=0
+[2025-11-17 12:14:43] OSV pkg=eslint-plugin-import vulns=0
+[2025-11-17 12:14:43] OSV pkg=safe-publish-latest vulns=0
+[2025-11-17 12:14:43] OSV pkg=confusing-browser-globals vulns=0
+[2025-11-17 12:14:43] OSV pkg=eslint-plugin-react-hooks vulns=0
+[2025-11-17 12:14:43] OSV pkg=eslint-config-airbnb-base vulns=0
+[2025-11-17 12:14:43] OSV pkg=eclint vulns=0
+[2025-11-17 12:14:43] OSV pkg=eslint-plugin-react vulns=0
+[2025-11-17 12:14:43] OSV pkg=tape vulns=0
+[2025-11-17 12:14:43] OSV pkg=react vulns=2
+[2025-11-17 12:14:43] OSV pkg=babel-preset-airbnb vulns=0
+[2025-11-17 12:14:43] OSV aggregate dep_total=18 vulnerable=2 time_ms=3.9
+[2025-11-17 12:14:43] COMMIT 11f986f no removals time_ms=3034.9
+[2025-11-17 12:14:44] OSV pkg=eslint vulns=0
+[2025-11-17 12:14:44] OSV pkg=eslint-plugin-jsx-a11y vulns=0
+[2025-11-17 12:14:44] OSV pkg=eslint-find-rules vulns=0
+[2025-11-17 12:14:44] OSV pkg=@babel/runtime vulns=1
+[2025-11-17 12:14:44] OSV pkg=babel-tape-runner vulns=0
+[2025-11-17 12:14:44] OSV pkg=markdownlint-cli vulns=0
+[2025-11-17 12:14:44] OSV pkg=in-publish vulns=0
+[2025-11-17 12:14:44] OSV pkg=markdownlint vulns=0
+[2025-11-17 12:14:44] OSV pkg=eslint-plugin-import vulns=0
+[2025-11-17 12:14:44] OSV pkg=safe-publish-latest vulns=0
+[2025-11-17 12:14:44] OSV pkg=confusing-browser-globals vulns=0
+[2025-11-17 12:14:44] OSV pkg=eslint-plugin-react-hooks vulns=0
+[2025-11-17 12:14:44] OSV pkg=eslint-config-airbnb-base vulns=0
+[2025-11-17 12:14:44] OSV pkg=eclint vulns=0
+[2025-11-17 12:14:44] OSV pkg=eslint-plugin-react vulns=0
+[2025-11-17 12:14:44] OSV pkg=tape vulns=0
+[2025-11-17 12:14:44] OSV pkg=react vulns=2
+[2025-11-17 12:14:44] OSV pkg=babel-preset-airbnb vulns=0
+[2025-11-17 12:14:44] OSV aggregate dep_total=18 vulnerable=2 time_ms=4.4
+[2025-11-17 12:14:44] OSV pkg=eslint vulns=0
+[2025-11-17 12:14:44] OSV pkg=eslint-plugin-jsx-a11y vulns=0
+[2025-11-17 12:14:44] OSV pkg=eslint-find-rules vulns=0
+[2025-11-17 12:14:44] OSV pkg=@babel/runtime vulns=1
+[2025-11-17 12:14:44] OSV pkg=babel-tape-runner vulns=0
+[2025-11-17 12:17:38] START
+[2025-11-17 12:17:40] CLONE_OK time_ms=1389.5
+[2025-11-17 12:17:44] OSV pkg=@babel/runtime vulns=1
+[2025-11-17 12:17:44] OSV pkg=babel-preset-airbnb vulns=0
+[2025-11-17 12:17:44] OSV pkg=eslint-config-airbnb-base vulns=0
+[2025-11-17 12:17:44] OSV pkg=confusing-browser-globals vulns=0
+[2025-11-17 12:17:44] OSV pkg=eslint-plugin-react vulns=0
+[2025-11-17 12:17:44] OSV pkg=eslint-plugin-import vulns=0
+[2025-11-17 12:17:44] OSV pkg=markdownlint vulns=0
+[2025-11-17 12:17:44] OSV pkg=react vulns=2
+[2025-11-17 12:17:44] OSV pkg=eclint vulns=0
+[2025-11-17 12:17:44] OSV pkg=eslint-find-rules vulns=0
+[2025-11-17 12:17:44] OSV pkg=in-publish vulns=0
+[2025-11-17 12:17:44] OSV pkg=safe-publish-latest vulns=0
+[2025-11-17 12:17:44] OSV pkg=tape vulns=0
+[2025-11-17 12:17:44] OSV pkg=eslint vulns=0
+[2025-11-17 12:17:44] OSV pkg=eslint-plugin-jsx-a11y vulns=0
+[2025-11-17 12:17:44] OSV pkg=markdownlint-cli vulns=0
+[2025-11-17 12:17:44] OSV pkg=babel-tape-runner vulns=0
+[2025-11-17 12:17:44] OSV pkg=eslint-plugin-react-hooks vulns=0
+[2025-11-17 12:17:44] OSV aggregate dep_total=18 vulnerable=2 time_ms=11.4
+[2025-11-17 12:17:44] OSV pkg=@babel/runtime vulns=1
+[2025-11-17 12:17:44] OSV pkg=babel-preset-airbnb vulns=0
+[2025-11-17 12:17:44] OSV pkg=eslint-config-airbnb-base vulns=0
+[2025-11-17 12:17:44] OSV pkg=confusing-browser-globals vulns=0
+[2025-11-17 12:17:44] OSV pkg=eslint-plugin-react vulns=0
+[2025-11-17 12:17:44] OSV pkg=eslint-plugin-import vulns=0
+[2025-11-17 12:17:44] OSV pkg=markdownlint vulns=0
+[2025-11-17 12:17:44] OSV pkg=react vulns=2
+[2025-11-17 12:17:44] OSV pkg=eclint vulns=0
+[2025-11-17 12:17:44] OSV pkg=eslint-find-rules vulns=0
+[2025-11-17 12:17:44] OSV pkg=in-publish vulns=0
+[2025-11-17 12:17:44] OSV pkg=safe-publish-latest vulns=0
+[2025-11-17 12:17:44] OSV pkg=tape vulns=0
+[2025-11-17 12:17:44] OSV pkg=eslint vulns=0
+[2025-11-17 12:17:44] OSV pkg=eslint-plugin-jsx-a11y vulns=0
+[2025-11-17 12:17:44] OSV pkg=markdownlint-cli vulns=0
+[2025-11-17 12:17:44] OSV pkg=babel-tape-runner vulns=0
+[2025-11-17 12:17:44] OSV pkg=eslint-plugin-react-hooks vulns=0
+[2025-11-17 12:17:44] OSV aggregate dep_total=18 vulnerable=2 time_ms=13.1
+[2025-11-17 12:17:44] COMMIT 11f986f no removals time_ms=3824.8
+[2025-11-17 12:17:46] OSV pkg=@babel/runtime vulns=1
+[2025-11-17 12:17:46] OSV pkg=babel-preset-airbnb vulns=0
+[2025-11-17 12:17:46] OSV pkg=eslint-config-airbnb-base vulns=0
+[2025-11-17 12:17:46] OSV pkg=confusing-browser-globals vulns=0
+[2025-11-17 12:17:46] OSV pkg=eslint-plugin-react vulns=0
+[2025-11-17 12:17:46] OSV pkg=eslint-plugin-import vulns=0
+[2025-11-17 12:17:46] OSV pkg=markdownlint vulns=0
+[2025-11-17 12:17:46] OSV pkg=react vulns=2
+[2025-11-17 12:17:46] OSV pkg=eclint vulns=0
+[2025-11-17 12:17:46] OSV pkg=eslint-find-rules vulns=0
+[2025-11-17 12:17:46] OSV pkg=in-publish vulns=0
+[2025-11-17 12:17:46] OSV pkg=safe-publish-latest vulns=0
+[2025-11-17 12:17:46] OSV pkg=tape vulns=0
+[2025-11-17 12:17:46] OSV pkg=eslint vulns=0
+[2025-11-17 12:17:46] OSV pkg=eslint-plugin-jsx-a11y vulns=0
+[2025-11-17 12:17:46] OSV pkg=markdownlint-cli vulns=0
+[2025-11-17 12:17:46] OSV pkg=babel-tape-runner vulns=0
+[2025-11-17 12:17:46] OSV pkg=eslint-plugin-react-hooks vulns=0
+[2025-11-17 12:17:46] OSV aggregate dep_total=18 vulnerable=2 time_ms=7.7
+[2025-11-17 12:17:46] OSV pkg=@babel/runtime vulns=1
+[2025-11-17 12:17:46] OSV pkg=babel-preset-airbnb vulns=0
+[2025-11-17 12:17:46] OSV pkg=eslint-config-airbnb-base vulns=0
+[2025-11-17 12:17:46] OSV pkg=confusing-browser-globals vulns=0
+[2025-11-17 12:20:37] START
+[2025-11-17 12:20:40] CLONE_OK time_ms=2915.6
+[2025-11-17 12:20:56] OSV aggregate dep_total=18 vulnerable=2 time_ms=0.0
+[2025-11-17 12:20:56] OSV aggregate dep_total=18 vulnerable=2 time_ms=0.0
+[2025-11-17 12:20:57] COMMIT 11f986f no removals time_ms=11914.2
+[2025-11-17 12:21:05] OSV aggregate dep_total=18 vulnerable=2 time_ms=0.0
+[2025-11-17 12:21:05] OSV aggregate dep_total=18 vulnerable=2 time_ms=0.0
+[2025-11-17 12:21:05] COMMIT e6f2922 no removals time_ms=8439.8
+[2025-11-17 12:21:09] OSV aggregate dep_total=18 vulnerable=2 time_ms=0.0
+[2025-11-17 12:21:09] OSV aggregate dep_total=18 vulnerable=2 time_ms=0.0
+[2025-11-17 12:21:09] COMMIT 932951a no removals time_ms=4250.3
+[2025-11-17 12:21:15] OSV aggregate dep_total=18 vulnerable=2 time_ms=0.0
+[2025-11-17 12:21:15] OSV aggregate dep_total=18 vulnerable=2 time_ms=0.0
+[2025-11-17 12:21:16] COMMIT 5f019b1 no removals time_ms=6295.9
+[2025-11-17 12:21:21] OSV aggregate dep_total=19 vulnerable=2 time_ms=0.0
+[2025-11-17 12:21:21] OSV aggregate dep_total=18 vulnerable=2 time_ms=0.0
+[2025-11-17 12:21:28] TIMEOUT_OR_ERROR: process exited code 3221225786; stderr: Traceback (most recent call last):
+  File "C:\code\TI6\app\scripts\find_dependency_replacements.py", line 394, in _worker_analyze
+    metrics_before = compute_js_metrics_inline(repo_dir, parent, no_complexity, max_js_files, time_cap_ms, full_name)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\code\TI6\app\scripts\find_dependency_replacements.py", line 185, in compute_js_metrics_inline
+    code = run(f'{GIT} -C "{r
+[2025-11-17 12:23:57] START
+[2025-11-17 12:24:03] CLONE_OK time_ms=5815.9
+[2025-11-17 12:26:16] COMMITS_INITIAL=389 recent_mode=False
+[2025-11-17 12:30:22] TIMEOUT_OR_ERROR: timeout after 400 seconds

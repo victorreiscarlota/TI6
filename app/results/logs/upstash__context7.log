@@ -1,0 +1,16 @@
+[2025-11-17 12:21:29] TIMEOUT_OR_ERROR: process exited code 3221225786; stderr: Traceback (most recent call last):
+  File "C:\Users\victo\AppData\Local\Temp\mine_supervisor_yhuvtvu9\worker_out.json.runner.py", line 6, in <module>
+    from app.scripts.find_dependency_replacements import _worker_analyze
+  File "C:\code\TI6\app\scripts\find_dependency_replacements.py", line 37, in <module>
+    import requests
+  File "C:\code\TI6\.venv\Lib\site-packages\requests\__init__.py", line 43, in <module>
+    import urllib3
+  File "C:\code\TI6\.venv\Lib\site-packages\urllib3\__init__.py
+[2025-11-17 12:23:53] START
+[2025-11-17 12:24:00] CLONE_OK time_ms=7709.4
+[2025-11-17 12:24:26] COMMITS_INITIAL=26 recent_mode=False
+[2025-11-17 12:28:55] REMOVAL_RECENT selected=1 target=20
+[2025-11-17 12:28:57] OSV aggregate dep_total=12 vulnerable=3 time_ms=740.2
+[2025-11-17 12:28:57] OSV aggregate dep_total=12 vulnerable=3 time_ms=0.0
+[2025-11-17 12:29:50] COMMIT 2e6c9a6 removed=1 added=1 deps_before=12 deps_after=12 vuln_before=3 vuln_after=3 time_ms=55521.6
+[2025-11-17 12:29:50] FINISHED total_records=1

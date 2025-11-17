@@ -1,0 +1,84 @@
+[2025-11-17 12:17:38] START
+[2025-11-17 12:17:40] CLONE_OK time_ms=1728.0
+[2025-11-17 12:17:48] OSV pkg=axios vulns=7
+[2025-11-17 12:17:48] OSV pkg=stream-throttle vulns=0
+[2025-11-17 12:17:48] OSV pkg=fs-extra vulns=0
+[2025-11-17 12:17:48] OSV pkg=@rollup/plugin-commonjs vulns=0
+[2025-11-17 12:17:49] OSV pkg=karma-jasmine vulns=0
+[2025-11-17 12:17:49] OSV pkg=selfsigned vulns=0
+[2025-11-17 12:17:49] OSV pkg=karma-rollup-preprocessor vulns=0
+[2025-11-17 12:17:49] OSV pkg=dtslint vulns=0
+[2025-11-17 12:17:50] OSV pkg=tar-stream vulns=0
+[2025-11-17 12:17:50] OSV pkg=karma-jasmine-ajax vulns=0
+[2025-11-17 12:17:50] OSV pkg=husky vulns=0
+[2025-11-17 12:17:51] OSV pkg=abortcontroller-polyfill vulns=0
+[2025-11-17 12:17:51] OSV pkg=gulp vulns=0
+[2025-11-17 12:17:51] OSV pkg=sinon vulns=0
+[2025-11-17 12:17:51] OSV pkg=@rollup/plugin-alias vulns=0
+[2025-11-17 12:17:51] OSV pkg=cross-env vulns=0
+[2025-11-17 12:17:51] OSV pkg=@types/node vulns=0
+[2025-11-17 12:17:51] OSV pkg=@commitlint/config-conventional vulns=0
+[2025-11-17 12:17:52] OSV pkg=karma vulns=2
+[2025-11-17 12:17:52] OSV pkg=form-data vulns=1
+[2025-11-17 12:17:52] OSV pkg=karma-chrome-launcher vulns=0
+[2025-11-17 12:17:52] OSV pkg=karma-sinon vulns=0
+[2025-11-17 12:17:52] OSV pkg=typescript vulns=0
+[2025-11-17 12:17:53] OSV pkg=follow-redirects vulns=4
+[2025-11-17 12:17:53] OSV pkg=rollup-plugin-terser vulns=0
+[2025-11-17 12:17:53] OSV pkg=@rollup/plugin-babel vulns=0
+[2025-11-17 12:17:53] OSV pkg=@release-it/conventional-changelog vulns=0
+[2025-11-17 12:17:54] OSV pkg=karma-sourcemap-loader vulns=0
+[2025-11-17 12:17:54] OSV pkg=@rollup/plugin-node-resolve vulns=0
+[2025-11-17 12:17:54] OSV pkg=get-stream vulns=0
+[2025-11-17 12:17:54] OSV pkg=multer vulns=4
+[2025-11-17 12:17:54] OSV pkg=mocha vulns=0
+[2025-11-17 12:17:55] OSV pkg=dev-null vulns=0
+[2025-11-17 12:17:55] OSV pkg=karma-firefox-launcher vulns=0
+[2025-11-17 12:17:55] OSV pkg=handlebars vulns=11
+[2025-11-17 12:17:55] OSV pkg=release-it vulns=0
+[2025-11-17 12:17:55] OSV pkg=eslint vulns=0
+[2025-11-17 12:17:56] OSV pkg=jasmine-core vulns=0
+[2025-11-17 12:17:56] OSV pkg=@commitlint/cli vulns=0
+[2025-11-17 12:17:56] OSV pkg=@rollup/plugin-json vulns=0
+[2025-11-17 12:17:56] OSV pkg=chalk vulns=1
+[2025-11-17 12:17:57] OSV pkg=rollup vulns=1
+[2025-11-17 12:17:57] OSV pkg=rollup-plugin-auto-external vulns=0
+[2025-11-17 12:17:57] OSV pkg=express vulns=5
+[2025-11-17 12:17:57] OSV pkg=body-parser vulns=1
+[2025-11-17 12:17:57] OSV pkg=formidable vulns=1
+[2025-11-17 12:17:57] OSV pkg=proxy-from-env vulns=0
+[2025-11-17 12:17:57] OSV pkg=memoizee vulns=0
+[2025-11-17 12:17:57] OSV pkg=@babel/preset-env vulns=0
+[2025-11-17 12:17:57] OSV pkg=pretty-bytes vulns=0
+[2025-11-17 12:17:57] OSV pkg=rollup-plugin-bundle-size vulns=0
+[2025-11-17 12:17:58] OSV pkg=pacote vulns=0
+[2025-11-17 12:17:58] OSV pkg=@babel/core vulns=0
+[2025-11-17 12:17:58] OSV pkg=karma-safari-launcher vulns=0
+[2025-11-17 12:17:58] OSV pkg=minimist vulns=2
+[2025-11-17 12:17:58] OSV pkg=es6-promise vulns=0
+[2025-11-17 12:17:58] OSV pkg=coveralls vulns=0
+[2025-11-17 12:17:59] OSV pkg=formdata-node vulns=0
+[2025-11-17 12:17:59] OSV pkg=karma-sauce-launcher vulns=0
+[2025-11-17 12:17:59] OSV pkg=auto-changelog vulns=0
+[2025-11-17 12:17:59] OSV pkg=string-replace-async vulns=0
+[2025-11-17 12:18:00] OSV pkg=istanbul-instrumenter-loader vulns=0
+[2025-11-17 12:18:00] OSV pkg=@rollup/plugin-multi-entry vulns=0
+[2025-11-17 12:18:00] OSV aggregate dep_total=63 vulnerable=12 time_ms=12094.1
+[2025-11-17 12:18:00] OSV pkg=axios vulns=7
+[2025-11-17 12:18:00] OSV pkg=stream-throttle vulns=0
+[2025-11-17 12:18:00] OSV pkg=fs-extra vulns=0
+[2025-11-17 12:18:00] OSV pkg=@rollup/plugin-commonjs vulns=0
+[2025-11-17 12:18:00] OSV pkg=karma-jasmine vulns=0
+[2025-11-17 12:18:00] OSV pkg=selfsigned vulns=0
+[2025-11-17 12:18:00] OSV pkg=karma-rollup-preprocessor vulns=0
+[2025-11-17 12:18:00] OSV pkg=dtslint vulns=0
+[2025-11-17 12:20:38] START
+[2025-11-17 12:20:44] CLONE_OK time_ms=5715.4
+[2025-11-17 12:21:28] TIMEOUT_OR_ERROR: process exited code 3221225786; stderr: Traceback (most recent call last):
+  File "C:\Users\victo\AppData\Local\Temp\mine_supervisor_pp4_embk\worker_out.json.runner.py", line 7, in <module>
+    res = _worker_analyze(*['axios/axios', None, 'C:\\Users\\victo\\AppData\\Local\\Temp\\mine_supervisor_pp4_embk\\worker_out.json', 600, 1200, 40, False, False, False, None, None, False])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-11-17 12:23:43] START
+[2025-11-17 12:23:48] CLONE_OK time_ms=4632.4
+[2025-11-17 12:25:56] COMMITS_INITIAL=264 recent_mode=False
+[2025-11-17 12:30:22] TIMEOUT_OR_ERROR: timeout after 400 seconds
